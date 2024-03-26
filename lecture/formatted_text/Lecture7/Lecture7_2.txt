@@ -1,0 +1,125 @@
+Lecture 7: Pagerank Algorithm
+
+PageRank
+- Not just a count of inlinks
+- A link from a more important page is more important
+- A link from a page with fewer links is more important
+- A page with lots of inlinks from important pages (which have few outlinks) is more important
+ PageRank Model
+
+The Web: a directed graph
+G = (V, E)
+Vertices (pages)	Edges (links)
+a	(a, e), (a, f)
+b	(b, d)
+c	(c, b)
+d	(d, a), (d, c), (d, f)
+e	(e, b), (e, d), (e, f)
+f	(f, a)
+
+Which is the most “important” vertex?
+V = {a, b, c, d, e, f }
+E = {(a, e), (a, f), (b, d), (c, b), (d, a), (d, c), (d, f), (e, b), (e, d), (e, f), (f,a)}
+
+---
+
+PageRank: Random Surfer Model
+= someone surfing the web, clicking links randomly
+* What is the probability of being at page x after n hops?
+The diagram shows a web graph with 6 nodes labeled a, b, c, d, e, and f. The nodes are connected by directed edges. The surfer starts at node e and randomly surfs the web by clicking on links. The probability of the surfer being at node x after n hops is given by the following formula:
+P(x, n) = (1-d)/N + d * sum(P(y, n-1) * L(y, x)) for all y in N(x)
+where:
+N is the total number of nodes in the graph
+d is a damping factor that controls the probability of the surfer continuing to surf the web or jumping to a random page
+L(y, x) is the probability of the surfer clicking on the link from node y to node x
+The damping factor d is typically set to 0.85. This means that the surfer has an 85% chance of continuing to surf the web and a 15% chance of jumping to a random page.
+
+---
+
+PageRank: Random Surfer Model
+The probability of the surfer being at node x after n hops can be calculated using the following steps:
+1. Initialize the vector P(x, 0) to 1/N for all x in N.
+2. For each n from 1 to n, update the vector P(x, n) using the formula given above.
+3. Return the vector P(x, n).
+The following table shows the probability of the surfer being at each node after 1, 2, and 3 hops:
+| Node | P(x, 1) | P(x, 2) | P(x, 3) |
+|---|---|---|---|
+| a | 0.167 | 0.169 | 0.170 |
+| b | 0.167 | 0.169 | 0.170 |
+| c | 0.167 | 0.169 | 0.170 |
+| d | 0.167 | 0.169 | 0.170 |
+| e | 0.167 | 0.169 | 0.170 |
+| f | 0.167 | 0.169 | 0.170 |
+As you can see from the table, the probability of the surfer being at any particular node after n hops is roughly the same. This is because the damping factor d causes the surfer to randomly jump to different pages, which prevents the surfer from getting stuck at any particular node.
+Imagine a surfer on the web, randomly clicking links. What is the probability that the surfer will be at a particular page after n hops? We assume that the surfer starts at a random page.
+This is the PageRank model, a way of ranking web pages based on their importance. The more important a page is, the higher its PageRank.
+The PageRank of a page is calculated by taking the sum of the PageRanks of the pages that link to it, divided by the number of links on those pages.
+For example, in the diagram above, the PageRank of page A is calculated by taking the sum of the PageRanks of pages B, C, and D, divided by the number of links on those pages.
+
+---
+
+PageRank: Random Surfer Model
+The PageRank model is a powerful tool for ranking web pages. It is used by Google and other search engines to determine the order in which pages are displayed in search results.
+- Imagine a surfer on the web, randomly clicking links.
+- What is the probability of the surfer being at a particular page after n hops?
+- Assume that the surfer starts at a random page.
+- We can model this process using a directed graph, where each node represents a web page and each edge represents a link between two pages.
+- The PageRank of a page is a measure of its importance, and it is calculated by iteratively applying the following formula:
+```
+PR(x) = (1-d) + d * (PR(y)/C(y) + PR(z)/C(z) + ...)
+```
+- Where:
+    - PR(x) is the PageRank of page x
+    - d is a damping factor (usually set to 0.85)
+    - C(y) is the number of outgoing links from page y
+    - PR(y) is the PageRank of page y
+- The PageRank of a page is a measure of its importance, and it is calculated by iteratively applying the following formula:
+```
+PR(x) = (1-d) + d * (PR(y)/C(y) + PR(z)/C(z) + ...)
+```
+- Where:
+    - PR(x) is the PageRank of page x
+    - d is a damping factor (usually set to 0.85)
+    - C(y) is the number of outgoing links from page y
+    - PR(y) is the PageRank of page y
+- This formula takes into account the number of links to a page, as well as the PageRanks of the pages that link to it.
+- The PageRank algorithm is a powerful tool for ranking web pages, and it is used by Google to determine the order of results in its search engine.
+Imagine a surfer on the web, randomly clicking links. What is the probability that the surfer will be at a particular page after n hops? We can model this using a random walk on a graph, where the nodes are the web pages and the edges are the links between them. The initial state of the surfer is that they are equally likely to be at any node. At each step, the surfer randomly chooses one of the outgoing links from their current page and follows it.
+
+---
+
+PageRank: Random Surfer Model
+The PageRank algorithm is an iterative algorithm that computes the probability that the surfer will be at each page after n hops. The algorithm starts by initializing the PageRank of each page to 1/n. At each iteration, the PageRank of each page is updated to be the sum of the PageRanks of the pages that link to it, divided by the number of outgoing links from those pages.
+The PageRank algorithm can be used to rank web pages based on their importance. The pages with the highest PageRanks are the most likely to be visited by a random surfer.
+If the surfer reaches a page without any outgoing links, they randomly jump to another page.
+- Someone surfing the web, clicking links randomly
+- What is the probability of being at page x after n hops?
+- Initial state: surfer equally likely to start at any node
+- PageRank applied iteratively for each hop: score indicates probability of being at that page after than many hops
+- If the surfer reaches a page without links, the surfer randomly jumps to another page
+What would happen with g and i over time?
+Imagine a surfer on the web, randomly clicking links.
+What is the probability of being at a page after x hops?
+The initial state is that the surfer is equally likely to start at any node.
+PageRank is applied iteratively for each hop: the score indicates the probability of being at that page after than many hops.
+If the surfer reaches a page without links, the surfer randomly jumps to another page.
+What would happen with g and i over time?
+
+---
+
+PageRank: Random Surfer Model
+Imagine a surfer on the web, randomly clicking links.
+What is the probability of the surfer being at a particular web page after n hops (clicks)?
+We can model this using a directed graph, where each node represents a web page and each edge represents a link between two web pages. The surfer starts at a random node and then follows a random link to another node. This process is repeated n times.
+The probability of the surfer being at a particular node after n hops is given by the PageRank algorithm. PageRank is a link analysis algorithm that measures the importance of web pages. It is used by Google to rank search results.
+The PageRank algorithm works by iteratively applying the following formula to each node in the graph:
+```
+PR(i) = (1-d) + d * (PR(j)/C(j))
+```
+where:
+* PR(i) is the PageRank of node i
+* d is a damping factor that is typically set to 0.85
+* PR(j) is the PageRank of the node that links to node i
+* C(j) is the number of outgoing links from node j
+The damping factor d is used to prevent the PageRank algorithm from getting stuck in a loop. It also helps to ensure that all nodes in the graph have a non-zero PageRank.
+The PageRank algorithm is a powerful tool for measuring the importance of web pages. It is used by Google to rank search results, and it can also be used to identify influential nodes in a social network.

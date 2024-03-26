@@ -1,0 +1,17 @@
+Lecture 5b: Cloud Security
+
+**Two Methods**
+There are two primary ways in which a plain text message can be codified to obtain a ciphertext: Substitution and Transposition.
+
+**Substitution**
+- Modified Caesar Cipher: each alphabet is replaced by one that is k places down the line, where k is from 1 to 25.
+- You need 25 attempts at most to crack k and decipher the ciphertext.
+- Instead of a uniform substitution scheme, you can have a random substitution.
+- Polygram Substitution Cipher: replace a block of alphabets with another. “HELLO” -> “YUQQW”, “HELL” -> "TEUI"
+
+**Transposition**
+In addition to replacing the alphabets, we also perform some permutation over them.
+Rail Fence Technique: Write down the plain text as a sequence of diagonals. Read the text written as above as a sequence of rows.
+Plain text: "Come home tomorrow"
+Cipher text: Cmhmtmrooeoeoorw
+In transposition, the position of letters in the plaintext is changed to produce the ciphertext. The key is the permutation that is applied to the plaintext to produce the ciphertext.

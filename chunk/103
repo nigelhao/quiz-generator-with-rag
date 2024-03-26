@@ -1,0 +1,13 @@
+Lecture 7: Pagerank Algorithm
+
+Modified Version of PageRank
+\[ R'(u) = c_1 ∑ \frac{R'(v)}{N_v} + c_2E(u) \]
+\[ v \in B_u \]
+\[ E(u) \]: a distribution of ranks of web pages that "users" jump to when they "get bored" after successive links at random.
+
+An example of Modified PageRank
+The diagram shows a modified PageRank algorithm.
+- There are three web pages: Yahoo, Amazon, and Microsoft.
+- The weight of the link from Yahoo to Amazon is 1/2, the weight of the link from Amazon to Microsoft is 1/2, and the weight of the link from Microsoft to Yahoo is 1/2.
+- The initial rank of each page is 1/3.
+- The modified PageRank of Yahoo is 0.333, the modified PageRank of Amazon is 0.333, and the modified PageRank of Microsoft is 0.333.

@@ -1,0 +1,10 @@
+Lecture 3: Virtualization in Cloud
+
+Virtual Machine:
+- Software that makes code (running in a process) think that it's running on raw hardware.
+- A virtual machine monitor runs in the host operating system.
+- It loads and runs disk images for guest operating systems.
+- Operations in the guest operating system that are normally not allowed trap into the virtual machine monitor.
+  - Guest operating system tries to change page tables.
+  - Guest operating system tries to disable interrupts.
+- Virtual machine monitor emulates the hardware.

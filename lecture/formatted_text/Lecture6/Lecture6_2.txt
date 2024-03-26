@@ -1,0 +1,43 @@
+Lecture 6: CAP Theorem
+
+CAP Theorem: Proof
+* 2002: Proven by research conducted by Nancy Lynch and Seth Gilbert at MIT
+Gilbert, Seth, and Nancy Lynch. "Brewer's conjecture and the feasibility of consistent, available, partition-tolerant web services." ACM SIGACT News 33.2 (2002): 51-59.
+A simple proof using two nodes:
+A B
+The CAP theorem states that it is impossible for a distributed computer system to simultaneously provide all of the following three guarantees:
+* Consistency: All nodes in the system have the same data at all times.
+* Availability: Every request to the system is guaranteed to succeed.
+* Partition tolerance: The system continues to operate correctly even if some of the nodes in the system fail.
+In this proof, we will show that it is impossible to achieve all three of these guarantees in a system with two nodes.
+We will first show that it is impossible to achieve both consistency and availability in a system with two nodes. To do this, we will consider the following scenario:
+* Node A has a value of 1.
+* Node B has a value of 2.
+* A request is made to node A to read the value.
+* Node A responds with the value 1.
+* A request is made to node B to read the value.
+* Node B responds with the value 2.
+In this scenario, the system is not consistent because the two nodes have different values.
+We will now show that it is impossible to achieve both availability and partition tolerance in a system with two nodes. To do this, we will consider the following scenario:
+* Node A fails.
+* A request is made to node B to read the value.
+* Node B cannot respond to the request because it is not aware that node A has failed.
+In this scenario, the system is not available because a request to the system cannot be guaranteed to succeed.
+Finally, we will show that it is impossible to achieve all three of the CAP guarantees in a system with two nodes. To do this, we will consider the following scenario:
+* Node A has a value of 1.
+* Node B has a value of 2.
+* A request is made to node A to read the value.
+* Node A responds with the value 1.
+* Node A fails.
+* A request is made to node B to read the value.
+* Node B cannot respond to the request because it is not aware that node A has failed.
+In this scenario, the system is not consistent because the two nodes have different values, and it is not available because a request to the system cannot be guaranteed to succeed.
+Therefore, it is impossible to achieve all three of the CAP guarantees in a system with two nodes.
+A simple proof of the CAP theorem can be given using two nodes. In this proof, we will show that if a system is partitioned, then it cannot be both consistent and available.
+Consider a system with two nodes, A and B. Initially, both nodes are in the same partition and they have the same data. Now, suppose that the network is partitioned and node A is no longer able to communicate with node B.
+If the system is still consistent, then both nodes must have the same data. However, this is not possible because node A cannot update its data since it is not able to communicate with node B.
+Therefore, if the system is partitioned, then it cannot be both consistent and available.
+A - Wait to be updated
+B - Not Available!
+In the above diagram, we have two nodes, A and B. Node A is trying to update its value, but it is waiting for node B to be available. However, node B is not available, so node A cannot update its value. This is an example of the CAP theorem, which states that in a distributed system, you can only have two out of the three properties: Consistency, Availability, and Partition tolerance. In this case, we have consistency and partition tolerance, but not availability.
+In the above diagram, we have two nodes, A and B. A is updated from B. If the network is partitioned, then A and B will not be able to communicate with each other. This means that A will not be able to get the updated value from B. Therefore, the CAP theorem states that a distributed system can only satisfy two out of the three properties of Consistency, Availability, and Partition Tolerance.

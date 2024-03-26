@@ -1,0 +1,18 @@
+Lecture 7: Pagerank Algorithm
+
+PageRank: Random Surfer Model
+The PageRank algorithm is an iterative algorithm that computes the probability that the surfer will be at each page after n hops. The algorithm starts by initializing the PageRank of each page to 1/n. At each iteration, the PageRank of each page is updated to be the sum of the PageRanks of the pages that link to it, divided by the number of outgoing links from those pages.
+The PageRank algorithm can be used to rank web pages based on their importance. The pages with the highest PageRanks are the most likely to be visited by a random surfer.
+If the surfer reaches a page without any outgoing links, they randomly jump to another page.
+- Someone surfing the web, clicking links randomly
+- What is the probability of being at page x after n hops?
+- Initial state: surfer equally likely to start at any node
+- PageRank applied iteratively for each hop: score indicates probability of being at that page after than many hops
+- If the surfer reaches a page without links, the surfer randomly jumps to another page
+What would happen with g and i over time?
+Imagine a surfer on the web, randomly clicking links.
+What is the probability of being at a page after x hops?
+The initial state is that the surfer is equally likely to start at any node.
+PageRank is applied iteratively for each hop: the score indicates the probability of being at that page after than many hops.
+If the surfer reaches a page without links, the surfer randomly jumps to another page.
+What would happen with g and i over time?

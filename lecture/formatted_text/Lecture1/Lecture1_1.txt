@@ -1,0 +1,82 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+Cloud: Massive Scale
+Facebook [GigaOM, 2012]
+30K in 2009 -> 60K in 2010 -> 100K in 2012
+Microsoft [DC knowledge]
+> 1 million,2013
+AWS EC2 [Randy Bias, 2009]
+40K, 8 cores per machine
+Google [DC knowledge]
+> 900K, 2013
+
+So what is a cloud?
+At its most basic, cloud computing is a way to access computing resources over the internet. Those resources could be anything from applications to storage to processing power.
+This diagram shows the different components of a cloud computing system.
+The cloud edge is the layer that connects the cloud to the end user. This includes devices like smartphones, tablets, and laptops.The cloud core is the layer that provides the actual computing resources. This includes things like servers, storage, and networking.The cloud services layer is the layer that provides the applications and services to the end user. This includes things like email, web hosting, and CRM software.The data centers and internet layer is the layer that provides the physical infrastructure for the cloud. This includes things like data centers, networks, and cables.
+
+A definition
+Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction
+Four types of cloud computing: private clouds, public clouds, hybrid clouds, and multiclouds
+National Institute of Standards and Technology (NIST), U.S. Department of Commerce
+
+---
+
+On-demand self-service
+Suppose you open a start-up and need 20 servers for the business. Cloud computing enables on-demand service.
+The engineer sends an API request to the cloud. The cloud then sends back a result, which is a VM.
+A consumer can unilaterally provision com     puting capabilities, such as servers and network storage, as needed automatically without requiring human interaction with each service provider.
+Cloud computing makes the underlying technology, beyond the user device, almost invisible and transparent to users
+Advantages for consumers: flexible, minimal overhead, quick and easy
+
+Broad network access
+Capabilities are available over the network and accessed through standard mechanisms that promote use by heterogeneous thin or thick client platforms (e.g., smartphones, tablets, laptops, and workstations).
+Advantages for consumers: "Always-on" experience, like utilities (electricity)
+Allows big amount of data to be collected from cloud edge
+Cloud computing enables scalable machine learning techniques to power Artificial Intelligence (AI) applications
+
+---
+
+Resource pooling
+The provider's resources are pooled to serve consumers using a multi-tenant model, with different physical and virtual resources dynamically allocated according to consumer demand.
+Location independence: the customer generally has no control or knowledge over the exact location of the provided resources but may be able to specify location at a higher level of abstraction (e.g., country, state, or datacenter).
+Advantage for providers: efficiency in utilization
+
+Cloud rapid elasticity
+Resources can be rapidly and elastically scaled up and down. Suppose your business grows and needs 40 servers now. Elastic provisioning outperforms static provisioning
+The diagram shows the comparison between static capacity with cloud elasticity. The x-axis is time in days, and the y-axis is resources. The blue line represents static provisioning, and the green line represents elastic provisioning.
+Static provisioning is when you provision resources based on your peak load. This means that you have enough resources to handle your maximum possible traffic. However, this can be inefficient because you are paying for resources that you are not always using.
+Elastic provisioning is when you provision resources based on your current needs. This means that you can scale up or down your resources as needed. This can be more efficient because you are only paying for the resources that you are using.
+With cloud computing
+30 instances at
+$0.055/hr = $36/day
+0 idle instances at $0.05/hr = $/day
+outages=0
+Active
+Idle
+Advantage for consumers: flexible, quick and easy
+The diagram shows the scaling of cloud elasticity. The x-axis is time, and the y-axis is load. The yellow line represents the active instances, and the green line represents the idle instances. The graph shows that the number of active instances increases as the load increases. The number of idle instances decreases as the load increases. This shows that cloud elasticity can be used to scale the number of instances to meet the demand.
+
+---
+
+Cloud economics
+A cloud automatically controls and optimizes resource use by leveraging a metering capability at some level of abstraction appropriate to the type of service.
+Resource usage can be monitored, controlled, and reported, providing transparency for both the provider and consumer.
+Cloud economics to match supply and demand. How to optimize cloud resources to match computing and storage demands?
+Cloud economics: Who determines price and pricing strategies?
+Pay-as-you-go, pay only for what you use.
+
+**Social cloud computing**
+Generalize cloud computing to include the sharing, bartering, and renting of computing resources across peers whose owners and operators are verified through a social network or reputation system.
+Basis of emerging Web 3.0 applications past the confines of formal commercial data centers operated by cloud providers to include anyone interested in participating within the cloud services sharing economy.
+Berkeley Open Infrastructure for Network Computing
+Subutai P2P Edge Cloud Platform (https://subutai.io)
+Decentralized applications (dApps)
+https://en.wikipedia.org/wiki/Social_cloud_computing
+
+Cloud Summary
+Cloud computing is an umbrella term used to refer to Internet-based development and services.
+A number of characteristics define cloud data, applications, services, and infrastructure:
+Remotely hosted: Services or data are hosted on remote infrastructure.
+Ubiquitous: Services or data are available from anywhere.
+Commodified: The result is a utility computing model similar to traditional that of traditional utilities, like gas and electricity - you pay for what you would want!

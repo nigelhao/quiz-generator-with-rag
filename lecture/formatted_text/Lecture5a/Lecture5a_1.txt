@@ -1,0 +1,78 @@
+Lecture 5a: Crowdsourcing in Cloud
+
+Human-assisted Computation: Crowdsourcing
+One of the first SaaS on Amazon Cloud
+For the first time in human history, hundreds of millions of people can, via the Internet, easily collaborate on the same problem.
+
+Human-In-Loop: Mechanical Turk
+- The Turk, also known as the Mechanical Turk or Automaton Chess Player, was a fake chess-playing machine constructed in the late 18th century. From 1770 until its destruction by fire in 1854 it was exhibited by various owners as an automaton, though it was eventually revealed to be an elaborate hoax.
+- Constructed and unveiled in 1770 by Wolfgang von Kempelen to impress the Empress Maria Theresa of Austria, the mechanism appeared to be able to play a strong game of chess against a human opponent, as well as perform the knight's tour, a puzzle that requires the player to move a knight to occupy every square of a chessboard exactly once. Even Napoleon (Emperor of France) played against it in 1809.
+The diagram shows the chess-playing automaton, with a turbaned figure seated at a table, operating the chess pieces with one hand while the other hand rests on a cushion. The automaton is surrounded by a group of onlookers, who are observing the game with interest.
+Once you’re inside, move the seat as far forward as you’re able.
+The first thing the audience sees is the clockworks inside the left chamber.
+Wait until you hear me shut the Left rear door, then go ahead.
+The back set of clockworks are fake. They swing up as you slide backwards.
+While those are being shown, the director is entirely inside the right chamber.
+Go ahead.
+But the wall—You’re now completely hidden from view.
+The interior of the machine was very complicated and designed to mislead anyone who observed it. When opened on the left, the front doors of the cabinet exposed a number of gears and cogs, similar to clockwork. The section was designed so that if the back doors of the cabinet were open at the same time one could see through the machine.
+The other side of the cabinet did not house machinery; instead it contained a red cushion and some removable parts, as well as brass structures. This area was designed to provide a clear line of vision through the machine. Underneath the robes of the Ottoman model, two other doors were hidden.
+These also exposed clockwork machinery and provided a similarly unobstructed view through the machine. The design allowed the presenter of the machine to open every available door to the public. In this way, he could maintain the illusion.
+The second half of the divider now hides your head while the left front door is open.
+And because the left rear door is closed—
+- In 2005, Amazon.com launched the Amazon Mechanical Turk (MTurk). The service was inspired, in part, by the way Kempelen's Mechanical Turk operated.
+- MTurk provides companies with access to a marketplace of on-demand workers whenever a business needs them connecting to a variety of skill sets and capabilities via a global workforce.
+- Organizations can harness the power of crowdsourcing via MTurk for a range of use cases, such as microwork, human insights, and machine learning development.
+
+---
+
+Human-assisted Computation: Crowdsourcing
+The Story of CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) and reCAPTCHA
+https://www.nytimes.com/2014/01/19/magazine/who-made-that-captcha.html
+# CAPTCHA Sweat Shops
+Spam companies hire humans to type CAPTCHAs all day long for $2.50 per hour for each human. Each human can complete 720 captchas per hour, which means they earn 1/3 cent per account.
+CAPTCHA is a completely automated public Turing test to tell computers and humans apart.
+What is reCAPTCHA?
+reCAPTCHA is a free service that protects your website from spam and abuse. It uses advanced risk analysis techniques to tell humans and bots apart.
+How does it work?
+reCAPTCHA presents a challenge to users that humans can easily solve, but that are difficult for bots to solve. The challenge usually involves identifying objects in a series of images.
+If a user can correctly identify the objects, they are likely to be human. If they cannot, they are likely to be a bot.
+reCAPTCHA also uses other factors to assess the risk of a user being a bot, such as the user's IP address and browser history.
+What are the benefits of using reCAPTCHA?
+reCAPTCHA can help to protect your website from a variety of threats, including:
+* Spam: reCAPTCHA can help to block spam bots from submitting forms on your website.
+* Abuse: reCAPTCHA can help to protect your website from abusive users, such as those who are trying to hack your site or steal your data.
+* Fraud: reCAPTCHA can help to protect your website from fraud, such as credit card fraud and identity theft.
+
+---
+
+How do I add reCAPTCHA to my website?
+You can add reCAPTCHA to your website by following these steps:
+1. Sign up for a reCAPTCHA account.
+2. Add the reCAPTCHA code to your website.
+3. Customize the reCAPTCHA settings.
+Once you have added reCAPTCHA to your website, it will start to protect your site from spam and abuse.
+What are the different types of reCAPTCHA?
+There are two types of reCAPTCHA:
+* reCAPTCHA v2: This is the most common type of reCAPTCHA. It presents users with a challenge that involves identifying objects in a series of images.
+* reCAPTCHA v3: This is a newer type of reCAPTCHA that is designed to be more user-friendly. It does not require users to solve a challenge, but it still provides effective protection against spam and abuse.
+Which type of reCAPTCHA should I use?
+The type of reCAPTCHA that you should use depends on your specific needs. If you are concerned about spam and abuse, you should use reCAPTCHA v2. If you are looking for a more user-friendly option, you should use reCAPTCHA v3.
+How can I improve the accuracy of reCAPTCHA?
+There are a few things that you can do to improve the accuracy of reCAPTCHA:
+* Use a strong password for your reCAPTCHA account.
+* Make sure that the reCAPTCHA code is properly installed on your website.
+* Customize the reCAPTCHA settings to fit your specific needs.
+* Monitor the reCAPTCHA logs to identify any potential problems.
+By following these tips, you can help to improve the accuracy of reCAPTCHA and protect your website from spam and abuse.
+Roughly 200 million CAPTCHAs are typed every day.
+10s of human time per CAPTCHA.
+Can we use this human effort for good?
+
+---
+
+Human-assisted Computation:
+Challenge-Response System
+What makes a good CAPTCHA to distinguish between human and bots?
+Here's one eCAPTCHA
+Can we make this into a game? The story continues...

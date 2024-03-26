@@ -1,0 +1,18 @@
+Lecture 7: Pagerank Algorithm
+
+PageRank: Random Surfer Model
+Imagine a surfer on the web, randomly clicking links.
+What is the probability of the surfer being at a particular web page after n hops (clicks)?
+We can model this using a directed graph, where each node represents a web page and each edge represents a link between two web pages. The surfer starts at a random node and then follows a random link to another node. This process is repeated n times.
+The probability of the surfer being at a particular node after n hops is given by the PageRank algorithm. PageRank is a link analysis algorithm that measures the importance of web pages. It is used by Google to rank search results.
+The PageRank algorithm works by iteratively applying the following formula to each node in the graph:
+```
+PR(i) = (1-d) + d * (PR(j)/C(j))
+```
+where:
+* PR(i) is the PageRank of node i
+* d is a damping factor that is typically set to 0.85
+* PR(j) is the PageRank of the node that links to node i
+* C(j) is the number of outgoing links from node j
+The damping factor d is used to prevent the PageRank algorithm from getting stuck in a loop. It also helps to ensure that all nodes in the graph have a non-zero PageRank.
+The PageRank algorithm is a powerful tool for measuring the importance of web pages. It is used by Google to rank search results, and it can also be used to identify influential nodes in a social network.

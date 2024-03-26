@@ -1,0 +1,19 @@
+Lecture 6: CAP Theorem
+
+A simple example:
+Hotel Booking: are we double-booking the same room?
+In the above diagram, there are two people, Bob and Dong. They are both trying to book the same hotel room. The hotel has a policy that does not allow double-booking. So, if Bob books the room first, then Dong will not be able to book the same room. Similarly, if Dong books the room first, then Bob will not be able to book the same room.
+This is an example of the CAP theorem. The CAP theorem states that in a distributed system, you can only have two out of the following three properties:
+* Consistency: All nodes in the system have the same data at all times.
+* Availability: All nodes in the system are always available.
+* Partition tolerance: The system can continue to operate even if some of the nodes in the system fail.
+In this example, the hotel booking system can only have two out of the three properties. It can be consistent and available, but it cannot be partition tolerant. This is because if the system is partitioned, then the two nodes will not be able to communicate with each other. This means that they will not be able to share data, and they will not be able to book the same room.
+Hotel Booking: are we double-booking the same room?
+Bob cannot see Dong's booking, and vice versa. If both try to book the same room at the same time, is it possible for the hotel booking system to double-book the room?
+Hotel Booking: are we double-booking the same room?
+In the above diagram, we have a simple example of the CAP theorem. We have two clients, Bob and Dong, who are both trying to book the same hotel room. The hotel booking system is trying to ensure that only one of them can book the room.
+The CAP theorem states that in a distributed system, you can only have two out of the following three properties:
+* Consistency: All nodes in the system have the same data at all times.
+* Availability: All nodes in the system are always available.
+* Partition tolerance: The system can continue to operate even if some of the nodes fail.
+In this example, the hotel booking system is trying to achieve consistency and partition tolerance. However, it cannot achieve availability because both Bob and Dong are able to book the same room.

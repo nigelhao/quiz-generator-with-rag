@@ -1,0 +1,14 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+PaaS
+Platform-as-a-Service (PaaS)
+Providers give users with a software platform or middleware where applications run
+You develop and maintain and deploy your own software on top of the platform
+The hardware needed to run the software is automatically managed by the platform. There are limitations on explicit management of resources.
+Examples: SQL as a service (SQLaaS), Matlab, Gurobi
+You have automated scalability without the need to respond to request load increase or decrease
+Ideal for deployment of mobile apps, web apps, etc.
+Application programming interface (API) support via popular languages like Python, Javascript, Java, PHP, and Go
+Java Runtime
+Web 2.0 Runtime
+Data analytics Engine

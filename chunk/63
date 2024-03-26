@@ -1,0 +1,16 @@
+Lecture 4: Cloud CPU Scheduling
+
+Credit scheduler – example
+> Assume 1 credit = 10ms. The system allocates 15 credits every 150ms, i.e. 5-time slots.
+> VM1 weight: 256, VM2 weight: 512
+The diagram shows a timeline of credit allocation for two virtual machines, VM1 and VM2. VM1 has a weight of 256 and VM2 has a weight of 512. The system allocates credits to each VM in proportion to its weight. So, VM2 will receive twice as many credits as VM1. The credits are allocated in time slots of 150ms, and each slot contains 15 credits. So, in each time slot, VM1 will receive 6 credits and VM2 will receive 12 credits.
+ Credit scheduler – example
+> Under the same setting, consider the case with three VMs, with weights 256, 512, and 512.
+The diagram shows a credit scheduler with three VMs. The VMs are labeled VM1, VM2, and VM3. The weights of the VMs are 256, 512, and 512, respectively. The x-axis of the diagram represents time, and the y-axis represents the amount of credit. The lines in the diagram represent the credit usage of each VM over time.
+At time 0, VM1 has the highest credit usage, followed by VM2 and VM3. VM1's credit usage increases steadily over time, while VM2's and VM3's credit usage remains constant. At time 15, VM1's credit usage reaches its peak, while VM2's and VM3's credit usage is still increasing.
+
+Credit scheduler – summary
+Features:
+- Global load balancing
+- WC and NWC modes
+- Easy to implement

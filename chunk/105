@@ -1,0 +1,11 @@
+Lecture 7: Pagerank Algorithm
+
+PageRank vs. Web Traffic
+- An important component of PageRank calculation is E.
+  - A vector over the web pages (used as a source of rank).
+  - A powerful parameter to adjust the page ranks.
+- The vector E corresponds to the distribution of web pages that a random surfer periodically jumps to from the search engine.
+- Some highly accessed web pages have low page rank, possibly because:
+  - People do not want to link to these pages from their own web pages (the example in the 1998 PageRank paper is pornographic sites...).
+  - Some important backlinks are omitted.
+- Use web usage data as a start vector for PageRank.

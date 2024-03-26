@@ -1,0 +1,9 @@
+Lecture 3: Virtualization in Cloud
+
+Lecture 3: Virtualization in Cloud
+
+CPU virtualization
+CPU virtualization allows a single physical CPU to be divided into multiple virtual CPUs. Each virtual CPU can run its own operating system and applications independently of the others. This allows for greater flexibility and efficiency in the use of computing resources.
+There are two main types of CPU virtualization: full virtualization and paravirtualization. Full virtualization creates a completely isolated environment for each virtual CPU, while paravirtualization requires the guest operating systems to be aware of the virtualization layer.
+Full virtualization is more secure than paravirtualization, but it is also more performance-intensive. Paravirtualization is less secure, but it is also more efficient.
+CPU virtualization is a powerful technology that can be used to improve the efficiency and flexibility of computing resources. It is used in a wide variety of applications, including cloud computing, virtualization, and desktop virtualization.

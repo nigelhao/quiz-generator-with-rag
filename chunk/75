@@ -1,0 +1,26 @@
+Lecture 5b: Cloud Security
+
+**Diffie-Hellman key exchange algorithm (1976)**
+p, g: prime numbers. a, b: random numbers
+**Alice**
+Secret | Public | Calculates | Sends | Calculates
+a
+p, g
+p.g
+a
+p, g, A | ga mod p = A | A→
+a
+p, g, A
+a, sp, g, A, B | Bª mod p = s | Bgb mod p = B | p, g, A, B | Ab mod p = s | p, g, A, B b, s
+**Bob**
+Public | Secret
+b
+p, g
+b
+b
+Alice computes s=g^ba mod p. Bob computes s=g^ab mod p.
+Example: Alice and Bob agree to use p=23 and g=5 (publicly). Alice secretly uses a=6, and Bob secretly chooses b=15.
+Alice sends to Bob A = g^a mod p = 5^6 mod 23 = 8
+Bob sends to Alice B = g^b mod p = 5^15 mod 23 = 19
+Alice computes s = B^a mod p = 19^6 mod 23 = 2
+Bob computes s = A^b mod p = 8^15 mod 23 = 2

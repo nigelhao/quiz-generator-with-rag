@@ -1,0 +1,12 @@
+Lecture 7: Pagerank Algorithm
+
+A Problem with Simplified PageRank
+A loop:
+During each iteration, the loop accumulates rank but never distributes rank to other pages!
+In the above diagram, there are three pages A, B, and C. Each page has a certain amount of rank, represented by the number inside the page. The arrow from page A to page B indicates that page A is linking to page B.
+The problem with the simplified PageRank algorithm is that it does not take into account the fact that pages can link to themselves. This means that pages that are in a loop can accumulate rank indefinitely, while pages that are not in a loop will never be able to accumulate any rank.
+Consider the following scenario. There are three companies: Yahoo, Amazon, and Microsoft. Each company has a certain market share. The market share of Yahoo is 1/2, the market share of Amazon is 1/3, and the market share of Microsoft is 1/6.
+Now, let's say that Yahoo and Amazon decide to merge. The new company will have a market share of 1/2 + 1/3 = 5/6. Microsoft's market share will remain the same at 1/6.
+The problem is that the market share of the new company is greater than the sum of the market shares of the two companies that merged. This is because the merger creates a new entity that is more competitive than either of the two companies were on their own.
+This problem is known as the "winner's curse." It occurs when a company acquires another company and the combined company ends up with a market share that is greater than the sum of the market shares of the two companies that merged.
+The winner's curse can be a problem for investors because it can lead to them paying too much for a company. If a company's market share is greater than the sum of the market shares of the two companies that merged, then it is likely that the company is overvalued.

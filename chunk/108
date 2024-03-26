@@ -1,0 +1,31 @@
+Lecture 7: Pagerank Algorithm
+
+PageRank example
+The PageRank of a web page is a measure of its importance or popularity. It is calculated by taking into account the number and quality of links to the page. The PageRank of a page is determined by the following formula:
+PR(a) = (1-d) + d * (PR(b)/C(b) + PR(c)/C(c) + PR(d)/C(d))
+where:
+PR(a) is the PageRank of page a
+d is a damping factor that is typically set to 0.85
+C(b) is the number of outgoing links from page b
+PR(b) is the PageRank of page b
+The PageRank of a page is a measure of its importance or popularity. It is calculated by taking into account the number and quality of links to the page. The PageRank of a page is determined by the following formula:
+PR(a) = (1-d) + d * (PR(b)/C(b) + PR(c)/C(c) + PR(d)/C(d))
+where:
+PR(a) is the PageRank of page a
+d is a damping factor that is typically set to 0.85
+C(b) is the number of outgoing links from page b
+PR(b) is the PageRank of page b
+The PageRank of a page is a measure of its importance or popularity. It is calculated by taking into account the number and quality of links to the page. The PageRank of a page is determined by the following formula:
+PR(a) = (1-d) + d * (PR(b)/C(b) + PR(c)/C(c) + PR(d)/C(d))
+where:
+PR(a) is the PageRank of page a
+d is a damping factor that is typically set to 0.85
+C(b) is the number of outgoing links from page b
+PR(b) is the PageRank of page b
+The PageRank of a page is a measure of its importance or popularity. It is calculated by taking into account the number and quality of links to the page. The PageRank of a page is determined by the following formula:
+PR(a) = (1-d) + d * (PR(b)/C(b) + PR(c)/C(c) + PR(d)/C(d))
+where:
+PR(a) is the PageRank of page a
+d is a damping factor that is typically set to 0.85
+C(b) is the number of outgoing links from page b
+PR(b) is the PageRank of page b

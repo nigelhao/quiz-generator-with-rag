@@ -1,0 +1,85 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+IaaS
+Infrastructure-as-a-Service (IaaS)
+Providers give you the computing infrastructure made available as a service. You get "bare-metal" machines.
+Providers manage a large pool of resources (i.e., servers), and use virtualization to dynamically allocate servers
+Customers "rent" these physical resources to customize their own infrastructure
+You operate the Operating System (OS) and all the software on the servers by yourself
+Virtualization and Virtual Machines
+This diagram illustrates the difference between traditional and virtualized environments. In a traditional environment, each physical server runs a single operating system and application. This can be inefficient, as it often leads to underutilized servers. In a virtualized environment, a single physical server can run multiple virtual machines, each with its own operating system and application. This allows for more efficient use of resources and can help to improve scalability and agility.
+In a traditional environment, each physical server is dedicated to a single application or service. This can be inefficient, as it often leads to underutilized servers. For example, a web server may only be used during peak hours, while a database server may only be used during business hours. This means that both servers are idle for a significant portion of the day.
+In a virtualized environment, a single physical server can run multiple virtual machines, each with its own operating system and application. This allows for more efficient use of resources, as each virtual machine can be sized to meet the specific needs of the application it is running. For example, a web server can be allocated more resources during peak hours, while a database server can be allocated more resources during business hours. This allows both servers to be used more efficiently, which can save money.
+Virtualization can also help to improve scalability and agility. In a traditional environment, adding new servers can be a time-consuming and expensive process. In a virtualized environment, new virtual machines can be provisioned quickly and easily. This allows businesses to scale their IT infrastructure quickly and easily to meet changing needs.
+Virtualization is a powerful technology that can help businesses to improve efficiency, scalability, and agility. By virtualizing their IT infrastructure, businesses can save money, improve performance, and respond more quickly to changing needs.
+Netflix rents thousands of servers, terabytes of storage from Amazon Web Services (AWS)
+Develop and deploy specialized software for transcoding, storage, streaming, analytics, etc. on top of service delivery
+Able to support tens of millions of connected devices used by 40+ million users from 40+ countries
+
+---
+
+Virtualization
+Virtual workspaces:
+- An abstraction of an execution environment that can be made dynamically available to authorized clients by using well-defined protocols,
+- Resource quota (e.g. CPU, memory share),
+- Software configuration (e.g. O/S, provided services).
+Implement on Virtual Machines (VMs):
+- Abstraction of a physical host machine,
+- Hypervisor intercepts and emulates instructions from VMs. and allows management of
+ VMs,
+- VMWare, Xen, etc.
+Provide infrastructure API:
+- Plug-ins to hardware/support structures
+Diagram:
+The diagram shows the components of a virtualized stack. The bottom layer is the hardware, which is virtualized by the hypervisor. The hypervisor provides an API to the guest operating systems, which are then able to run applications. The applications are isolated from each other by the hypervisor.
+
+Virtual Machines
+VM technology allows multiple virtual machines to run on a single physical machine.
+The diagram shows how multiple virtual machines can run on a single physical machine. Each virtual machine has its own operating system and applications. The virtual machines are isolated from each other, so they cannot interfere with each other. The physical machine's hardware is shared between the virtual machines.
+There are several different ways to implement virtualization. One common way is to use a hypervisor. A hypervisor is a software program that runs on the physical machine's hardware. The hypervisor creates and manages the virtual machines. Another way to implement virtualization is to use containers. Containers are lightweight virtualization environments that do not require a hypervisor.
+Virtualization has several benefits. It can improve security, reliability, and scalability. Virtualization can also be used to test new operating systems and applications.
+Performance: Para-virtualization (e.g., Xen) is very close to raw physical performance!
+
+---
+
+PaaS
+Platform-as-a-Service (PaaS)
+Providers give users with a software platform or middleware where applications run
+You develop and maintain and deploy your own software on top of the platform
+The hardware needed to run the software is automatically managed by the platform. There are limitations on explicit management of resources.
+Examples: SQL as a service (SQLaaS), Matlab, Gurobi
+You have automated scalability without the need to respond to request load increase or decrease
+Ideal for deployment of mobile apps, web apps, etc.
+Application programming interface (API) support via popular languages like Python, Javascript, Java, PHP, and Go
+Java Runtime
+Web 2.0 Runtime
+Data analytics Engine
+
+---
+
+SaaS
+Software-as-a-Service (SaaS)
+Providers give you a piece of software/application, and take care of updating, maintaining and troubleshooting the application.
+As end user, you simply use the software using the Internet.
+Business model of SaaS: business-to-business (B2B), business-to-clients (B2C) that cover numerous retail end users Nowadays, many institutions use Google Apps, Apple cloud, and Office 365 for emails, video meetings, calendars, etc.
+Business uses SaaS for payment and transactions. The legal industry relies on SaaS for compliance, while the creative industry relies on SaaS for artwork (e.g., computer-generated images). Engineers rely on SaaS to design circuits/software. Students rely on SaaS to learn and collaborate.
+What are the scientific applications of SaaS?
+SaaS Maturity Model
+Level 1: Ad-Hoc/Custom – One Instance per customer
+Level 2: Configurable per customer
+Level3: configurable & Multi-Tenant-Efficient
+Level 4: Scalable, Configurable & Multi-Tenant-Efficient
+The diagram shows the four levels of SaaS maturity.
+Level 1 is Ad-Hoc/Custom. In this level, each customer has their own dedicated instance of the software. This is the least efficient level of SaaS maturity, as it requires the most resources to maintain.
+Level 2 is Configurable per customer. In this level, customers can configure their own instances of the software. This is more efficient than Level 1, as it allows customers to tailor the software to their specific needs.
+Level 3 is configurable & Multi-Tenant-Efficient. In this level, multiple customers share a single instance of the software. This is more efficient than Level 2, as it reduces the number of resources required to maintain the software.
+Level 4 is Scalable, Configurable & Multi-Tenant-Efficient. In this level, the software is able to scale to meet the needs of multiple customers. This is the most efficient level of SaaS maturity, as it provides the best balance of cost and performance.
+
+---
+
+**Comparison of IaaS, PaaS, SaaS**
+The diagram shows the relationship between Infrastructure as a Service (IaaS), Platform as a Service (
+PaaS), and Software as a Service (SaaS).
+IaaS is the most basic level of cloud computing. It provides users with access to virtualized computing resources, such as servers, storage, and networking. PaaS is a more advanced level of cloud computing that provides users with a platform on which to develop, deploy, and manage their applications. SaaS is the most advanced level of cloud computing that provides users with access to software applications that are hosted in the cloud.
+The diagram also shows the tradeoff between flexibility and built-in functionality. IaaS provides the most flexibility, but it also requires users to have the most technical expertise. PaaS provides less flexibility than IaaS, but it also requires less technical expertise. SaaS provides the least flexibility, but it also requires the least technical expertise.
+The choice of which cloud computing model to use depends on the specific needs of the user. If the user needs the most flexibility, then IaaS is the best option. If the user needs a platform on which to develop, deploy, and manage their applications, then PaaS is the best option. If the user needs access to software applications that are hosted in the cloud, then SaaS is the best option.

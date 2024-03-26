@@ -1,0 +1,11 @@
+Lecture 5a: Crowdsourcing in Cloud
+
+**The Story of Kasparov Against The World**
+A 1999 Game of Chess over the Internet:
+- Gary Kasparov (world chess champion) versus the Rest of The World (moves decided by majority vote)
+- Kasparov was heavily favored before the game began.
+- "Rest of The World" utilized online discussions and inputs from five well-known chess experts, including "The Computer Chess Team."
+- Many weak players received hints from their home computers, notoriously poor at endgames.
+Result: Kasparov won after 62 moves in four months.
+Kasparov described it as the hardest game he ever played, marking one of the greatest moments in AI and human history.
+[Source: Wikipedia - Kasparov versus the World](https://en.wikipedia.org/wiki/Kasparov_versus_the_World)

@@ -1,0 +1,930 @@
+ Nanyang Technological University, Singapore
+
+CE/CZ4052 Cloud Computing
+
+Crowdsourcing in Cloud
+
+Dr. Tan, Chee Wei
+Email: cheewei.tan@ntu.edu.sg
+Office: N4-02c-104
+
+A number of slides due to Prof. Luis von Ahn at Carnegie Mellon University (www.cs.cmu.edu/~biglou/TechEd.ppt)
+ Human-assisted Computation: Crowdsourcing
+
+One of the first SaaS on Amazon Cloud
+
+For the first time in human history, hundreds of millions of people can, via the Internet, easily collaborate on the same problem.
+ Human-In-Loop: Mechanical Turk
+- The Turk, also known as the Mechanical Turk or Automaton Chess Player, was a fake chess-playing machine constructed in the late 18th century. From 1770 until its destruction by fire in 1854 it was exhibited by various owners as an automaton, though it was eventually revealed to be an elaborate hoax.
+- Constructed and unveiled in 1770 by Wolfgang von Kempelen to impress the Empress Maria Theresa of Austria, the mechanism appeared to be able to play a strong game of chess against a human opponent, as well as perform the knight's tour, a puzzle that requires the player to move a knight to occupy every square of a chessboard exactly once. Even Napoleon (Emperor of France) played against it in 1809.
+
+The diagram shows the chess-playing automaton, with a turbaned figure seated at a table, operating the chess pieces with one hand while the other hand rests on a cushion. The automaton is surrounded by a group of onlookers, who are observing the game with interest.
+ Human-In-Loop: Mechanical Turk
+
+Once you’re inside, move the seat as far forward as you’re able.
+
+The first thing the audience sees is the clockworks inside the left chamber.
+
+The back set of clockworks are fake. They swing up as you slide backwards.
+
+Wait until you hear me shut the left rear door, then go ahead.
+
+While those are being shown, the director is entirely inside the right chamber.
+
+Go ahead.
+
+But the wall—
+
+You’re now completely hidden from view.
+
+The interior of the machine was very complicated and designed to mislead anyone who observed it. When opened on the left, the front doors of the cabinet exposed a number of gears and cogs, similar to clockwork. The section was designed so that if the back doors of the cabinet were open at the same time one could see through the machine.
+
+The other side of the cabinet did not house machinery; instead, it contained a red cushion and some removable parts, as well as brass structures. This area was designed to provide a clear line of vision through the machine. Underneath the robes of the Ottoman model, two other doors were hidden.
+
+These also exposed clockwork machinery and provided a similarly unobstructed view through the machine. The design allowed the presenter of the machine to open every available door to the public. In this way, he could maintain the illusion.
+
+The second half of the divider now hides your head while the left front door is open.
+
+And because the left rear door is closed—
+ Human-In-Loop: Amazon Mechanical Turk
+
+- In 2005, Amazon.com launched the Amazon Mechanical Turk (MTurk). The service was inspired, in part, by the way Kempelen's Mechanical Turk operated.
+- MTurk provides companies with access to a marketplace of on-demand workers whenever a business needs them connecting to a variety of skill sets and capabilities via a global workforce.
+- Organizations can harness the power of crowdsourcing via MTurk for a range of use cases, such as microwork, human insights, and machine learning development.
+ # Amazon Mechanical Turk
+
+## All HITs
+
+Search for HITs containing that pay at least $0.00 for which you
+
+### 1-10 of 913 Results
+Sort by: HITs Available (most first)
+
+Share your FAVORITES!
+
+Requester: Mastercard
+HIT Expiration Date: Jul 4, 2009 (5 days 9 hours)
+Time Allotted: 30 minutes
+Reward: $0.10
+HITs Available: 16480
+
+Requester: Mastercard
+HIT Expiration Date: Jun 30, 2009 (1 day 2 hours)
+Time Allotted: 60 minutes
+Reward: $0.03
+HITs Available: 12680
+
+Requester: Katie Kong
+HIT Expiration Date: Jul 26, 2009 (3 weeks 6 days)
+Time Allotted: 60 minutes
+Reward: $0.01
+HITs Available: 4860
+
+Requester: Jeffrey Bloom
+HIT Expiration Date: Jul 8, 2009 (1 week 2 days)
+Time Allotted: 60 minutes
+Reward: $0.10
+HITs Available: 3647
+ Human-assisted Computation: Crowdsourcing
+
+The Story of CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) and reCAPTCHA
+
+reCAPTCHA
+
+https://www.nytimes.com/2014/01/19/magazine/who-made-that-captcha.html
+ Yahoo! Registration - Windows Internet Explorer
+https://edit.yahoo.com/config/eval_register?.intl=us&new=1&.don
+Yahoo! Registration
+Verify Your Registration
+* Enter the code shown:
+More info
+This helps Yahoo! prevent automated registrations.
+pozd
+Terms of Service
+Please review the following terms and indicate your agreement below. Printable Version
+1. ACCEPTANCE OF TERMS
+Yahoo! Inc. ("Yahoo!") welcomes you. Yahoo!
+provides its service to you subject to the
+following Terms of Service ("TOS"), which may be
+By clicking "I Agree" you agree and consent to (a) the Yahoo! Terms of Service
+and Privacy Policy, and (b) receive required notices from Yahoo! electronically.
+I Agree
+I Do Not Agree
+Verification technology developed in collaboration with Carnegie Mellon University
+Internet | Protected Mode: Off
+100%
+ "Help! I've been waiting for 20 minutes, and nothing happens"
+
+Yahoo! Registration - Windows Internet Explorer
+https://edit.yahoo.com/config/eval_register?.intl=us&new=1&.don
+
+Yahoo! Registration
+Verify Your Registration
+* Enter the code shown:
+More info
+This helps Yahoo! prevent automated registrations.
+WAIT
+Terms of Service
+Please review the following terms and indicate your agreement below. Printable Version
+1. ACCEPTANCE OF TERMS
+Yahoo! Inc. ("Yahoo!") welcomes you. Yahoo!
+provides its service to you subject to the
+following Terms of Service ("TOS"), which may be
+By clicking "I Agree" you agree and consent to (a) the Yahoo! Terms of Service
+and Privacy Policy, and (b) receive required notices from Yahoo! electronically.
+I Agree
+I Do Not Agree
+Verification technology developed in collaboration with Carnegie Mellon University
+Internet | Protected Mode: Off
+100%
+ Yahoo! Registration - Windows Internet Explorer
+https://edit.yahoo.com/config/eval_register?.intl=us&new=1&.don
+Yahoo! Registration
+Verify Your Registration
+* Enter the code shown:
+More info
+This helps Yahoo! prevent automated registrations.
+RESTART
+X
+X Google
+>>
+Page▾
+Tools
+Please review the following terms and indicate your agreement below. Printable Version
+1. ACCEPTANCE OF TERMS
+Yahoo! Inc. ("Yahoo!") welcomes you. Yahoo!
+provides its service to you subject to the
+following Terms of Service ("TOS"), which may be
+By clicking "I Agree" you agree and consent to (a) the Yahoo! Terms of Service
+and Privacy Policy, and (b) receive required notices from Yahoo! electronically.
+I Agree
+I Do Not Agree
+Verification technology developed in collaboration with Carnegie Mellon University
+Internet | Protected Mode: Off
+100%
+ # CAPTCHA Sweat Shops
+
+Spam companies hire humans to type CAPTCHAs all day long for $2.50 per hour for each human. Each human can complete 720 captchas per hour, which means they earn 1/3 cent per account.
+
+CAPTCHA is a completely automated public Turing test to tell computers and humans apart.
+ Показывать информацию обо мне
+- Всем
+- Только зарегистрированным пользователям
+- Никому
+
+Защита от автоматической регистрации
+
+Введите ответ lim ln(2+arctg(x)*sin(x))/x
+
+Очистить
+Всё верно
+ R = 7R
+R = 3R + 3R
+R = 6R
+R = 6 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R = 2 x R
+R = R
+R = R + R
+R = 2R
+R
+ I'm Terrified Of Heights! I'm Even Hoping Not To Get Too Tall!
+
+isaac asimov jamie Jane jealousy
+jerm jeremiah Joe Jordan Joy
+Justin katle keely kelly kelsey
+kevin kkk knights larissa
+laughter laura s life light lindsey
+list tha liz phair lolcat lord of the
+rings love marina marlo
+materialism math matt mckenna
+memory mike di mind mitchell
+mom monica mr benler mr
+manias mr stalinton mr vincent mis
+robinson
+quiz
+music mystics mythology
+najiba nature neptune ning noble
+nolan note oops pain painting
+passion people persephone perspective
+phrenology physics pictures poetry
+president bush quest for camellot
+rachael rachel radilo free rosicoe rain
+rant raven ravens relligilon revolution
+running sacrifice sadness salt water
+taffy sarcasm school
+scott sebastian self sexuality sick
+signs sillas silent night silliness siliver
+lining sky sloth snow songs sorrow
+science
+spirit guides spirituality squirell
+star steph strength summer
+survey sweater sweet t. s. elliot
+tarot teacher teardrops on my guitar
+teija telephone test the door to hell the
+last unicom theo therapy thom thumbs
+thunderstorm tiffany tree trees trent
+
+Add to Memories | Tell a Friend | Link
+
+Comment Form
+What is “1 + 1” : |
+Subject.
+Don't auto-format:
+Message:
+
+(Read Comments )
+
+Post Comment
+
+Internet | Protected Mode: Off
+100%
+ reCAPTCHA
+
+What is reCAPTCHA?
+
+reCAPTCHA is a free service that protects your website from spam and abuse. It uses advanced risk analysis techniques to tell humans and bots apart.
+
+How does it work?
+
+reCAPTCHA presents a challenge to users that humans can easily solve, but that are difficult for bots to solve. The challenge usually involves identifying objects in a series of images.
+
+If a user can correctly identify the objects, they are likely to be human. If they cannot, they are likely to be a bot.
+
+reCAPTCHA also uses other factors to assess the risk of a user being a bot, such as the user's IP address and browser history.
+
+What are the benefits of using reCAPTCHA?
+
+reCAPTCHA can help to protect your website from a variety of threats, including:
+
+* Spam: reCAPTCHA can help to block spam bots from submitting forms on your website.
+* Abuse: reCAPTCHA can help to protect your website from abusive users, such as those who are trying to hack your site or steal your data.
+* Fraud: reCAPTCHA can help to protect your website from fraud, such as credit card fraud and identity theft.
+
+How do I add reCAPTCHA to my website?
+
+You can add reCAPTCHA to your website by following these steps:
+
+1. Sign up for a reCAPTCHA account.
+2. Add the reCAPTCHA code to your website.
+3. Customize the reCAPTCHA settings.
+
+Once you have added reCAPTCHA to your website, it will start to protect your site from spam and abuse.
+
+What are the different types of reCAPTCHA?
+
+There are two types of reCAPTCHA:
+
+* reCAPTCHA v2: This is the most common type of reCAPTCHA. It presents users with a challenge that involves identifying objects in a series of images.
+* reCAPTCHA v3: This is a newer type of reCAPTCHA that is designed to be more user-friendly. It does not require users to solve a challenge, but it still provides effective protection against spam and abuse.
+
+Which type of reCAPTCHA should I use?
+
+The type of reCAPTCHA that you should use depends on your specific needs. If you are concerned about spam and abuse, you should use reCAPTCHA v2. If you are looking for a more user-friendly option, you should use reCAPTCHA v3.
+
+How can I improve the accuracy of reCAPTCHA?
+
+There are a few things that you can do to improve the accuracy of reCAPTCHA:
+
+* Use a strong password for your reCAPTCHA account.
+* Make sure that the reCAPTCHA code is properly installed on your website.
+* Customize the reCAPTCHA settings to fit your specific needs.
+* Monitor the reCAPTCHA logs to identify any potential problems.
+
+By following these tips, you can help to improve the accuracy of reCAPTCHA and protect your website from spam and abuse.
+ Roughly 200 million CAPTCHAs are typed every day. 
+10s of human time per CAPTCHA. 
+Can we use this human effort for good?
+ Digitizing Books
+
+[Image of a book being scanned]
+
+The royal palace at Friederichsberg took fire last night. The King himself directed the operations for extinguishing the fire. The whole structure was, however, destroyed.
+ The image shows a book that has been scanned. The OCR (Optical Character Recognition) has been used to convert the image of the book into text. However, the OCR has not been able to read some of the words in the book. These words are marked as "between".
+
+The second image shows a randomly distorted image of the word "between". This image has been created by the reCAPTCHA system. reCAPTCHA is a system that is used to prevent spam and abuse on websites. The system presents a distorted image of a word to the user and asks the user to type the word in the image. If the user is able to type the word correctly, the system will allow the user to access the website.
+
+The third image shows a CAPTCHA image. The image contains the word "between" that is distorted. The user is asked to type the word in the image in the box below the image.
+ # Facebook Sign Up Form
+
+The form is for signing up for a Facebook account. It requires the following information:
+
+- Full name
+- Email address
+- Password
+- Date of birth
+- Gender
+- Security check (a CAPTCHA)
+
+The user must also agree to the Terms of Use and Privacy Policy.
+
+Below the form, there is a link to log in to an existing account and a link to learn more about Facebook.
+ ticketmaster
+Security Check
+Type both words separated by a space below
+excellent Yes
+Type both words:
+Get a new word
+Vision Impaired
+Help
+The Security Check allows us to:
+Ensure Fair Access to Tickets
+Automated programs known as "Bots" cannot read distorted text as
+well as humans. The Security Check helps prevent automated
+programs from blocking other customers from getting tickets.
+Digitize Books One Word at a Time
+By entering the words in the box, you are also helping to digitize
+books from the Internet Archive and preserve literature that was
+written before the computer age.
+Provide an Audio Option for Visually Impaired Customers
+An audio option allows visually impaired customers to hear a set of
+8 digits that can be entered instead of the word challenge.
+You do not have permission to access this website if you are using an automated program.
+Continue
+Security Check provided by reCAPTCHA. Carnegie Mellon University, all rights reserved.
+©2007 Ticketmaster. All rights reserved.
+ ## Create a Free Twitter Account
+
+**Username:** No spaces, please.
+**Your URL:** http://twitter.com/USERNAME
+**Password:** 6 characters or more (be tricky!)
+**Confirm Password:**
+**Email Address:**
+**Humanness:**
+
+In case you forget something
+
+[Image of a Captcha]
+
+Type the two words:
+
+I want the inside scoop-please send me email updates!
+
+By clicking on 'I accept below, you confirm that you are over 13 years of age and accept the Terms of Service.
+ Sign Up to Party for Change
+Sign up to host your own Party for Change or sign up to attend one in your area.
+
+Username
+
+Password
+
+Password (again)
+
+Zip Code
+
+Email Address
+ Human-assisted Computation:
+Challenge-Response System
+
+What makes a good CAPTCHA to distinguish between human and bots?
+
+Here's one eCAPTCHA
+
+Can we make this into a game? The story continues...
+ The ESP Game
+
+Two-player online game
+
+Partners don't know each other and can't communicate
+
+Object of the game: Type the same word
+
+Only thing in common is An image
+ The ESP Game
+1:50 Time Left
+0070 score
+
+Taboo Words
+DOG
+PILLOW
+
+Your Guesses
+PUPPY
+
+Type your next guess: ____________________
+
+Your partner has entered a guess
+
+Pass   Flag
+ GWAP Games with a Purpose
+Verbosity | Peekaboo | ESP Game | Phetch
+
+Tag a Tune
+Hum a few bars
+
+Score: 8790
+Time: 3:07
+
+Describe the tune...
+0:05
+||
+Your descriptions
+Rock
+Electric guitar
+Male singer
+
+Listening to the same tune?
+Same
+Different
+3 in a row!
+
+Your partner's descriptions
+Loud electric guitar
+Rock
+
++ Submit
+Pass
+ ## Crowdsourcing Language Translation
+
+Duolingo is a crowdsourcing language translation platform that allows users to translate texts from one language to another. The platform uses a variety of techniques to ensure the quality of the translations, including user ratings and feedback, and machine learning.
+
+The platform has a large community of users who contribute their time and effort to translate texts. The community is made up of people from all over the world, and they speak a variety of languages. This allows Duolingo to offer translations in a wide range of languages.
+
+The platform also uses a variety of machine learning techniques to improve the quality of the translations. These techniques help to identify and correct errors in the translations, and they also help to improve the overall fluency of the translations.
+
+Duolingo is a valuable tool for anyone who wants to learn a new language. The platform offers a variety of features that make it easy to learn a new language, and it is also a fun and engaging way to learn.
+ Falls Pakistans Geschichte ein Indikator ist, so könnte Musharrafs Entscheidung, das Kriegsrecht zu verhängen, jener sprichwörtliche Tropfen sein, der das Fass zum Überlaufen bringt.
+
+If Pakistan's history is any indicator, Musharraf's decision to impose martial law may prove to be the proverbial straw that breaks the camel's back.
+
+If Pakistan's history is an indicator, Musharraf's decision to impose martial law could be the straw that breaks the camel's back.
+ The internet threatened to speed up the death of endangered languages. Could it save them instead?
+By James Griffiths, CNN Business
+Updated 2200 GMT (0600 HKT) October 4, 2019
+Pittsburgh (CNN Business) - Noah Higgs hated learning Irish in school. He hated the way it was taught, overly formal and disconnected from ordinary people's lives. Most of all he hated the effect the lessons had on his fellow students' willingness to speak the language.
+But the Dublin native never lost his love for Irish, nor his opinion that more people should be learning the language.
+Today, almost 40% of the 7,000 languages spoken worldwide are endangered, according to the United Nations. More are going extinct every year.
+It was once widely feared that the internet revolution would speed up this decline. If developers and smartphone manufacturers aren't willing to invest in supporting minority languages, that would cut off people who speak them from an important way to communicate and trap those languages in the past.
+Higgs, 23, though, is one of a small cohort of educators and activists reinventing how minority languages are taught and preserved online by using cutting-edge technology.
+When he was 17, Higgs "had this kind of crazy teenage idea." He had begun using Duolingo, a mobile language-learning app, to study French, and wondered if the creators had considered adding support for Irish.
+Saving endangered languages:
+Users of its smartphone or web app are presented with short, five minute lessons in which they identify words, translate short sentences, or practice speaking and listening. Users earn points for passing lessons, and they can compete in daily and weekly leaderboards. New languages can be created at https://incubator.duolingo.com
+https://edition.cnn.com/2019/10/04/tech/duolingo-endangered-languages-intl-hnk/index.html
+ Human-assisted Computation: Autograding
+
+The Story of Autograding in Nemo Bot
+
+Use crowdsourcing or human-assisted computation to extract knowledge from a large number of people to make predictions through an educational chatbot software interface (e.g., the Facebook Messenger chatbot platform) via the built-in image annotation feature to automate grading in large classes.
+
+"Human-assisted Computation for Auto-Grading", Ling and Tan, IEEE ICDM Workshop on Machine Learning for Education 2018
+ Human-assisted Computation: Autograding
+
+Grading is hard and time-consuming, especially for large classes and MOOCs. Autograding is a way to use human computation to help with the grading process. In autograding, humans are used to grade a small sample of the assignments, and then a machine learning model is trained on the human-graded assignments. This model can then be used to grade the remaining assignments.
+
+Autograding can be a valuable tool for educators, as it can save them time and effort. However, it is important to note that autograding is not perfect. The model can make mistakes, and it is important for educators to review the autograded assignments to ensure that they are accurate.
+
+Despite its limitations, autograding can be a helpful tool for educators. It can save them time and effort, and it can help to improve the accuracy of grading.
+ Human-assisted Computation: Autograding
+
+The diagram shows the architecture of a human-assisted computation system for autograding. The system has three main components: a web backend, a chatbot interface, and a student response monitoring and statistics component. The web backend handles the communication between the students and the system. The chatbot interface allows the students to interact with the system and to submit their responses. The student response monitoring and statistics component monitors the students' responses and provides feedback to the instructors.
+
+The system works as follows:
+
+1. The instructors create quizzes and learning content using the web backend.
+2. The students access the quizzes and learning content using the chatbot interface.
+3. The students submit their responses to the quizzes using the chatbot interface.
+4. The system monitors the students' responses and provides feedback to the instructors.
+5. The instructors review the students' responses and provide feedback to the students.
+ Human-assisted Computation: Autograding
+
+Fig. 2: Interface of the educational chatbot system. (a) is the web backend where the instructors can edit and post self-assessment quizzes to students; (b) and (c) are the actual chatbot interface, where students can respond and answer the quizzes.
+ Human-assisted Computation: Autograding
+
+Hi Chee, here's a new puzzle for you!
+#cs3334 #BubbleSort
+The C++ code is the bubble sort algorithm with a logic error, please find out which line(s) is not correct.
+A: 4
+B: 5
+C: 3,5
+D: 4,6
+
+Please select the correct answer by clicking one of the buttons below
+A
+B
+C
+D
+ Human-assisted Computation: Autograding
+
+For a given MCQ with m possible choices, each choice has a prior probability of being true. Assuming we are limited to MCQs with only one correct answer each, the prior probability is 1/m. For the choice A, the correct answer is represented by Ao, where
+
+Ao = {1 if the choice A is true
+      -1 otherwise.
+
+Note that we assume the system knows nothing about the value of Ao yet, and its job is to calculate the possibility of A being true (P(Ao = 1)) from student answers. Let the prior probability of A being true be po, i.e.
+
+po = P(Ao = 1) = 1/m
+ Human-assisted Computation: Autograding
+
+Let a student's answer be A₁ with a probability of p₁ for their answer being correct. i.e.
+p₁ = P(A₁ = 1 | Ao = 1) = P(A₁ = −1 | Ao = −1).
+
+From Bayes' Theorem, we have
+P(Ao = 1 | A₁ = 1) = 
+P(A₁ = 1 | Ao = 1)P(Ao = 1)
+P(A₁ = 1)
+
+We can further rewrite it using p0 and p₁:
+P(Ao = 1 | A₁ = 1) = 
+p₁p0
+p₁p0 + (1 − p1)(1 – p0)
+
+P(Ao = 1|A1 = a₁) = logit-1(logit(po)+a₁logit(p1))
+
+where the logit function is defined as logit(·) = log(1−),
+and logit-1(·) = 1/exp.
+ Human-assisted Computation: Autograding
+
+# Answers	P(A)	P(B)	P(C)	P(D)	Guess	Truth
+77	0.263	0.789	0.263	0.316	B	B
+73	0.263	0.158	0.211	0.947	D	D
+68	0.158	0.263	0.263	0.842	D	D
+63	0.211	0.789	0.316	0.263	B	B
+60	0.789	0.368	0.263	0.316	A	A
+56	0.632	0.211	0.368	0.526	A	A
+48	0.368	0.263	0.684	0.263	C	C
+46	0.368	0.684	0.421	0.316	B	B
+37	0.421	0.632	0.421	0.316	B	B
+28	0.421	0.421	0.474	0.474	unknown	B
+
+Table 1: Experiment result. For the last question, the system cannot make a reliable guess because the probabilities of the four options are too close to each other.
+ Human-assisted Computation: Autograding
+
+The image shows a code snippet written in C programming language. The code snippet calculates the Fibonacci number. There are a few errors deliberately added in the code. The errors are:
+
+1. In line 2, the condition `n<=1` should be `n<1`.
+2. In line 5, the function call should be `fib(n-1)` instead of `fib(n)`.
+
+The correct code should be:
+```
+int fib(int n) {
+  if (n < 1)
+    return n;
+  else
+    return fib(n-1) + fib(n - 1);
+}
+```
+ Human-assisted Computation: Autograding
+
+Fig. 4: Examples of possible student answers. (a) and (b) are both acceptable answers but used different ways to annotate the image.
+ Human-In-Loop: Wisdom of the Crowd
+
+The Story of Kasparov Against The World
+
+A 1999 Game of Chess over the Internet:
+
+- Gary Kasparov (world chess champion) versus the Rest of The World (whose moves are decided by a majority vote)
+- Kasparov was heavy favorite before game began.
+- "Rest of The World" used on-line discussions, and inputs by five well-known chess experts, including a group called "The Computer Chess Team"
+- Many weak players got hints from their home computers, which were notoriously poor at endgames.
+
+Result: Kasparov won after 62 moves in four months.
+
+Kasparov said it was the hardest game he ever played. This is one of the greatest moments in the AI Story and Human history.
+
+https://en.wikipedia.org/wiki/Kasparov_versus_the_World

@@ -1,0 +1,38 @@
+Lecture 3: Virtualization in Cloud
+
+CPU virtualization
+CPU virtualization allows a single physical CPU to be divided into multiple virtual CPUs. Each virtual CPU can run its own operating system and applications independently of the others. This allows for greater flexibility and efficiency in the use of computing resources.
+There are two main types of CPU virtualization: full virtualization and paravirtualization. Full virtualization creates a completely isolated environment for each virtual CPU, while paravirtualization requires the guest operating systems to be aware of the virtualization layer.
+Full virtualization is more secure than paravirtualization, but it is also more performance-intensive. Paravirtualization is less secure, but it is also more efficient.
+CPU virtualization is a powerful technology that can be used to improve the efficiency and flexibility of computing resources. It is used in a wide variety of applications, including cloud computing, virtualization, and desktop virtualization.
+
+---
+
+OS review
+Credit: Prof. John Kubiatowicz's slides for CS162, Spring 2015, UC Berkeley
+What is an operating system?
+- Special layer of software that provides application software access to hardware resources
+- Convenient abstraction of complex hardware devices
+- Protected access to shared resources
+- Security and authentication
+- Communication amongst logical entities
+The diagram shows the relationship between the operating system (OS) and the hardware. The OS is a layer of software that sits between the hardware and the application software. The OS provides the application software with a convenient abstraction of the complex hardware devices. This allows the application software to be written without having to worry about the details of the underlying hardware. The OS also provides protected access to shared resources, such as memory and files. This ensures that the application software does not interfere with each other. Finally, the OS provides security and authentication services. This helps to protect the system from unauthorized access.
+
+---
+
+**Four fundamental OS concepts**
+* **Thread**
+    * Single unique execution context
+    * Program Counter, Registers, Execution Flags, Stack
+* **Address Space w/ Translation**
+    * Programs execute in an address space that is distinct from the memory space of the physical machine
+* **Process**
+    * An instance of an executing program is a process consisting of an address space and one or more threads of control
+* **Dual Mode operation/Protection**
+    * Only the "system" has the ability to access certain resources
+    * The OS and the hardware are protected from user programs and user programs are isolated from one another by controlling the translation from program virtual addresses to machine physical addresses
+**OS Bottom Line: Run Programs**
+The diagram shows the relationship between the different components of an operating system (OS). The OS is responsible for managing the hardware and software resources of a computer system, and providing services to user programs.
+The bottom line of the OS is to run programs. To do this, the OS must first load the program into memory. The program is then executed by the processor, which follows the instructions in the program to perform the desired tasks.
+While the program is running, the OS provides it with services such as memory management, process scheduling, and input/output. The OS also protects itself and the program from each other, and from other programs that may be running on the system.
+The OS is a complex piece of software, but it is essential for the operation of a computer system. Without the OS, the computer would not be able to run programs or perform any useful tasks.

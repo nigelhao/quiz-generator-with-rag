@@ -1,0 +1,83 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+Opportunities and Challenges
+The use of the cloud provides a number of opportunities:
+IaaS enables services to be used without any understanding of their infrastructure.
+Cloud computing works using economies of scale:
+- IaaS and PaaS potentially lower the outlay expense for start up companies, as they would no longer need to buy their own software or servers.
+- Cost would be by on-demand pricing in IaaS, PaaS, and SaaS.
+- Cloud providers claim costs by establishing an ongoing revenue stream.
+Data and services are stored remotely but accessible from "anywhere" in SaaS.
+
+Opportunities and Challenges
+In parallel there has been backlash against cloud computing: Use of cloud computing means dependence on others and that could possibly limit flexibility and innovation: The others are likely become the bigger Internet companies like Google and IBM, who may monopolise the market. Some argue that this use of supercomputers is a return to the time of mainframe computing that the PC was a reaction against. Security could prove to be a big issue: It is still unclear how safe out-sourced data to SaaS is and when using these services ownership of data in SaaS is not always clear. There are also issues relating to policy and access: If your data is stored abroad whose policy do you adhere to? What happens if the remote server goes down? How will you then access files? There have been cases of users being locked out of accounts and losing access to data.
+
+---
+
+# Advantages of Cloud Computing
+IaaS leads to lower computer costs:
+- You do not need a high-powered and high-priced computer to run
+ cloud computing's web-based applications.
+- Since applications run in the cloud, not on the desktop PC, your desktop PC does not need the processing power or hard disk space demanded by traditional desktop software.
+- When you are using web-based applications, your PC can be less expensive, with a smaller hard disk, less memory, more efficient processor...
+- In fact, your PC in this scenario does not even need a CD or DVD drive, as no software programs have to be loaded and no document files need to be saved.
+IaaS leads to unlimited storage capacity:
+Cloud computing offers virtually limitless storage. Your computer’s current 1 Tbyte hard drive is small compared to the hundreds of Pbytes available in the cloud.
+IaaS leads to increased data reliability:
+Unlike desktop computing, in which if a hard disk crashes and destroys all your valuable data, a computer crashing in the cloud should not affect the storage of your data. If your personal computer crashes, all your data is still out there in the cloud, still accessible.
+In a world where few individual desktop PC users back up their data on a regular basis, cloud computing is a data-safe computing platform!
+PaaS leads to improved performance:
+With few large programs hogging your computer's memory, you will see better performance from your PC. Computers in a cloud computing system boot and run faster because they have fewer programs and processes loaded into memory.
+SaaS leads to reduced software costs:
+Instead of purchasing expensive software applications, you can get most of what you need for free-ish!
+- most cloud computing applications today, such as the Google Docs suite. Better than paying for similar commercial software which alone may be justification for switching to cloud applications.
+PaaS and SaaS take care of instant software updates:
+Another advantage to cloud computing is that you are no longer faced with choosing between obsolete software and high upgrade costs.
+With web-based applications (i.e., SaaS), updates happen automatically - available the next time you log into the cloud.
+When you access a web-based application, you get the latest version without needing to pay for or download an upgrade.
+SaaS leads to improved document format compatibility.
+You do not have to worry about the documents you create on your machine being compatible with other users' applications or OSes
+There are potentially no format incompatibilities when everyone is sharing documents and applications in the cloud.
+SaaS leads to universal document access:
+That is not a problem with cloud computing because you do not take your documents with you. Instead, they stay in the cloud, and you can access them whenever you have a computer and an Internet connection. Documents are instantly available from wherever you are.
+SaaS leads to the latest version availability:
+When you edit a document at home, that edited version is what you see when you access the document at work. The cloud always hosts the latest version of your documents - as long as you are connected, you are not in danger of having an outdated version.
+SaaS leads to easier group collaboration:
+Sharing documents leads directly to better collaboration. Many users do this as it is an important advantage of cloud computing.
+- Multiple users can collaborate easily on documents and projects.
+Device independence:
+You are no longer tethered to a single computer or network. Changes to computers, applications, and documents follow you through the cloud. Move to a portable device, and your applications and documents are still available.
+
+---
+
+Disadvantages of Cloud Computing
+Requires a constant Internet connection:
+Cloud computing is impossible if you cannot connect to the Internet. Since you use the Internet to connect to both your applications and documents, if you do not have an Internet connection you cannot access anything, even your own documents. A dead Internet connection means no work and in areas where Internet connections are few or inherently unreliable, this could be a deal-breaker.
+Does not work well with low-speed connections:
+Similarly, a low-speed Internet connection, such as that found with dial-up services, makes cloud computing painful at best and often impossible. Web-based applications require a lot of bandwidth to download, as do large documents.
+Features might be limited:
+This situation is bound to change, but today many web-based applications simply are not as full-featured as their desktop-based applications.
+- For example, you can do a lot more with Microsoft PowerPoint than with Google Presentation's web-based offering
+Can be slow:
+Even with a fast connection, web-based applications can sometimes be slower than accessing a similar software program on your desktop PC.
+Everything about the program, from the interface to the current document, has to be sent back and forth from your computer to the computers in the cloud.
+If the cloud servers happen to be backed up at that moment, or if the Internet is having a slow day, you would not get the instantaneous access you might expect from desktop applications.
+Stored data might not be secure:
+With cloud computing, all your data is stored on the cloud.
+The question is How secure is the cloud?
+Can unauthorized users gain access to your confidential data?
+Stored data can be lost:
+Theoretically, data stored in the cloud is safe, replicated across multiple machines.
+But on the off chance that your data goes missing, you have no physical or local backup.
+Put simply, relying on the cloud puts you at risk if the cloud lets you down.
+HPC Systems:
+Not clear that you can run compute-intensive HPC applications that use MPI/OpenMP!
+Scheduling is important with this type of application
+- As you want all the VM to be co-located to minimize communication latency!
+
+General Concerns:
+Each cloud systems
+ uses different protocols and different APIs
+- May not be possible to run applications between cloud based systems
+Amazon has created its own DB system (not SQL), and
+ workflow system (many popular workflow systems out there)- so your normal applications will have to be adapted to execute on these platforms.

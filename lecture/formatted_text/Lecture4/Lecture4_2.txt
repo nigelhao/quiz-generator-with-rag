@@ -1,0 +1,132 @@
+Lecture 4: Cloud CPU Scheduling
+
+Credit scheduler
+Xen's latest PS (proportional share) scheduler featuring automatic load balancing across physical CPUs.
+Default scheduler in Xen.
+Each VM is assigned a weight and a cap.
+> Idea based on Stride Scheduling
+Jobs have a “stride” value
+- A stride value describes the counter pace when the job should give up the CPU
+- Stride value is inverse in proportion to the job's number of tickets (more tickets = smaller stride)
+
+Total system tickets = 10,000
+- Job A has 100 tickets
+- Job B has 50 tickets
+- Job C has 250 tickets
+Astride = 10000/100 = 100 stride
+Bstride = 10000/50 = 200 stride
+Cstride = 10000/250 = 40 stride
+Stride scheduler tracks “pass” values for each job (A, B, C)
+
+---
+
+Stride scheduler
+Basic algorithm:
+1. Stride scheduler picks job with the lowest pass value
+2. Scheduler increments job's pass value by its stride and starts running the job for the current time slice
+3. Stride scheduler increments a system counter
+4. After scheduling quantum, scheduler returns to #1
+Stride scheduler always runs job(s) with the lowest pass value(s)
+KEY: Jobs having low “PASS” values are scheduled more often because their pass values increase more slowly than others...
+- Stride values
+- Tickets = priority to select job
+- Stride is inverse to tickets
+- Lower stride = more chances to run (higher priority)
+Priority
+C stride = 40
+A stride = 100
+B stride = 200
+- Three-way tie: randomly pick job A (all pass values=0)
+- Set A's pass value to A's stride = 100
+- Increment sys counter by A's stride. counter > 100
+- Pick a new job: two-way tie
+Pass(A) (stride=100)      Pass(B) (stride=200)      Pass(C) (stride=40)   Who Runs?
+0                               0                               0                       A
+100                             0                               0                       B
+100                             200                             0                       C
+100                             200                             40                       C
+100                             200                             80                       C
+100                             200                             120                      A
+200                             200                             120                      C
+200                             200                             160                      C
+200                             200                             200                      C
+...
+
+Initial job selection is random. All @ 0
+C has the most tickets and receives a lot of opportunities to run...
+- We set A's counter (pass value) to A's stride = 100
+- Next scheduling decision between B (pass=0) and C (pass=0)
+- Randomly choose B
+- C has the lowest counter for next 3 rounds
+
+| Pass(A) (stride=100) | Pass(B) (stride=200) | Pass(C) (stride=40) | Who Runs? |
+|---|---|---|---|
+| 0 | 0 | 0 | A |
+| 100 | 0 | 0 | B |
+| 100 | 200 | 0 | C |
+| 100 | 200 | 40 | C |
+| 100 | 200 | 80 | C |
+| 100 | 200 | 120 | A |
+| 200 | 200 | 120 | C |
+| 200 | 200 | 160 | C |
+| 200 | 200 | 200 | ... |
+
+C has the most tickets and is selected to run more often.
+- Job counters support determining which job to run next
+- Over time jobs are scheduled to run based on their priority represented as their share of tickets...
+- Tickets are analogous to job priority
+
+                                 Tickets
+                                   C = 250
+                                   A = 100
+                                   B = 50
+
+Pass(A)   Pass(B)   Pass(C)   Who Runs?
+(stride=100)  (stride=200)  (stride=40)
+0               0               0
+100             0               0           A
+100             200             0           B
+100             200             40          C
+100             200             80          C
+100             200             120         A
+200             200             120         C
+200             200             160         C
+200             200             200         ...
+
+Figure 3-12: Stride Scheduling Example. Clients A (triangles), B (circles), and C (squares) have a 3:2:1 ticket ratio. In this example, stride = 6, yielding respective strides of 2, 3, and 6. For each quantum, the client with the minimum pass value is selected, and its pass is advanced by its stride.
+C. Waldspurger's PhD Thesis at MIT: http://www.waldspurger.org/carl/papers/phd-mit-tr667.pdf
+
+---
+
+Credit scheduler
+Weight: default value is 256. Range: [1,65535]
+Cap: optionally fix the CPU this VM can get, even if the CPU has idle cycles (NWC)
+default is 0, WC
+set to percentages. For example 30, meaning this VM can get 30% of the CPU at most.
+
+Credit scheduler - basics
+Time unit/slot: 30ms
+A VM has priority, which can be one of two values: "over" or "under" representing whether this VM has or hasn't yet exceeded its fair share of CPU resource in the ongoing accounting period.
+Each CPU manages a FIFO queue of runnable VMs sorted by priority (under precedes over).
+At each slot, the VM off the head of the queue gets to run
+
+Credit scheduler - accounting
+As a VM runs, it consumes credits. Every 30ms, a system-wide accounting thread recomputes the credits for each active VM.
+Every so often, the system bumps credit to each VM. The credit is allocated in a PS fashion (weighted fair sharing).
+
+---
+
+Credit scheduler – example
+> Assume 1 credit = 10ms. The system allocates 15 credits every 150ms, i.e. 5-time slots.
+> VM1 weight: 256, VM2 weight: 512
+The diagram shows a timeline of credit allocation for two virtual machines, VM1 and VM2. VM1 has a weight of 256 and VM2 has a weight of 512. The system allocates credits to each VM in proportion to its weight. So, VM2 will receive twice as many credits as VM1. The credits are allocated in time slots of 150ms, and each slot contains 15 credits. So, in each time slot, VM1 will receive 6 credits and VM2 will receive 12 credits.
+ Credit scheduler – example
+> Under the same setting, consider the case with three VMs, with weights 256, 512, and 512.
+The diagram shows a credit scheduler with three VMs. The VMs are labeled VM1, VM2, and VM3. The weights of the VMs are 256, 512, and 512, respectively. The x-axis of the diagram represents time, and the y-axis represents the amount of credit. The lines in the diagram represent the credit usage of each VM over time.
+At time 0, VM1 has the highest credit usage, followed by VM2 and VM3. VM1's credit usage increases steadily over time, while VM2's and VM3's credit usage remains constant. At time 15, VM1's credit usage reaches its peak, while VM2's and VM3's credit usage is still increasing.
+
+Credit scheduler – summary
+Features:
+- Global load balancing
+- WC and NWC modes
+- Easy to implement

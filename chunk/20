@@ -1,0 +1,21 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+Internet Protocol - IP
+Connectionless, packet-based
+Best-effort, inherently unreliable - packets may be lost, dropped, delayed, delivered out-of-order - no guarantee
+Header format
+| 0 | 4 | 8 | 16 | 19 | 31 | |---|---|---|---|---|---| | Version | HLen | TOS | Length | Ident | Flags | Offset | | TTL | Protocol | Checksum | SourceAddr | DestinationAddr | Options (variable) | Pad (variable) | Data |
+
+Routing
+Routing in a nutshell:
+- Every packet header has the destination address.
+- If the router is directly connected to the destination network, forward to the host.
+- Else, forward to some router.
+Example
+| Network | Next hop | | :--- | :--- | | Network 1 | R1 | | Network 2 | R3 | | All else | R0 |
+Provide reliable data transfer to applications over unreliable IP network
+(a) Provided service
+The transport layer provides a reliable data transfer service to applications. It ensures that data is delivered to the receiving application in the same order it was sent, and that no data is lost or corrupted during transmission.
+(b) Service implementation
+The transport layer uses a variety of techniques to implement reliable data transfer. One common technique is to use a reliable data transfer protocol, such as TCP. TCP ensures reliable data transfer by using a combination of acknowledgement and retransmission mechanisms.
+The diagram shows the relationship between the transport layer and the other layers of the OSI model. The transport layer is located between the network layer and the application layer. It receives data from the network layer and passes it to the application layer. It also receives data from the application layer and passes it to the network layer.

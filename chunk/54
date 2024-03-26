@@ -1,0 +1,36 @@
+Lecture 3: Virtualization in Cloud
+
+Latency Numbers Every Programmer Should Know by Peter Norvig and Jeff Dean:
+- L1 cache reference - 0.5ns
+- Branch mispredict - 5ns
+- L2 cache reference - 7ns
+- Mutex lock/unlock - 25ns
+- Main memory reference - 100ns
+- Compress 1K with Zippy - 3,000ns (3us)
+- Send 1K over 1Gbps network - 10,000ns (10us)
+- Read 4K randomly from SSD - 150,000ns (150us)
+- Round trip within a datacenter - 250,000ns (250us)
+- Read 1MB sequentially from RAM - 500,000ns (500us)
+- Read 1MB sequentially from SSD - 1,000,000ns (1,000us) (1ms)
+- Hard disk seek - 10,000,000ns (10,000us) (10ms)
+- Read 1MB sequentially from disk - 20,000,000ns (20,000us) (20ms)
+- Send packet CA->Netherlands->CA - 150,000,000ns (150,000us) (150ms)
+
+Caching:
+Performance optimization by keeping a copy of some data usually closer to where the data is needed or something that might be reused (don't recompute). Used everywhere in computer systems such as Registers, Processor caches, File system buffer cache, DNS caching, memcached, Database page cache, Spark analytics framework, Web browser page/image cache, Phone email/SMS cache.
+Why Is Caching Useful?
+There is a basic tradeoff in performance and size:
+- If you make it bigger, it's slower.
+  - Takes longer to get to (due to size).
+  - Addressing it is more complex (more bits to switch on).
+- Faster storage is more expensive.
+  - 16GB RAM: $59.99
+  - 1TB HDD: $59.99
+  - 4TB HDD: $116.99
+  - 4TB SSD: $499.99
+Think about the places your web page might be stored...
+The diagram shows the different levels of caching, from the CPU cache to the web cache. Each level of caching is closer to the user than the previous level, and therefore has a lower latency. This means that data that is frequently accessed can be retrieved more quickly from a higher level of the cache. The different caching levels are as follows:
+- CPU cache: The CPU cache is the smallest and fastest level of caching. It is located on the CPU die and is used to store frequently accessed data and instructions.
+- Memory cache: The memory cache is larger than the CPU cache and is used to store data that is not currently being used by the CPU.
+- Web cache: The web cache is used to store web pages and other web content. It is located on the web server and is used to improve the performance of web browsing.
+- Proxy cache: The proxy cache is used to store web pages and other web content that is frequently accessed by users. It is located on a proxy server, which is a server that sits between the

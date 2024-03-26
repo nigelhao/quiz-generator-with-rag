@@ -1,0 +1,19 @@
+Lecture 5b: Cloud Security
+
+**Principles:**
+- Confidentiality
+- Integrity
+- Authentication
+- Non-repudiation
+
+**Confidentiality**
+Alice wants to make sure no one except Bob gets the envelope, and even if someone else gets it, that person does not come to know about the details of the envelope.
+**Integrity**
+An attacker may not know the details of the envelope, but he/she can intercept and burn the envelope. Alice and Bob want to make sure no one can tamper with the contents of the message (location, date, etc.).
+
+**Authentication**
+Bob wants to make sure that the invite is indeed from Alice, not from someone else posing as Alice.
+
+**Non-repudiation**
+Later some tabloids found out about Alice's invite, but Alice claimed that she never sent the message to Bob, i.e., Alice repudiates (happens a lot...). There should be some mechanism to defeat such a possibility of denying something which you have done.
+"I didn't invite him. He invited me to the hotel!"

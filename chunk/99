@@ -1,0 +1,28 @@
+Lecture 7: PageRank Algorithm
+
+Google search: anchor text
+PageRank
+Anchor text
+
+Google uses:
+- In anchor text?
+- In URL?
+- Title
+- Meta tags
+- <h> level
+- Rel font size
+- Capitalization
+- Word pos in doc
+- Secret ingredients
+... and weighs them according to a secret recipe
+The diagram shows how Google search uses anchor text.
+The left side of the diagram shows the PageRank algorithm, which is used to rank web pages based on their importance. The right side of the diagram shows how anchor text is used to determine the relevance of a web page to a particular search query.
+The arrows between the two sides of the diagram show how the PageRank algorithm and anchor text are used together to determine the ranking of a web page.
+
+Link Structure of the Web
+- 150 million web pages - 1.7 billion links
+A - Backlinks and Forward links:
+- A and B are C's backlinks
+- C is A and B's forward link
+B
+Intuitively, a webpage is important if it has a lot of backlinks.

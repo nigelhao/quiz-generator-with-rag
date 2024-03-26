@@ -1,0 +1,24 @@
+Lecture 5b: Cloud Security
+
+**Digital Signatures**
+When A sends to B, A uses B's public key to encrypt, so the message is confidential.
+In many situations we need "signatures" to verify the identity of someone.
+We can use a different scheme:
+- A uses his private key to encrypt a message
+- Anyone can check the message is signed by A by using A's public key
+- Only A can sign the message
+Certificates: bind Bob's ID to his PK.
+How does Alice (browser) obtain Bob's public key pkBob?
+In the diagram, there are three entities: Alice, Bob, and a Certification Authority (CA). Alice is the browser, Bob is the server, and the CA is a trusted third party that issues certificates.
+The process of obtaining Bob's public key pkBob is as follows:
+1. Bob generates a public-private key pair (pkBob, skBob).
+2. Bob sends a certificate request to the CA. The certificate request contains Bob's public key pkBob and proof that Bob owns the corresponding private key skBob.
+3. The CA verifies the certificate request and issues a certificate. The certificate contains Bob's public key pkBob and the CA's signature.
+4. Bob sends the certificate to Alice.
+5. Alice verifies the certificate and extracts Bob's public key pkBob.
+Bob uses his certificate for an extended period (e.g., one year). During this period, Alice can use Bob's public key pkBob to encrypt messages to Bob. Bob can use his private key skBob to decrypt the messages.
+
+**Public Key Infrastructure - PKI**
+How do we know a key belongs to Bob?
+One solution: PKI.
+Trust certification/root authority (VeriSign, etc.). Everyone must know the public key of the root authority. Check your browser, you can find many. Root authority can sign certificates. Certificates identify others, including other authorities. DocuSign is a SaaS product that businesses use to send electronic signatures. [DocuSign Wikipedia](https://en.wikipedia.org/wiki/DocuSign)

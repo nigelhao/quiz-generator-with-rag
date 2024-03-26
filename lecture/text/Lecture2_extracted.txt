@@ -1,0 +1,495 @@
+ Nanyang Technological University, Singapore
+
+CE/CZ4052 Cloud Computing
+
+Data Center Networking – Basics, Topology
+
+Dr. Tan, Chee Wei
+Email: cheewei.tan@ntu.edu.sg
+Office: N4-02c-104
+ Outline
+* Brief history of computer networking and the Internet
+* Basic concepts
+* Layering architecture
+* TCP/IP
+ History
+How can computers be connected and talk to each other?
+The roots of computer networking can be traced back to the development of telephone networks. In 1961, Leonard Kleinrock published his first paper on packet switching, which showed that this method of data transmission was more efficient than circuit switching for bursty traffic. Packet switching was later adopted as the basis for the ARPANET (Advanced Research Projects Agency Network), which was the first wide-area computer network.
+ Evolution - 1969
+>First link on ARPAnet between UCLA and SRI (Stanford Research Institute)
+
+6 Test messages between UCLA-SRI 10/15/69
+6a Network configuration
+SRI 
+|
+UCLA
+
+The diagram shows the first link on ARPAnet between UCLA and SRI (Stanford Research Institute). The link was established on October 15, 1969, and consisted of six test messages sent between the two locations. The messages were sent using a network configuration that was developed by SRI.
+ Evolution - 1969
+>By the end of 1969, four nodes, UCLA, SRI, UCSB, Utah
+
+The ARPA Network December 1969 consisted of 4 nodes: UCLA, SRI, UCSB, and Utah.
+ Evolution - 1971
+September 1971
+
+The diagram shows the evolution of the ARPANET in September 1971. The network had grown significantly since its inception in 1969, and by this time, there were 15 nodes connected to the network. These nodes were located at universities, research institutions, and government agencies across the United States. The ARPANET was used for a variety of purposes, including research, education, and military communication.
+
+The nodes on the network were connected by a variety of links, including leased lines, dial-up connections, and satellite links. The network was designed to be decentralized, with no single point of failure. This made it resilient to damage or attack.
+
+The ARPANET was a major milestone in the development of the Internet. It was the first network to use the TCP/IP protocol suite, which is still used today. The ARPANET also helped to develop the concept of packet switching, which is used to route data efficiently over a network.
+
+The ARPANET was decommissioned in 1990, but it had a profound impact on the development of the Internet. It helped to create the foundation for the global network that we know today.
+ Evolution - Now
+
+            A diagram showing the evolution of Facebook.
+ Milestones
+- In 1973, R. Metcalfe invented Ethernet (in Xerox PARC)
+- In 1974, Vinton Cerf and Robert Kahn invented TCP/IP
+- The term “internet” was adopted around the 70s as an abbreviation of internetworking
+- Killer applications: Email, Web, peer-to-peer (P2P), search engine, video, mobile, social media
+ Some basic concepts
+
+Diagrams are a great way to visualize information. They can help you to see the relationships between different parts of a system, and to identify patterns and trends.
+
+There are many different types of diagrams, each with its own strengths and weaknesses. Some of the most common types of diagrams include:
+
+* Flowcharts: Flowcharts are used to represent the flow of information or data through a system. They can be used to identify bottlenecks and inefficiencies in a process.
+* Block diagrams: Block diagrams are used to represent the components of a system and the relationships between them. They can be used to identify the major components of a system and how they interact with each other.
+* Organizational charts: Organizational charts are used to represent the hierarchy of an organization. They can be used to identify the different levels of management and the reporting relationships between them.
+* Venn diagrams: Venn diagrams are used to represent the relationships between different sets of data. They can be used to identify the similarities and differences between different sets of data.
+* Pie charts: Pie charts are used to represent the proportions of different parts of a whole. They can be used to identify the relative sizes of different parts of a whole.
+* Bar charts: Bar charts are used to represent the values of different variables. They can be used to compare the values of different variables and to identify trends.
+* Line charts: Line charts are used to represent the changes in a variable over time. They can be used to identify trends and to make predictions about the future.
+
+Diagrams can be a valuable tool for understanding complex information. They can help you to see the relationships between different parts of a system, and to identify patterns and trends.
+ Building blocks
+- Nodes
+ - end-hosts, or hosts: PC, server
+ - switches, routers, middleboxes
+- Links: coax cable, optical fiber, wireless, ...
+ - point-to-point
+ - multiple access (shared)
+ ## Switching approaches
+- Circuit switching
+ - (early) telephone networks
+ - Connection oriented, dedicated communication link between two nodes
+- Packet switching
+ - computer networks
+ - Connection-less, shared communication links, no set-up
+ - Data is divided into packets and transferred independently
+ Addressing, routing
+
+- Address: byte-string that identifies a node
+- Routing: process of forwarding messages to the destination node based on its address
+- Types of addresses:
+  - unicast: node-specific
+  - broadcast: all nodes on the network
+  - multicast: a group/subset of nodes
+ Multiplexing
+
+Time-division multiplexing (TDM)
+Frequency-division multiplexing (FDM)
+
+The diagram shows a time-division multiplexing (TDM) system. 
+- It has three inputs, L1, L2, and L3, and three outputs, R1, R2, and R3. 
+- The switch connects each input to each output in a round-robin fashion. 
+- For example, in the first time slot, L1 is connected to R1, L2 is connected to R2, and L3 is connected to R3. 
+- In the second time slot, L1 is connected to R2, L2 is connected to R3, and L3 is connected to R1. 
+- This continues until all of the inputs have been connected to all of the outputs.
+
+TDM is a technique for sending multiple signals over a single channel by dividing the channel into multiple time slots. 
+- Each signal is assigned a specific time slot, and the signals are sent one after the other. 
+- TDM is used in a variety of applications, such as telecommunications and computer networking.
+ Statistical multiplexing
+- On-demand time-division. Schedule link on a per-packet basis
+- Packets that content for the link enter a/some buffer(s)/queue(s)
+- Different scheduling disciplines can be used to decide which packet to transmit next
+- Buffer (queue) overflow is called congestion
+ Statistical multiplexing
+Say host A sends data to host B in a bursty manner. On average
+A generates 100Kbps in 10% of the time, and idles for 90% of
+the time
+Circuit switching, given a link with 1Mbps, how many hosts can
+be supported simultaneously?
+10 with no delay (no queueing)
+Packet switching, how many?
+About 30 with very low probability of queueing delay
+ Statistical multiplexing gain: not everybody is transmitting!
+
+In statistical multiplexing, not all users are transmitting at the same time. This means that the total bandwidth required is less than the sum of the bandwidths required by each user if they were transmitting simultaneously. The amount of bandwidth that can be saved depends on the traffic characteristics of the users. For example, if the users are transmitting data in bursts, then the amount of bandwidth that can be saved is greater than if the users are transmitting data continuously.
+
+The statistical multiplexing gain is a key factor in the design of telecommunications networks. It allows network providers to offer high-speed data services to a large number of users without having to provision enough bandwidth for all users to transmit simultaneously.
+ Performance metrics
+- Bandwidth, throughput
+ - amount of data transmitted per unit time
+ - 1 Mbps = 10^6 bits per second, 1 MBps = 8 Mbps
+- Latency (delay)
+ - total time from one end to another
+ - latency = propagation + transmission + queue
+ - propagation = distance / C, transmission = size / bandwidth
+ Performance metrics
+- Relative importance
+- 1B flow: queuing delay dominates
+- 1ms/100ms vs. 1MBps/100MBps
+- 25MB flow: transmission delay, i.e. throughput, dominates
+- 1ms/100ms vs. 1MBps/100MBps
+ A layering architecture
+
+The diagram shows a layering architecture. The architecture is divided into three layers: the presentation layer, the business logic layer, and the data access layer.
+
+The presentation layer is responsible for interacting with the user. It handles the user interface and the presentation of data to the user.
+
+The business logic layer is responsible for handling the logic of the application. It contains the business rules and the logic for processing data.
+
+The data access layer is responsible for accessing the data. It handles the interaction with the database and the retrieval and storage of data.
+ Layering
+
+How to build an internet that connects all different kinds of networks, each of which may use a completely different technology?
+
+Answer: layering, with well-defined interfaces
+
+Best summarized by David Clark, MIT, “The Design Philosophy of the DARPA Internet Protocols"
+ Why layering?
+
+- Functions are separated into layers. Layers are "blackboxes" to the upper- or lower-layer protocols.
+- Allow distinct technologies for the same function.
+ - physical: Ethernet, 3G, WiFi, satellite, optical, quantum, etc.
+- Allow them to inter-operate using standardized interfaces
+ OSI reference model
+
+The OSI model is a layered architecture for computer networks. It was developed by the International Organization for Standardization (ISO) in the 1980s. The OSI model divides the network into seven layers, each of which has a specific function. The layers are:
+
+- Physical layer: The physical layer is the lowest layer of the OSI model. It is responsible for the physical connection between two devices. This layer defines the electrical, mechanical, and functional specifications for the physical connection.
+- Data link layer: The data link layer is responsible for ensuring that data is transmitted and received correctly between two devices. This layer defines the protocols for error detection and correction, flow control, and addressing.
+- Network layer: The network layer is responsible for routing data between two devices. This layer defines the protocols for determining the best path for data to take, and for ensuring that data is delivered to the correct destination.
+- Transport layer: The transport layer is responsible for ensuring that data is delivered reliably between two devices. This layer defines the protocols for error recovery, flow control, and congestion control.
+- Session layer: The session layer is responsible for establishing and maintaining a connection between two devices. This layer defines the protocols for opening and closing connections, and for managing the flow of data between devices.
+- Presentation layer: The presentation layer is responsible for formatting data so that it can be understood by the application layer. This layer defines the protocols for data compression, encryption, and formatting.
+- Application layer: The application layer is the highest layer of the OSI model. It is responsible for providing the user with access to network services. This layer defines the protocols for applications such as email, file transfer, and web browsing.
+ More popular TCP/IP model
+
+Application	   email, browser
+Transport	   specific data delivery
+ 	   TCP, UDP
+Network	   internetworking, routing
+ 	   IP
+Data link/MAC	how to access local links
+ 	   Ethernet, 802.11
+Physical	   how bits are represented
+ 	   on wire. DSL, Bluetooth
+
+The TCP/IP model is a layered architecture that describes how data is transmitted between devices on a network. The model is divided into five layers:
+
+- The physical layer defines the physical connection between devices, such as the type of cable or wireless connection.
+- The data link layer defines how data is transmitted between devices on a network, such as the protocols used to establish a connection and send and receive data.
+- The network layer defines how data is routed between devices on a network, such as the protocols used to determine the best path for data to take.
+- The transport layer defines how data is sent and received between devices on a network, such as the protocols used to ensure that data is delivered reliably and in order.
+- The application layer defines how applications use the network to communicate with each other, such as the protocols used for email, web browsing, and file sharing.
+ Hourglass
+Our protocol stack
+
+The hourglass diagram shows the different layers of the protocol stack. The bottom layer is the physical layer, which is responsible for sending and receiving raw data. The next layer is the data link layer, which is responsible for ensuring that data is transmitted and received correctly. The third layer is the network layer, which is responsible for routing data between different networks. The fourth layer is the transport layer, which is responsible for ensuring that data is delivered reliably. The fifth layer is the session layer, which is responsible for establishing and maintaining connections between different applications. The sixth layer is the presentation layer, which is responsible for formatting data so that it can be understood by different applications. The seventh layer is the application layer, which is responsible for providing different applications to users.
+ TCP/IP
+
+Transmission Control Protocol/Internet Protocol (TCP/IP) is a suite of communication protocols used to connect networked computers. It is the basis for the Internet and most other modern computer networks.
+
+TCP/IP is a layered protocol stack, meaning that it is composed of multiple layers, each of which performs a specific function. The layers are as follows:
+
+* Physical layer: This layer defines the physical connection between two devices, such as a network cable or a wireless connection.
+* Data link layer: This layer ensures that data is transmitted and received correctly between two devices.
+* Network layer: This layer routes data packets from one device to another across a network.
+* Transport layer: This layer ensures that data is delivered reliably and in the correct order.
+* Application layer: This layer provides the interface between the user and the network. It includes protocols such as HTTP, FTP, and SMTP.
+
+TCP/IP is a connection-oriented protocol, meaning that it establishes a connection between two devices before data is transmitted. This ensures that data is delivered reliably and in the correct order.
+
+TCP/IP is a widely used protocol suite, and it is the foundation of the Internet. It is also used in many other types of networks, such as private networks and corporate networks.
+ TCP/IP
+
+This diagram shows the Transmission Control Protocol/Internet Protocol (TCP/IP) protocol suite, which is a set of communication protocols used for the internet and other computer networks. It is a layered architecture, with each layer providing a specific set of services to the layers above and below it.
+
+The physical layer is the lowest layer of the TCP/IP protocol suite. It is responsible for sending and receiving raw data bits over a physical medium, such as a copper wire or optical fiber.
+
+The link layer is responsible for ensuring that data is transmitted and received correctly over a physical link. It adds error detection and correction mechanisms to the raw data bits received from the physical layer.
+
+The network layer is responsible for routing data packets from one host to another across a network. It uses IP addresses to identify hosts and to determine the best path for data packets to take.
+
+The transport layer is responsible for ensuring that data is delivered reliably and in the correct order to the correct application on the destination host. It uses port numbers to identify different applications on a host.
+
+The application layer is the highest layer of the TCP/IP protocol suite. It provides a variety of services to applications, such as file transfer, email, and web browsing.
+ Internet Protocol - IP
+
+Connectionless, packet-based
+
+Best-effort, inherently unreliable
+- packets may be lost, dropped, delayed, delivered out-of-order
+- no guarantee
+
+Header format
+
+| 0 | 4 | 8 | 16 | 19 | 31 |
+|---|---|---|---|---|---|
+| Version | HLen | TOS | Length | Ident | Flags | Offset |
+| TTL | Protocol | Checksum | SourceAddr | DestinationAddr | Options (variable) | Data | Pad (variable) |
+ Routing
+
+Routing in a nutshell:
+
+- Every packet header has the destination address
+- If the router is directly connected to the destination network, forward to the host
+- Else, forward to some router
+
+Example
+
+| Network | Next hop |
+| :--- | :--- |
+| Network 1 | R1 |
+| Network 2 | R3 |
+| All else | R0 |
+ # Transport layer
+>Provide reliable data transfer to applications over unreliable IP network
+
+(a) shows the provided service and (b) shows the service implementation. The transport layer provides a reliable channel between two processes, which may be on the same host or on different hosts. The reliable channel ensures that data is delivered in the correct order and without errors.
+
+The transport layer uses a variety of techniques to achieve reliability, including:
+
+* **Error detection:** The transport layer uses checksums to detect errors in data. If an error is detected, the transport layer will retransmit the data.
+* **Flow control:** The transport layer uses flow control to prevent the sender from overwhelming the receiver with data. Flow control mechanisms include windowing and congestion control.
+* **Congestion control:** The transport layer uses congestion control to prevent the network from becoming congested. Congestion control mechanisms include slow start and congestion avoidance.
+
+The transport layer is an essential part of the Internet protocol suite. It provides the reliable data transfer that is necessary for applications such as web browsing, email, and file sharing.
+ TCP overview
+
+TCP: Transmission Control Protocol
+- Point-to-point; reliable in-order byte stream (sequence numbers); full duplex
+- Connection-oriented, handshaking before data exchange
+- Flow control: not sending too fast for the receiver to process (src and dst may have different network speeds). recv window, rwnd
+- Congestion control: avoid congestion collapse (too many sources sending too much). congestion window, cwnd
+ Reliable transfer
+> Use sequence number, and send acknowledgment packets indicating the sequence number up to which the receiver has received
+> If some packets are received out-of-order, or are lost, the receiver will only ACK the last seq num of the contiguous stream.
+> Packet loss can be detected by timeouts and duplicated ACKs.
+ TCP flow control
+
+Receiver controls sender, so the sender won't overflow the receiver's buffer by sending too fast.
+
+Receiver advertises buffer space by including a rwnd value in the header.
+
+Sender limits the amount of un-acked data to receiver's rwnd value.
+
+The diagram shows the TCP flow control mechanism. The sender sends data to the receiver. The receiver buffers the data. The receiver sends acknowledgments (ACKs) to the sender. The sender uses the ACKs to control the flow of data.
+
+The rwnd value is the amount of free space in the receiver's buffer. The sender can send up to the rwnd value of data without overflowing the receiver's buffer.
+
+The TCP flow control mechanism ensures that the sender does not send too much data to the receiver. This prevents the receiver's buffer from overflowing.
+ TCP congestion control
+"Too many sources sending too fast for the network to handle"
+Manifestations:
+lost packets (buffer overflow at routers)
+long delays (queueing in router buffers)
+ TCP congestion control
+
+TCP relies on packet drops as a signal of congestion. Packet drops are detected by duplicated ACKs. Thus when TCP sees duplicated ACKs, it will interpret as congestion is experienced.
+
+However
+
+Packet drops may not be caused by congestion, e.g., in wireless networks
+
+Duplicated ACKs may not be caused by packet drops. They may be due to a change of network path and some packets arrive late but not dropped
+ TCP congestion control
+
+AIMD:
+
+- Sender increases sending rate (window size), probing for unused bandwidth, until loss occurs
+- Additive increase: increase cwnd by 1 MSS (maximum segment size) every RTT until loss detected
+- Multiplicative decrease: cut cwnd by half when loss is detected
+
+AIMD sawtooth behavior: probing for bandwidth
+ ## TCP Congestion Control
+> Typical TCP cwnd behavior
+
+AIMD sawtooth behavior: probing for bandwidth
+
+additively increase window size … until loss occurs (then cut window in half)
+ Classical Visual Proof of AIMD
+
+In the diagram, the classical AIMD visual proof is illustrated. The X-axis represents User 1's allocation, while the Y-axis represents User 2's allocation. The fairness line represents the line where both users receive an equal allocation. The efficiency line represents the line where the total allocation is maximized. The AIMD abstraction is visually proven by the fact that the Nash equilibrium (x0, x0) is on the fairness line and the efficiency line. This means that the AIMD abstraction captures both fairness and efficiency.
+ # Perron-Frobenius Theory Approach to AIMD
+---
+**Perspective via positive linear systems theory**
+Let ws(k) denote the congestion window size of source s immediately before the kth network congestion event is detected by all the sources as shown in Figure 2.
+
+Let as and 0 < βs < 1 be the additive and multiplicative parameters of source s using the AIMD algorithm (that are conventionally set as 1 and 0.5) respectively
+
+Let qmax and P be, respectively, the maximum queue length of the congested bottleneck link and the maximum instantaneous number of sent unacknowledged packets that are in transit (e.g., P = qmax + BT where B is the bottleneck link service rate in packets per second and T is the round-trip time)
+ ## Positive Linear System
+At the \(k+1\)th congestion event, source s's window satisfies
+$$w_s(k+1) = \beta_s w_s(k) + \sum_{i=1}^n (1-\beta_i)w_i(k)$$
+
+Let \(w(k) = (w_1(k),...,w_n(k))^\mathsf{T}\) and write a positive system:
+$$w(k+1) = Aw(k),$$
+
+where
+$$A = \begin{bmatrix} \beta_1 & 0 & \dots & 0 \\\ 0 & \beta_2 & 0 & 0 \\\ \vdots & \vdots & \ddots & \vdots \\\ 0 & 0 & \dots & \beta_n \end{bmatrix} + \frac{1}{\sum_{i=1}^n \alpha_i} \begin{bmatrix} \alpha_1 & \alpha_2 & \dots & \alpha_n \\\ 1 & 1 & \dots & 1 \\\ (1-\beta_1) & (1-\beta_2) & \dots & (1-\beta_n) \end{bmatrix}$$
+ Visualizing the Theories Behind AIMD
+
+In the diagram, the X-axis represents User 1's allocation and the Y-axis represents User 2's allocation. The fairness line represents the line where both users receive an equal allocation. The efficiency line represents the line where the total allocation is maximized. The bottleneck link capacity adjusted by optimization-based dual algorithm is the line that represents the maximum allocation that can be achieved by any user, given the current state of the network.
+
+The diagram shows that the AIMD algorithm can achieve a fair and efficient allocation of resources between users. This is because the AIMD algorithm adjusts the allocation of resources between users based on the current state of the network. This ensures that both users receive an equal allocation of resources and that the total allocation is maximized.
+ ## Positive Linear System
+The spectrum of the matrix A (e.g., the Perron-Frobenius eigenvalue and eigenvectors) provides insights on fairness, rate of convergence and transient response:
+
+$$\lim_{k \to \infty} w(k) = \begin{pmatrix} \frac{\alpha_1}{1 - \beta_1} & \dots & \frac{\alpha_n}{1 - \beta_n} \end{pmatrix}^T$$
+
+which, if specialized to the case of αi = 1 and βi = 0.5 for all i, is proportional to the all-ones vector as it should be.
+Fairness line as Perron-Frobenius right eigenvector
+Classical power method algorithm can simulate AIMD and to visualize the iterates as shown in Figure 2
+ Topology
+or an evolution of Google's network topologies
+
+Credit: A. Singh et al., “Jupiter rising: A decade of Clos topologies and
+centralized control in Google's datacenter network,” ACM SIGCOMM'15.
+ 2004: four-post cluster
+>Supported 20k servers per cluster
+
+The diagram shows a four-post cluster. There are four cluster routers, each of which is connected to two ToR switches. The ToR switches are then connected to the servers. Each server rack has two 10GbE connections to the ToR switches.
+ But traffic keeps growing
+
+The diagram shows the growth of traffic generated by servers in Google's datacenters. The traffic has been growing exponentially since 2008. This growth is likely due to the increasing number of people using Google's services, such as Search, Gmail, and YouTube. The growth in traffic is also likely due to the increasing use of mobile devices, which are constantly generating data.
+ How to scale the network
+
+- Buying the largest switches with the most ports doesn't scale well
+- And it's expensive
+- Solution: Clos topologies
+
+The diagram shows a Clos topology. A Clos topology is a hierarchical network design that is used to scale networks. The Clos topology consists of three stages: the spine stage, the aggregation stage, and the edge stage. The spine stage is the core of the network and it is responsible for connecting the aggregation switches. The aggregation stage is responsible for connecting the edge switches to the spine switches. The edge stage is responsible for connecting the servers to the aggregation switches.
+ A practical approach to scale
+- Use Clos topologies:
+ - Use many low-radix switches in multiple stages to scale to arbitrary size
+ - Substantial path diversity and redundancy
+- Merchant silicons
+ - off-the-shelf, allows regular and rapid upgrades
+ [2005] Firehose 1.0
+
+Spine Block
+32x10G to 32 aggregation blocks
+
+Aggregation Block (32x10G to 32 spine blocks)
+
+Stage 2, 3 or 4 board
+ToR (Stage 1) board:
+2x10G up, 24x1G down
+Stage 2, 3, 4 board:
+4x10G up, 4x10G down
+Stage 5 board:
+8x10G down
+
+> An aggr block has 16 ToRs (320 machines). 32 spine blocks
+each connect to 32 aggr blocks, resulting in a fabric that scales
+to 10K machines with 1G average bandwidth
+ 2012 Jupiter
+
+[Image of a diagram]
+The diagram shows the Jupiter architecture. The system is composed of multiple merchant silicon devices, each with 16x40G up and 32x40G down bandwidth. These devices are connected to a central spine block with 1x40G up and 128x40G down bandwidth. The spine block is then connected to 64 aggregation blocks, each with 512x40G to 256 spine blocks bandwidth. Finally, the aggregation blocks are connected to 8 middle blocks, each with 256x10G down bandwidth.
+ Facebook's fabric
+
+With 96 pods, the topology can accommodate 73,728 10Gbps hosts. In Facebook's Altoona data center, each aggregation switch connects to 48 ToR switches in its pod, and 12 out of the 48 possible core switches on its plane, resulting in a 4:1 oversubscription.
+
+The diagram shows the Facebook fabric, which is a network topology that is used to connect the servers in Facebook's data centers. The fabric is designed to be scalable, reliable, and efficient.
+
+The fabric is made up of three layers:
+
+- The core layer is made up of a number of core switches that are connected to each other in a mesh topology. The core switches are responsible for routing traffic between the different pods in the fabric.
+- The aggregation layer is made up of a number of aggregation switches that are connected to the core switches. The aggregation switches are responsible for aggregating traffic from the ToR switches in the pods and sending it to the core switches.
+- The ToR layer is made up of a number of ToR switches that are connected to the aggregation switches. The ToR switches are responsible for connecting the servers in the pods to the fabric.
+
+The fabric is designed to be scalable so that it can be easily expanded to accommodate more servers. The fabric is also designed to be reliable so that it can withstand the failure of any single component. The fabric is also designed to be efficient so that it can handle a large amount of traffic without experiencing any congestion.
+ Academia: Fat-tree
+
+The Fat-tree is a Clos topology that is built using commodity switches. It is a scalable and cost-effective network architecture for data centers.
+
+The Fat-tree has three levels of hierarchy: core, aggregation, and edge. The core level consists of a single switch that connects all of the aggregation switches. The aggregation level consists of multiple switches that connect the edge switches to the core switch. The edge level consists of multiple switches that connect the servers to the aggregation switches.
+
+The Fat-tree topology is designed to provide high scalability and fault tolerance. It is also designed to be cost-effective and easy to manage.
+ Fat-tree
+
+A k-pod fat-tree has k pods, each with two layers of k/2 switches. Each aggregation switch has k/2 ports to unique core switches and k/2 aggregation switches in a pod. So the total number of core switches is (k/2)².
+
+The diagram shows a 4-pod fat-tree. Each pod has two layers of 2 switches each. The first layer of switches is connected to the hosts. The second layer of switches is connected to the core switches. The core switches are connected to each other in a full mesh.
+ Fat-tree
+- Each core switch has one port to each pod.
+- Each edge switch has k/2 hosts. k/2 edge switches in each of k pods. So a k-pod fat-tree can support k³/4 hosts.
+
+The diagram shows a fat-tree network topology. A fat-tree network is a type of data center network that is designed to provide high scalability and performance. The network is made up of multiple layers of switches, with each layer connecting to the next layer in a tree-like structure. The top layer of the network is made up of core switches, which are connected to each other in a full mesh. The next layer down is made up of aggregation switches, which are connected to the core switches in a star topology. The bottom layer of the network is made up of edge switches, which are connected to the aggregation switches in a tree topology.
+
+The fat-tree network topology is designed to provide high scalability and performance by distributing traffic across multiple paths. This helps to reduce congestion and improve the overall performance of the network. The network is also designed to be fault-tolerant, so that if one or more switches fail, the network can still continue to operate.
+ Advantages of fat-tree
+
+In traditional hierarchical networks, switches in aggregation and core layers need to be more powerful and have more ports per device. High-end, high port density switches are extremely expensive.
+
+Scale out vs. scale up
+
+Fat-tree: (5k2/4) k-port switches support k^3/4 hosts
+
+48-port 1GigE switches: 27,648 hosts using 2,880 switches.
+ Advantages of fat-tree
+- Rearrangeably non-blocking: for arbitrary communication patterns, there is some set of paths that will saturate all the bandwidth available to the end hosts in the topology.
+- Hierarchical topologies are not rearrangeably non-blocking.
+ Traffic characteristics
+
+The characteristics of traffic can be described in terms of volume, speed, density, and composition.
+
+Volume is the number of vehicles that pass a given point on a roadway in a given time period. Speed is the average speed of vehicles on a roadway. Density is the number of vehicles per unit length of roadway. Composition is the percentage of different types of vehicles on a roadway.
+
+Volume, speed, density, and composition are related to each other in a number of ways. For example, as volume increases, speed and density also increase. As density increases, speed decreases. And as the composition of traffic changes, so too can the other characteristics.
+
+Traffic characteristics are important because they can be used to improve traffic flow and safety. By understanding the characteristics of traffic, engineers can design roadways that are more efficient and safer.
+ Flow size, Facebook
+
+(a) Web servers
+(c) Hadoop
+
+> Mice vs. elephants: many mice flows, a few elephants carrying most of the bytes -> Routing elephants is important
+
+A. Roy et al. Inside the social network's (datacenter) network. In Proc. of ACM SIGCOMM, 2015.
+ Theseus: Shannon's Mouse-in-Maze
+
+Theseus (1952) AT&T Bell Labs
+Video demo by Shannon: https://www.youtube.com/watch?v=nS0luYZd4fs
+https://time.com/4311107/claude-shannon-100-years/
+ Theseus: Shannon's Mouse-in-Maze
+
+A life-sized mouse robot in 1952... The Maze solves the Mouse!
+
+http://cyberneticzoo.com/mazesolvers/1952-%E2%80%93-theseus-maze-solving-mouse-%E2%80%93-claude-shannon-american/
+ Theseus: Shannon's Mouse-in-Maze
+
+The image shows a maze with a mouse in it. The mouse is trying to find its way through the maze. There are four different starting points in the maze. The mouse learns by experience and trial-and-error. It remembers its route such that when placed in a new spot that was on the previous route, Theseus can ignore blind alleys and navigate correctly to the endpoint. When the maze topology changes, Theseus forgets outdated knowledge, relearns, and incorporates new knowledge into existing ones in memory.
+This Shannon's maze opens the door to new results in many fields such as graph theory (breadth-first-search) and AI applications (e.g., the Internet).
+ Theseus: Shannon’s Mouse-in-Maze
+
+The trail of Theseus is highlighted by trial-and-error means. It does not necessarily choose the best way if there are two different ways to reach the target, although choosing the shorter one is highly probable.
+
+[Image of a maze with a mouse in it]
+
+Fig. 6—Shannon’s 1952 Maze
+http://cyberneticzoo.com/mazesolvers/1952-%E2%80%93-theseus-maze-solving-mouse-%E2%80%93-claude-shannon-american/
+ Our Internet is a-Maze-ing
+
+Another that I learned was that in building self-learning systems it is equally important to forget, as it is to learn. For example, when you destroy parts of a network, the network must quickly adapt to routing traffic entirely differently. I found that by using two different time constants, one for learning and the other for forgetting provided the balanced properties desired. And, I found it helpful to view the network as an organism, as it had many of the characteristics of an organism as it responds to overloads, and sub-system failures.
+
+Dynamic Routing, 1961
+
+Baran:
+I first thought that it might be possible to build a system capable of smart routing through the network after reading about Shannon's mouse through a maze mechanism. But instead of remembering only a single path, I wanted a scheme that not only remembered, but also knew when to forget, if the network was chopped up. It is interesting to note that the early simulation showed that after the hypothetical network was 50% instantly destroyed, that the surviving pieces of the network reconstituted themselves within a half a second of real-world time and again worked efficiently in handling the packet flow.
+
+How would the packets know how to do that?
+
+Baran:
+Through the use of a very simple routing algorithm. Imagine that you are a hypothetical postman and mail comes in from different directions, North, South, East, and West. You, the postman would look at the cancellation dates on the
+
+Paul Baran: Father of Packet Switching
+
+Packet switching is the method by which the Internet works, as it features delivery of packets of data between devices over a shared network.
+
+https://ethw.org/Oral-History:Paul_Baran

@@ -1,0 +1,20 @@
+Lecture 3: Virtualization in Cloud
+
+How to virtualize a CPU?
+- Essentially, the CPU doesn't differentiate between the guest OS and the host OS.
+- Allocate a portion of RAM for PC to point to.
+- Unprivileged code, running in userspace, is safe to execute whether from the guest OS or the host OS.
+- What about privileged code?
+Currently, there are 3 implementations:
+- Full virtualization
+- Para-virtualization
+- Hardware-assisted virtualization
+
+Types of CPU virtualization
+CPU virtualization allows multiple operating systems to run on a single physical machine. There are two main types of CPU virtualization: full virtualization and para-virtualization.
+Full virtualization creates a completely isolated virtual machine environment for each operating system. This means that each operating system has its own copy of the CPU, memory, and I/O devices. This type of virtualization is more secure and reliable, but it also has higher performance overhead.
+Para-virtualization requires the guest operating system to be aware of the virtualization layer. This allows the virtualization layer to make optimizations that improve performance. However, para-virtualization is less secure than full virtualization because the guest operating system has direct access to the virtualization layer.
+
+There are also two main types of hypervisors: Type 1 and Type 2.
+A Type 1 hypervisor, also known as a bare-metal hypervisor, runs directly on the hardware. This type of hypervisor has the lowest performance overhead, but it is also more difficult to install and configure.
+A Type 2 hypervisor, also known as a hosted hypervisor, runs on top of an existing operating system. This type of hypervisor is easier to install and configure, but it has higher performance overhead.

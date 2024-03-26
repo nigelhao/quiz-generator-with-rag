@@ -1,0 +1,17 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+IaaS
+Infrastructure-as-a-Service (IaaS)
+Providers give you the computing infrastructure made available as a service. You get "bare-metal" machines.
+Providers manage a large pool of resources (i.e., servers), and use virtualization to dynamically allocate servers
+Customers "rent" these physical resources to customize their own infrastructure
+You operate the Operating System (OS) and all the software on the servers by yourself
+Virtualization and Virtual Machines
+This diagram illustrates the difference between traditional and virtualized environments. In a traditional environment, each physical server runs a single operating system and application. This can be inefficient, as it often leads to underutilized servers. In a virtualized environment, a single physical server can run multiple virtual machines, each with its own operating system and application. This allows for more efficient use of resources and can help to improve scalability and agility.
+In a traditional environment, each physical server is dedicated to a single application or service. This can be inefficient, as it often leads to underutilized servers. For example, a web server may only be used during peak hours, while a database server may only be used during business hours. This means that both servers are idle for a significant portion of the day.
+In a virtualized environment, a single physical server can run multiple virtual machines, each with its own operating system and application. This allows for more efficient use of resources, as each virtual machine can be sized to meet the specific needs of the application it is running. For example, a web server can be allocated more resources during peak hours, while a database server can be allocated more resources during business hours. This allows both servers to be used more efficiently, which can save money.
+Virtualization can also help to improve scalability and agility. In a traditional environment, adding new servers can be a time-consuming and expensive process. In a virtualized environment, new virtual machines can be provisioned quickly and easily. This allows businesses to scale their IT infrastructure quickly and easily to meet changing needs.
+Virtualization is a powerful technology that can help businesses to improve efficiency, scalability, and agility. By virtualizing their IT infrastructure, businesses can save money, improve performance, and respond more quickly to changing needs.
+Netflix rents thousands of servers, terabytes of storage from Amazon Web Services (AWS)
+Develop and deploy specialized software for transcoding, storage, streaming, analytics, etc. on top of service delivery
+Able to support tens of millions of connected devices used by 40+ million users from 40+ countries

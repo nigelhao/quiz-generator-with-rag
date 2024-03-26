@@ -1,0 +1,11 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+OSI reference model
+The OSI model is a layered architecture for computer networks. It was developed by the International Organization for Standardization (ISO) in the 1980s. The OSI model divides the network into seven layers, each of which has a specific function. The layers are:
+- Physical layer: The physical layer is the lowest layer of the OSI model. It is responsible for the physical connection between two devices. This layer defines the electrical, mechanical, and functional specifications for the physical connection.
+- Data link layer: The data link layer is responsible for ensuring that data is transmitted and received correctly between two devices. This layer defines the protocols for error detection and correction, flow control, and addressing.
+- Network layer: The network layer is responsible for routing data between two devices. This layer defines the protocols for determining the best path for data to take and for ensuring that data is delivered to the correct destination.
+- Transport layer: The transport layer is responsible for ensuring that data is delivered reliably between two devices. This layer defines the protocols for error recovery, flow control, and congestion control.
+- Session layer: The session layer is responsible for establishing and maintaining a connection between two devices. This layer defines the protocols for opening and closing connections and for managing the flow of data between devices.
+- Presentation layer: The presentation layer is responsible for formatting data so that it can be understood by the application layer. This layer defines the protocols for data compression, encryption, and formatting.
+- Application layer: The application layer is the highest layer of the OSI model. It is responsible for providing the user with access to network services. This layer defines the protocols for applications such as email, file transfer, and web browsing.

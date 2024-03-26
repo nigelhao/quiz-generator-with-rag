@@ -1,0 +1,56 @@
+Lecture 7: PageRank Algorithm
+
+Google search: anchor text
+PageRank
+Anchor text
+
+Google uses:
+- In anchor text?
+- In URL?
+- Title
+- Meta tags
+- <h> level
+- Rel font size
+- Capitalization
+- Word pos in doc
+- Secret ingredients
+... and weighs them according to a secret recipe
+The diagram shows how Google search uses anchor text.
+The left side of the diagram shows the PageRank algorithm, which is used to rank web pages based on their importance. The right side of the diagram shows how anchor text is used to determine the relevance of a web page to a particular search query.
+The arrows between the two sides of the diagram show how the PageRank algorithm and anchor text are used together to determine the ranking of a web page.
+
+Link Structure of the Web
+- 150 million web pages - 1.7 billion links
+A - Backlinks and Forward links:
+- A and B are C's backlinks
+- C is A and B's forward link
+B
+Intuitively, a webpage is important if it has a lot of backlinks.
+
+---
+
+A Simple Version of PageRank
+R(u) = c
+u: a web page
+B_u: the set of u's backlinks
+N_v: the number of forward links of page v
+c: the normalization factor to make R(1) + ... + R(T) = 1 where there are T pages in total
+
+An example of Simplified PageRank
+In the above diagram, there are three web pages: Yahoo, Amazon, and Microsoft. The arrows between the pages indicate the links between them. The numbers on the arrows indicate the probability of a user clicking on the link. For example, the arrow from Yahoo to Amazon has a probability of 1/2, which means that if a user is on the Yahoo page, there is a 50% chance that they will click on the link to Amazon.
+The matrix M on the right side of the diagram represents the link structure of the web pages. The rows and columns of the matrix correspond to the web pages, and the elements of the matrix represent the probabilities of the links between the pages. For example, the element M(1, 2) represents the probability of a user clicking on the link from Yahoo to Amazon, which is 1/2.
+The vector r on the right side of the diagram represents the PageRank of the web pages. The PageRank of a web page is a measure of its importance, and it is calculated by taking into account the links to the page from other pages. The PageRank vector is calculated by multiplying the link structure matrix M by the PageRank vector r.
+In the first iteration, the PageRank vector is initialized to 1/3 for each page. After the first iteration, the PageRank vector is updated to [1/3, 1/3, 1/3]. This means that after the first iteration, each page has a PageRank of 1/3.
+
+---
+
+A Problem with Simplified PageRank
+A loop:
+During each iteration, the loop accumulates rank but never distributes rank to other pages!
+In the above diagram, there are three pages A, B, and C. Each page has a certain amount of rank, represented by the number inside the page. The arrow from page A to page B indicates that page A is linking to page B.
+The problem with the simplified PageRank algorithm is that it does not take into account the fact that pages can link to themselves. This means that pages that are in a loop can accumulate rank indefinitely, while pages that are not in a loop will never be able to accumulate any rank.
+Consider the following scenario. There are three companies: Yahoo, Amazon, and Microsoft. Each company has a certain market share. The market share of Yahoo is 1/2, the market share of Amazon is 1/3, and the market share of Microsoft is 1/6.
+Now, let's say that Yahoo and Amazon decide to merge. The new company will have a market share of 1/2 + 1/3 = 5/6. Microsoft's market share will remain the same at 1/6.
+The problem is that the market share of the new company is greater than the sum of the market shares of the two companies that merged. This is because the merger creates a new entity that is more competitive than either of the two companies were on their own.
+This problem is known as the "winner's curse." It occurs when a company acquires another company and the combined company ends up with a market share that is greater than the sum of the market shares of the two companies that merged.
+The winner's curse can be a problem for investors because it can lead to them paying too much for a company. If a company's market share is greater than the sum of the market shares of the two companies that merged, then it is likely that the company is overvalued.

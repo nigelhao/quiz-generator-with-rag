@@ -1,0 +1,1246 @@
+ Nanyang Technological University, Singapore
+
+CE/CZ4052 Cloud Computing
+
+Pagerank Algorithm
+
+Dr. Tan, Chee Wei
+Email: cheewei.tan@ntu.edu.sg
+Office: N4-02c-104
+ How does Google rank the Web?
+
+Acknowledgement:
+https://www.cazencott.info/dotclear/public/lectures/lsml19/2019-03-28_lsml19_systems.pdf
+
+The diagram shows how Google ranks the web. 
+
+At a high level, Google uses a crawler to discover web pages, and then uses a variety of factors to rank them, including the number and quality of links to the page, the content of the page, and the user's location.
+
+The diagram shows the different steps involved in Google's ranking process. 
+
+1. Crawling: Google's crawler discovers web pages by following links from other web pages. 
+2. Indexing: Google stores the web pages it discovers in its index. 
+3. Ranking: Google uses a variety of factors to rank web pages, including the number and quality of links to the page, the content of the page, and the user's location. 
+4. Serving: Google serves the most relevant web pages to users based on their search queries.
+ Search Engine Technologies
+
+Computer Science is ...
+
+A screenshot of a Google search. The search bar contains the query "computer science is". The suggested results are "computer science is hard", "computer science is so hard", "computer science is the study of", and "computer science is boring".
+ Search Engine Technologies
+
+Definition of google in English
+
+google
+Pronunciation: /'gu:gl/
+Translate google | into French | into Italian | into Spanish
+
+verb
+[with object]
+search for information about (someone or something) on the Internet using the search engine Google:
+on Sunday she googled an ex-boyfriend
+[no object]:
+I googled for a cheap hotel/flight deal
+
+Derivatives
+googleable
+(also googlable) adjective
+ The History of PageRank
+
+- PageRank was developed by Larry Page (hence the name Page-Rank) and Sergey Brin at Stanford in 1999.
+- Shortly after, Page and Brin founded Google.
+- Challenges: Web contains many sources of information including spam.
+- What is the best answer to a web query "google" in 1998?
+- A good web search algorithm enables trust
+- Use links as votes to rank pages
+- Are all links equally important?
+- Links from important pages count more.
+- This question is recursive.
+ The PageRank in Search Engines (1997)
+
+Location: http://walrus.stanford.edu/diglib/pub/people.html
+
+What's New?
+What's Cool?
+Destinations Net Search People Software
+
+Stanford University
+
+Participants
+
+The Database group
+Prof. Hector Garcia-Molina, Misturu Akizawa (Visiting Scholar from Hitachi), Edward Chang, Chen-Chuan K. Chang, Arturo Crespo, Luis Gravano, Matt Jacobsen, Steven Ketchpel, Yusuke Mishina (Visiting Scholar from Hitachi), Narayanan Shivakumar
+
+The Project on People Computers and Design
+Prof. Terry Winograd, Michelle Wang Baldonado, Steve Cousins, Mauria Finley, Frankie James, Larry Page- Christian P. Rohren, Martin Röscheisen, Alan Steremberg, Trace Wax
+
+The Nobots group
+Prof. Daphne Kollen, Prof. Yoav Shoham, Marko Balabanovic, Avi Pfeffen, Mehran Sahami, Katsumi Tanaka (Visiting Scholar)
+
+The Testbed group
+Scott Hassan, Andy Kacsman, Andreas Paepcke, Tom Schirmer
+
+Stanford Libraries and Academic Information Resources
+Rebecca Lasher, Vicky Reich
+
+Engineering-Economic Systems
+Tim Stanley
+
+Alumni from the Stanford Digital Libraries Project
+Perry Arnold, Kenichi Kamiya, James Kittock, Christian Mogensen, Tak Yan
+ Searching with PageRank (1997)
+
+Query: university
+11 Results Returned
+Showing Results From 0 to 10
+
+Stanford University Homepage
+http://www.stanford.edu/
+Stanford University: Portfolio Collection
+http://www.stanford.edu/home/administration/portfolio.html
+University of Illinois at Urbana-Champaign
+http://www.uiuc.edu
+Indiana University
+http://www.indiana..edw
+University of California, Irvine
+http://www.uci.edw
+University of Minnesota
+http://www.umn.edw
+Iowa State University Homepage
+http://www.iastate.edu/
+The University of Michigan
+http://www.umich.edw
+Mississippi State University
+http://www.msstate.edu/
+Northwestern University: NUInfo
+http://www.nwu.edw
+next 10
+
+Optical Physics at the University of Oregon
+Oregon Center for Optics in Science and Technology. Department of
+Physics, University of Oregon, Eugene OR 97403. Research Groups:
+Carmichael Group....
+http://optics.uoregon.edu-size 1K-16 Dec 1995
+
+Carnegie Mellon University - Campus Networking
+Departments. Data Communications. Data Communications is
+responsible for installing and maintaining all on campus networking
+equipment and all of...
+http://www.netcom.edu-size 4K-19 Aug 1995
+
+Wesleyan University Computer Science Group Home Page
+Computer Science Group. Wesleyan University. Welcome to the home
+page of the Computer Science Group at Wesleyan University. We are
+administratively within.
+http://www.wesleyan.edu-size 2K-15 Apr 1995
+
+Keio University Shonan Fujisawa Campus (SFC)
+B$3$N%Z!EFnF#B19%-9%c9%89%Q989 (B(WWW $B9%
+$BCm0U=q$- (B $B$rFI$s$G$/$@$5$$!# (B. Nihongo | English.
+SFC $B>pJs (B. [ $B%a9%G%#%"%;%s%?!*...
+http://www.sfc.keio.ac.jp-size 1K-5 Feb 1997
+
+School of Chemistry, University of Sydney
+The School of Chemistry. School of Chemistry, University of Sydney,
+NSW 2006 Australia International Phone: +61-2-9351-4504 Fax:
++61-2-9351-3329 Australia.
+http://www.chem.usyd.edu.au-size 4K-35 Feb 1997
+
+Mankato State University
+The Campus Athletics, Campus Tour, Bookstore, Maps, Current
+Events... Admission & Registration Admissions, Financial Aid,
+Registrar's, Graduate...
+http://www.mnsu.edu-size 3K-27 Nov 1995
+
+St. Ambrose University
+Main Index: Academic Departments. Administrative Services. Campus
+News. Computing Services. Galvin Fine Arts Center. Internet
+Connections. Library...
+http://www.sau.edu-size 3K-4 Feb 1997
+
+University of Washington ECSEL Projects
+ The PageRank in Search Engines (2017)
+
+Find Website Traffic, Statistics, and Analytics
+
+Enter a website. Example: site.com
+Find
+
+Engagement
+Daily Time on Site
+Bounce Rate
+1:30 mins
+15.7%
+Search Traffic
+Search Visits
+25.7%
+
+Popularity
+Global Rank
+US Rank
+2,346
+1,354
+Unique Visitors
+Monthly Unique Visitors
+2,354,567
+Competitor Site
+Monthly
+12,85
+Audience Geography
+Top Countries
+United States
+
+Increase Website Traffic Using Competitive Analytics
+Alexa is more than just the traffic rank you know and love from its early days.
+Checking website traffic and rank is the basis for uncovering actionable ideas to grow your business.
+
+https://www.alexa.com/siteinfo
+https://moonsy.com/alexa_rank/
+
+Guess, who has top ranking, i.e., number 1?
+ ## Link Analysis
+* Consider links as votes of confidence in a page
+* A hyperlink is the open Web's version of a "Like" button... even if the page is linked in a negative way.
+ Link Analysis
+
+So if we just count the number of inlinks a web-page receives we know its importance, right?
+
+The diagram shows a person standing next to a red box with a white X. The person is looking at the box. The text on the box says "Link Analysis".
+ Link Spamming
+[Image of a website with the words 'semanticweb.com' and 'The Voice of Semantic Technology Business' at the top]
+Home Events Media Industry Verticals Answers
+Questions Tags Users Badges
+[Image of a search bar]
+[deleted] Kala Jadu Specialist +9196
+black magic specialist baba ji call now +919610897260
+http://www.blackmagicspecialist.net.in
+[Image of a thumbs up icon]
+1
+java
+edit close undelete | more
+ PageRank
+
+The diagram shows the PageRank algorithm, which is used by Google to rank web pages. PageRank is a link analysis algorithm that assigns a numerical value to each page on the web. The value is based on the number and quality of links to the page. Pages with a high PageRank are considered to be more important and are more likely to appear at the top of search results.
+
+The PageRank algorithm was developed by Larry Page and Sergey Brin, the founders of Google. The algorithm is named after Page, who wrote his Ph.D. thesis on the topic.
+
+PageRank is a complex algorithm that takes into account a number of factors when calculating the PageRank of a page. These factors include:
+
+- The number of links to the page
+- The quality of the links to the page
+- The PageRank of the pages that link to the page
+
+The PageRank algorithm is constantly being updated to improve its accuracy. Google does not release the exact details of the algorithm, but it has published a number of papers that describe the general principles behind it.
+
+PageRank is a powerful tool that has helped to make Google the most popular search engine in the world. The algorithm is constantly being improved, and it is likely to continue to play an important role in the way that we search for information on the web.
+ PageRank
+- Not just a count of inlinks
+- A link from a more important page is more important
+- A link from a page with fewer links is more important
+- A page with lots of inlinks from important pages (which have few outlinks) is more important
+ PageRank Model
+The Web: a directed graph
+
+G = V E
+Vertices
+(pages)
+Edges
+(links)
+
+Which is the most
+“important" vertex?
+
+V = {a, b, c, d, e, f }
+E = {(a, e), (a, f), (b, d), (c, b), (d, a), (d, c), (d, f), (e, b), (e, d), (e, f), (f,a)}
+
+The diagram shows a directed graph with 6 vertices and 11 edges. The vertices are labeled a, b, c, d, e, and f. The edges are directed from one vertex to another, and they are labeled with a weight. The weight of an edge represents the strength of the connection between the two vertices.
+
+The most important vertex in the graph is vertex a. This is because vertex a has the highest PageRank score. The PageRank score of a vertex is a measure of its importance in the graph. It is calculated by taking into account the number and quality of the links to the vertex.
+ PageRank: Random Surfer Model
+
+= someone surfing the web, clicking links randomly
+
+* What is the probability of being at page x after n hops?
+
+The diagram shows a web graph with 6 nodes labeled a, b, c, d, e, and f. The nodes are connected by directed edges. The surfer starts at node e and randomly surfs the web by clicking on links. The probability of the surfer being at node x after n hops is given by the following formula:
+
+P(x, n) = (1-d)/N + d * sum(P(y, n-1) * L(y, x)) for all y in N(x)
+
+where:
+
+N is the total number of nodes in the graph
+d is a damping factor that controls the probability of the surfer continuing to surf the web or jumping to a random page
+L(y, x) is the probability of the surfer clicking on the link from node y to node x
+The damping factor d is typically set to 0.85. This means that the surfer has an 85% chance of continuing to surf the web and a 15% chance of jumping to a random page.
+
+The probability of the surfer being at node x after n hops can be calculated using the following steps:
+
+1. Initialize the vector P(x, 0) to 1/N for all x in N.
+2. For each n from 1 to n, update the vector P(x, n) using the formula given above.
+3. Return the vector P(x, n).
+
+The following table shows the probability of the surfer being at each node after 1, 2, and 3 hops:
+
+| Node | P(x, 1) | P(x, 2) | P(x, 3) |
+|---|---|---|---|
+| a | 0.167 | 0.169 | 0.170 |
+| b | 0.167 | 0.169 | 0.170 |
+| c | 0.167 | 0.169 | 0.170 |
+| d | 0.167 | 0.169 | 0.170 |
+| e | 0.167 | 0.169 | 0.170 |
+| f | 0.167 | 0.169 | 0.170 |
+
+As you can see from the table, the probability of the surfer being at any particular node after n hops is roughly the same. This is because the damping factor d causes the surfer to randomly jump to different pages, which prevents the surfer from getting stuck at any particular node.
+ PageRank: Random Surfer Model
+
+Imagine a surfer on the web, randomly clicking links. What is the probability that the surfer will be at a particular page after n hops? We assume that the surfer starts at a random page.
+
+This is the PageRank model, a way of ranking web pages based on their importance. The more important a page is, the higher its PageRank.
+
+The PageRank of a page is calculated by taking the sum of the PageRanks of the pages that link to it, divided by the number of links on those pages.
+
+For example, in the diagram above, the PageRank of page A is calculated by taking the sum of the PageRanks of pages B, C, and D, divided by the number of links on those pages.
+
+The PageRank model is a powerful tool for ranking web pages. It is used by Google and other search engines to determine the order in which pages are displayed in search results.
+ PageRank: Random Surfer Model
+
+- Imagine a surfer on the web, randomly clicking links.
+- What is the probability of the surfer being at a particular page after n hops?
+- Assume that the surfer starts at a random page.
+- We can model this process using a directed graph, where each node represents a web page and each edge represents a link between two pages.
+- The PageRank of a page is a measure of its importance, and it is calculated by iteratively applying the following formula:
+
+```
+PR(x) = (1-d) + d * (PR(y)/C(y) + PR(z)/C(z) + ...)
+```
+
+- Where:
+    - PR(x) is the PageRank of page x
+    - d is a damping factor (usually set to 0.85)
+    - C(y) is the number of outgoing links from page y
+    - PR(y) is the PageRank of page y
+
+- The PageRank of a page is a measure of its importance, and it is calculated by iteratively applying the following formula:
+
+```
+PR(x) = (1-d) + d * (PR(y)/C(y) + PR(z)/C(z) + ...)
+```
+
+- Where:
+    - PR(x) is the PageRank of page x
+    - d is a damping factor (usually set to 0.85)
+    - C(y) is the number of outgoing links from page y
+    - PR(y) is the PageRank of page y
+
+- This formula takes into account the number of links to a page, as well as the PageRanks of the pages that link to it.
+- The PageRank algorithm can be used to rank web pages in order of their importance, and it is used by Google to rank search results.
+ PageRank: Random Surfer Model
+
+Imagine a surfer on the web, randomly clicking links. What is the probability that the surfer will be at a particular page after n hops? We can model this using a random walk on a graph, where the nodes are the web pages and the edges are the links between them. The initial state of the surfer is that they are equally likely to be at any node. At each step, the surfer randomly chooses one of the outgoing links from their current page and follows it. 
+
+The PageRank algorithm is an iterative algorithm that computes the probability that the surfer will be at each page after n hops. The algorithm starts by initializing the PageRank of each page to 1/n. At each iteration, the PageRank of each page is updated to be the sum of the PageRanks of the pages that link to it, divided by the number of outgoing links from those pages. 
+
+The PageRank algorithm can be used to rank web pages based on their importance. The pages with the highest PageRanks are the most likely to be visited by a random surfer.
+
+If the surfer reaches a page without any outgoing links, they randomly jump to another page.
+ PageRank: Random Surfer Model
+
+Imagine a person surfing the web randomly, clicking links without any particular destination in mind. This is the basic idea behind the PageRank algorithm, which is used to rank web pages based on their importance.
+
+The PageRank of a web page is determined by two factors:
+1. The number of links to the page from other pages.
+2. The PageRank of the pages that link to the page.
+
+The PageRank algorithm works by iteratively updating the PageRank of each page until the PageRanks converge. The initial PageRank of each page is set to 1/N, where N is the total number of pages in the web graph.
+
+At each iteration, the PageRank of a page is updated based on the PageRanks of the pages that link to it. The update rule is as follows:
+
+```
+PR(x) = (1-d) + d * (PR(A)/C(A) + PR(B)/C(B) + ...)
+```
+
+where:
+- PR(x) is the PageRank of page x
+- d is a damping factor that is typically set to 0.85
+- C(A) is the number of links from page A
+- PR(A) is the PageRank of page A
+
+The damping factor d is used to prevent the PageRank of a page from becoming too high simply because it has a lot of links from low-quality pages.
+
+The PageRank algorithm can be used to rank web pages based on their importance. The pages with the highest PageRanks are the most important pages in the web graph.
+
+The PageRank algorithm is a powerful tool that can be used to improve the quality of search results. By ranking web pages based on their importance, search engines can help users find the most relevant and useful information.
+ PageRank: Random Surfer Model
+
+Imagine a surfer on the web, randomly clicking links.
+
+What is the probability of being at a page after x hops?
+
+The initial state is that the surfer is equally likely to start at any node.
+
+PageRank is applied iteratively for each hop: the score indicates the probability of being at that page after than many hops.
+
+If the surfer reaches a page without links, the surfer randomly jumps to another page.
+
+What would happen with g and i over time?
+ PageRank: Random Surfer Model
+
+- Imagine a surfer on the web, randomly clicking links.
+- What is the probability of the surfer being at a particular web page after n hops?
+- Assume that the surfer starts at a random web page.
+- We can model this process using a random walk. 
+- At each step, the surfer randomly chooses a link from the current web page and follows it. 
+- We can represent the web as a graph, where each web page is a node and each link is an edge. 
+- The probability of the surfer being at a particular web page at a given time is proportional to the number of random walks that pass through that web page.
+- This probability is called the PageRank of the web page.
+- The PageRank of a web page is a measure of its importance. 
+- Web pages with a high PageRank are more likely to be visited by a random surfer.
+- The PageRank of a web page can be calculated using the following formula:
+
+```
+PR(x) = (1-d) + d * (PR(x1)/C(x1) + PR(x2)/C(x2) + ... + PR(xn)/C(xn))
+```
+
+- Where:
+ - PR(x) is the PageRank of web page x
+ - d is a damping factor that controls the probability of the surfer continuing to surf or jumping to a random page.
+ - C(x) is the number of links on web page x
+ - PR(x1), PR(x2), ..., PR(xn) are the PageRanks of the web pages that link to web page x
+ Google search: anchor text
+
+Pagerank
+Anchor text
+
+Google uses:
+- In anchor text?
+- In URL?
+- Title
+- Meta tags
+- <h> level
+- Rel font size
+- Capitalization
+- Word pos in doc
+- Secret ingredients
+
+... and weighs them according to a secret recipe
+ Link Structure of the Web
+
+- 150 million web pages - 1.7 billion links
+
+A - B - C
+
+Backlinks and Forward links:
+- A and B are C's backlinks
+- C is A and B's forward link
+
+Intuitively, a webpage is important if it has a lot of backlinks.
+ A Simple Version of PageRank
+
+R(u) = c 
+∑ 
+R(v)
+Νυ
+v∈Bu
+
+- u: a web page
+- Bu: the set of u's backlinks
+- Nv: the number of forward links of page v
+- c: the normalization factor to make R(1) + ... + R(T) = 1 where there are T pages in total
+ An example of Simplified PageRank
+
+In the above diagram, there are three web pages: Yahoo, Amazon, and Microsoft. The arrows between the pages indicate the links between them. The numbers on the arrows indicate the probability of a user clicking on the link. For example, the arrow from Yahoo to Amazon has a probability of 1/2, which means that if a user is on the Yahoo page, there is a 50% chance that they will click on the link to the Amazon page.
+
+The matrix M on the right side of the diagram represents the link structure of the web pages. The rows and columns of the matrix correspond to the web pages, and the elements of the matrix represent the probabilities of the links between the pages. For example, the element M1,2 represents the probability of a user clicking on the link from Yahoo to Amazon, which is 1/2.
+
+The vector r on the left side of the diagram represents the PageRank of the web pages. The PageRank of a web page is a measure of its importance, and it is calculated by taking into account the links to the page from other pages. The PageRank vector is calculated by multiplying the link structure matrix M by the PageRank vector r.
+
+In the first iteration, the PageRank vector is initialized to 1/3 for each page. This means that each page is considered to be equally important initially. After the first iteration, the PageRank vector is updated to [1/3, 1/3, 1/3]. This means that the PageRank of each page has changed, and the pages are now ranked in order of importance.
+
+The PageRank algorithm is a powerful tool for ranking web pages. It is used by search engines to determine the relevance of web pages to a user's query. The PageRank algorithm is also used by webmasters to improve the ranking of their websites in search engine results.
+ An example of Simplified PageRank
+
+In the above diagram, there are three web pages: Yahoo, Amazon, and Microsoft. The arrows between the pages indicate the links between them. The numbers on the arrows indicate the probability of a user clicking on the link. For example, the arrow from Yahoo to Amazon has a probability of 1/2, which means that if a user is on the Yahoo page, there is a 50% chance that they will click on the link to Amazon.
+
+The matrix M on the right side of the diagram represents the link structure of the web pages. The rows and columns of the matrix correspond to the web pages, and the elements of the matrix represent the probabilities of the links. For example, the element M1,2 represents the probability of a user clicking on the link from Yahoo to Amazon, which is 1/2.
+
+The PageRank algorithm calculates a score for each web page that indicates its importance. The score is calculated by multiplying the link structure matrix by itself repeatedly. In this example, the PageRank scores for the three web pages after the first iteration are:
+
+Yahoo: 1/2
+Amazon: 1/4
+Microsoft: 1/4
+
+After the second iteration, the PageRank scores are:
+
+Yahoo: 5/12
+Amazon: 1/3
+Microsoft: 1/6
+
+The PageRank scores can be used to rank the web pages in order of their importance. In this example, the most important page is Yahoo, followed by Amazon and Microsoft.
+ An example of Simplified PageRank
+
+The diagram shows a simplified version of the PageRank algorithm. 
+- There are three web pages: Yahoo, Amazon, and Microsoft. 
+- The arrows between the pages represent links. 
+- The numbers on the arrows represent the probability that a user will click on the link. 
+- For example, the arrow from Yahoo to Amazon has a probability of 1/2, which means that if a user is on the Yahoo page, there is a 50% chance that they will click on the link to Amazon.
+
+- The matrix M represents the link structure of the web pages. 
+- The elements of the matrix M are the probabilities that a user will click on a link. 
+- For example, the element M1,2 is the probability that a user will click on the link from Yahoo to Amazon.
+
+- The vector v represents the PageRank of the web pages. 
+- The elements of the vector v are the probabilities that a user will be on a web page. 
+- For example, the element v1 is the probability that a user will be on the Yahoo page.
+
+- The equation v = Mv represents the PageRank update equation. 
+- This equation can be used to calculate the PageRank of the web pages.
+
+The diagram also shows the convergence of the PageRank algorithm. 
+- After a few iterations, the PageRank values of the web pages converge to a stable state. 
+- This means that the probabilities that a user will be on a web page no longer change.
+ A Problem with Simplified PageRank
+
+A loop:
+
+During each iteration, the loop accumulates rank but never distributes rank to other pages!
+
+In the above diagram, there are three pages A, B, and C. Each page has a certain amount of rank, represented by the number inside the page. The arrow from page A to page B indicates that page A is linking to page B.
+
+The problem with the simplified PageRank algorithm is that it does not take into account the fact that pages can link to themselves. This means that pages that are in a loop can accumulate rank indefinitely, while pages that are not in a loop will never be able to accumulate any rank.
+ An example of the problem
+
+In the above diagram, there are three companies: Yahoo, Amazon, and Microsoft. The arrows between the companies represent the flow of users between the companies. For example, the arrow from Yahoo to Amazon represents the fact that 1/2 of the users who visit Yahoo also visit Amazon. Similarly, the arrow from Amazon to Microsoft represents the fact that 1/2 of the users who visit Amazon also visit Microsoft.
+
+The matrix M represents the transition probabilities between the companies. For example, the entry M[0, 0] represents the probability that a user who visits Yahoo will also visit Yahoo, which is 1/2. Similarly, the entry M[0, 1] represents the probability that a user who visits Yahoo will also visit Amazon, which is 1/2.
+
+The vector v represents the initial distribution of users across the companies. For example, the entry v[0] represents the probability that a user will start their visit at Yahoo, which is 1/3. Similarly, the entry v[1] represents the probability that a user will start their visit at Amazon, which is 1/3.
+
+The goal of the problem is to find the stationary distribution of users across the companies. This is the distribution of users that will be reached after a long period of time, regardless of the initial distribution of users.
+
+To find the stationary distribution, we can use the following equation:
+
+```
+v = vM
+```
+
+where v is the stationary distribution and M is the transition probability matrix.
+
+In this example, the stationary distribution is:
+
+```
+v = [1/6, 1/2, 1/3]
+```
+
+This means that in the long run, 1/6 of the users will be visiting Yahoo, 1/2 of the users will be visiting Amazon, and 1/3 of the users will be visiting Microsoft.
+ An example of the problem
+
+In the diagram, there are three companies: Yahoo, Amazon, and Microsoft. The arrows between the companies represent the flow of users between the companies. For example, the arrow from Yahoo to Amazon represents the flow of users from Yahoo to Amazon. The numbers on the arrows represent the probability of a user flowing from one company to another. For example, the number 1/2 on the arrow from Yahoo to Amazon represents the probability of a user flowing from Yahoo to Amazon.
+
+The matrix M represents the flow of users between the companies. The rows of the matrix represent the companies, and the columns of the matrix represent the companies. The element M(i, j) represents the probability of a user flowing from company i to company j. For example, the element M(1, 2) represents the probability of a user flowing from Yahoo to Amazon.
+
+The vector y represents the probability of a user being at each company. The element y(i) represents the probability of a user being at company i. For example, the element y(1) represents the probability of a user being at Yahoo.
+
+The vector x represents the probability of a user flowing from each company. The element x(i) represents the probability of a user flowing from company i. For example, the element x(1) represents the probability of a user flowing from Yahoo.
+
+The equation y = Mx represents the flow of users between the companies. The element y(i) represents the probability of a user being at company i, and the element x(i) represents the probability of a user flowing from company i. The matrix M represents the flow of users between the companies.
+ An example of the problem
+
+In the above diagram, there are three companies: Yahoo, Amazon, and Microsoft. The arrows between the companies represent the flow of users between the companies. For example, the arrow from Yahoo to Amazon represents the fact that 1/2 of the users who visit Yahoo also visit Amazon. Similarly, the arrow from Amazon to Microsoft represents the fact that 1/2 of the users who visit Amazon also visit Microsoft.
+
+The matrix M represents the transition probabilities between the companies. For example, the entry M[0, 0] represents the probability that a user who visits Yahoo will also visit Yahoo, which is 1/2. Similarly, the entry M[0, 1] represents the probability that a user who visits Yahoo will also visit Amazon, which is 1/2.
+
+The vector v represents the probability that a user will visit each company. For example, the entry v[0] represents the probability that a user will visit Yahoo, which is 1/3. Similarly, the entry v[1] represents the probability that a user will visit Amazon, which is 1/3.
+
+The goal of the problem is to find the vector v such that vM = v. This vector v is called the eigenvector of the matrix M. The eigenvector v represents the probability that a user will visit each company in the long run.
+
+In this example, the eigenvector v is [1/3, 1/3, 1/3]. This means that in the long run, a user is equally likely to visit Yahoo, Amazon, or Microsoft.
+ ## Random Walks in Graphs
+- ### The Random Surfer Model
+ - The simplified model: the standing probability distribution of a random walk on the graph of the web. simply keeps clicking successive links at random
+- ### The Modified Model
+ - The modified model: the “random surfer" simply keeps clicking successive links at random, but periodically "gets bored" and jumps to a random page based on the distribution of E
+ Modified Version of PageRank
+
+R’(u) = c1 
+      Σ 
+    vєBu     R’(v) 
+              Nv 
+      + c2E(u)
+
+E(u): a distribution of ranks of web pages that "users" jump to when they "gets bored" after successive links at random.
+ An example of Modified PageRank
+
+Yahoo
+1/2
+Amazon
+1/2
+1/2 1/2 0
+1/2
+M = 1/2 0
+0+
+0
+1/2 1
+1
+yahoo
+1/3
+Amazon
+=
+1/3
+Microsoft
+1/3
+Microsoft
+C1 = 0.8
+C2 = 0.2
+0.333 0.333 0.280 0.259
+7/33
+0.333 0.200 0.200
+0.179
+5/33
+...
+0.333 0.467 0.520
+0.563
+21/33
+34
+ Dangling Links
+- Links that point to any page with no outgoing links
+- Most are pages that have not been downloaded yet
+- Affect the model since it is not clear where their weight should be distributed
+- Do not affect the ranking of any other page directly
+- Can be simply removed before pagerank calculation and added back afterwards
+ ## Convergence Property
+- PR (322 Million Links): 52 iterations
+- PR (161 Million Links): 45 iterations
+- Scaling factor is roughly linear in logn
+
+The diagram shows the convergence property of the PageRank algorithm. The x-axis shows the number of iterations, and the y-axis shows the total difference from the previous iteration. The two lines show the convergence of the algorithm for two different numbers of links: 322 million and 161 million. The algorithm converges faster for the smaller number of links.
+ ## Convergence Property
+- The Web is an expander-like graph
+ - Theory of random walk: a random walk on a graph is said to be rapidly-mixing if it quickly converges to a limiting distribution on the set of nodes in the graph. A random walk is rapidly-mixing on a graph if and only if the graph is an expander graph.
+ - Expander graph: every subset of nodes S has a neighborhood (set of vertices accessible via outedges emanating from nodes in S) that is larger than some factor a times of |S|. A graph has a good expansion factor if and only if the largest eigenvalue is sufficiently larger than the second-largest eigenvalue.
+ PageRank vs. Web Traffic
+- Important component of PageRank calculation is E
+ - A vector over the web pages (used as source of rank)
+ - Powerful parameter to adjust the page ranks
+- The vector E corresponds to the distribution of web pages that a random surfer periodically jumps to from the search engine
+- Some highly accessed web pages have low page rank possibly because
+ - People do not want to link to these pages from their own web pages (the example in 1998 PageRank paper is pornographic sites...)
+ - Some important backlinks are omitted
+ - Use web usage data as a start vector for PageRank.
+ Web Spamming by Gaming Pagerank
+
+- Since 2000, Google Search has become the default gateway to the web
+- Very high premium to appear on the first few pages of search results
+ - E-commerce sites
+ - Advertising-driven sites
+- Spamming: Manipulating the text of web pages in order to appear relevant to queries
+- Approximately 10-15% of web pages are spam
+- Spammers' goal: Maximize the page rank of a target page t
+- Spammers' technique: Manipulating the text of web pages so as to appear relevant to queries and get as many links from accessible pages as possible to target page t
+ Exercise on PageRank
+Consider a Web graph with three nodes 1, 2, and 3. The links are as follows:
+1->2, 3->2, 2->1, 2->3. Write down the transition probability matrices P for
+the surfer's walk with teleporting, with the value of teleport probability
+α=0.5.
+
+The transition probability matrix P is given by:
+
+```
+A = 
+0   1   0
+1   0   1
+0   1   0
+```
+
+Each entry in the matrix is divided by the number of ones in the corresponding row.
+
+The matrix (1-α)*A is given by:
+
+```
+(1-α)*A = 
+0   1/2   0
+1/2   0   1/2
+0   1/2   0
+```
+
+The matrix α*q is given by:
+
+```
+α*q = 
+1/3   1/3   1/3
+1/3   1/3   1/3
+1/3   1/3   1/3
+```
+
+The matrix P is given by:
+
+```
+P = (1-α)*A + α*q
+= 
+5/12   1/6   5/12
+5/12   1/6   5/12
+1/6   2/3   1/6
+```
+ PageRank example
+
+The diagram shows a PageRank example. It consists of four equations with four unknowns and no constants. The equations are:
+
+ra = 1/2 rb + 1/2 rc
+rb = 1/3 ra + 2/3 rd
+rc = 1/3 ra + 1/2 rb
+rd = 1/3 rc + 1/2 ra
+
+There is no unique solution to this system of equations. All solutions are equivalent modulo a scale factor. To make the solution unique, we add the additional constraint that the sum of all the r_i's is equal to 1.
+
+The solution to the system of equations with the additional constraint is:
+
+ra = 1/3
+rb = 3/8
+rc = 3/8
+rd = 1/8
+ ## Random Walkers
+- For large graphs, solving linear systems of equations is intractable.
+- Random surfers: Where do you end if you follow links at random?
+
+Consider the following diagram:
+```
+a -> b
+|   |
+v   v
+c -> d
+```
+Starting at node a, after one step, you will end up in b, c, or d with probability 1/3.
+
+The transition matrix for this graph is:
+```
+M = [
+    [0 1/3 1/3 0]
+    [1/3 0 1/3 0]
+    [1/3 1/3 0 0]
+    [0 0 1/3 0]
+]
+```
+The transition matrix is column-stochastic, meaning that the columns sum to 1. This is a property of all transition matrices.
+ Random Walkers: Transition Matrix Example
+
+A random walker is a mathematical model of a particle that moves randomly. It is often used to simulate the motion of particles in a fluid or gas.
+
+In this example, we will consider a random walker that moves on a graph. The graph has four nodes, labeled a, b, c, and d. The edges between the nodes are directed, and the probability of the walker moving from one node to another is given by the transition matrix.
+
+The transition matrix is a square matrix with dimensions equal to the number of nodes in the graph. The element in the ith row and jth column of the transition matrix gives the probability of the walker moving from node i to node j.
+
+For example, in the transition matrix below, the probability of the walker moving from node a to node b is 1/2, and the probability of the walker moving from node b to node c is 1/3.
+
+```
+0 1/2 1 0
+1/3 0 0 1/2
+1/3 0 0 1/2
+1/3 1/2 0 0
+```
+
+We can use the transition matrix to simulate the motion of the random walker. To do this, we first randomly select a node from the graph. This is the starting node. We then use the transition matrix to determine the next node that the walker will move to. We repeat this process until the walker has reached a node that has no outgoing edges.
+
+The following is a simulation of the random walker on the graph shown above.
+
+```
+Starting node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+Next node: b
+Next node: a
+Next node: b
+Next node: d
+Next node: b
+Next node: a
+Next node: c
+Next node: d
+ ## PageRank with random walkers
+
+- Start random surfers at all pages with equal probability 
+$$V_0 = [1/n, 1/n, . . ., 1/n]$$
+- After one step, the distribution will be
+$$V_1 = MV_0$$
+- After k steps:
+$$V_k = M^kV_0$$
+- Markov process: The distribution approaches a limiting distribution V such that V = MV if
+ - The graph is strongly connected: can get from a node to any other node.
+ - No dead ends: nodes that have no out-links.
+ PageRank with random walkers
+
+v = Mv.
+- Surfers are stationary.
+- The more important a page, and the more likely it is to have a surfer.
+- v is... the principal eigenvector of M. (M stochastic has largest eigenvalue 1.)
+- Power iteration: compute v by iterative matrix-vector multiplications.
+- Stop when ||v^t - v^(t-1)|| <= epsilon.
+- How eigenvectors are computed in large dimensions (e.g. Lanczos method.)
+- Amenable to MapReduce parallelization.
+- Equivalent to previous PageRank formulation:
+v_i = \Sigma_{j} e_ij v_j / d_j
+ Example
+
+- 
+- 
+- 
+a
+b
+c
+d
+Transition matrix:
+[0 1/2 1 0]
+[1/3 0 0 1/2]
+[1/3 0 0 1/2]
+[1/3 1/2 0 0]
+- Initialization: V0 = [1/4, 1/4, 1/4, 1/4].
+- After one step: V1 = [9/24, 5/24, 5/24, 5/24].
+- After two steps: V2 = [15/48, 11/48, 11/48, 11/48].
+...
+- Converges to: V = [1/3, 2/9, 2/9, 2/9].
+ ## Dead ends
+- Dead ends: nodes that have no out-links.
+
+a -> b
+    \
+     c -> d
+
+c is a dead end
+
+Transition matrix:
+[0 1/2 0 0]
+[1/3 0 0 1/2]
+[1/3 0 0 1/2]
+[1/3 1/2 0 0]
+
+- The transition matrix does not have full rank.
+- It cannot be inverted, i.e. our linear system of equations has no solution.
+- The power method converges to v = 0.
+
+Solutions:
+- Recursively remove dead ends and their incoming links.
+- When at a dead end, teleport (with equal probability) to another node.
+ Example
+
+a -> b
+c -> d
+
+Transition matrix:
+
+| 0 | 1/2 | 0 | 0 |
+| 1/3 | 0 | 0 | 1/2 |
+| 1/3 | 0 | 0 | 1/2 |
+| 1/3 | 1/2 | 0 | 0 |
+
+New transition matrix:
+
+| 0 | 1/2 | 1/4 | 0 |
+| 1/3 | 0 | 1/4 | 1/2 |
+| 1/3 | 0 | 1/4 | 1/2 |
+| 1/3 | 1/2 | 1/4 | 0 |
+
+Eventually, v = [1/5, 4/15, 4/15, 4/15].
+ ## Spider traps
+- Spider trap: set of nodes with no dead ends but no links out.
+- Problem:
+- All random surfers end up in the spider trap.
+- Transition matrix:
+            0   1/2   0   0
+      0   1/3   0   1/2
+      0   1/3   1   1/2
+      0   1/3   0   0
+- v converges to v = [0, 0, 1, 0] .
+- Diagram: 
+     a -> b
+     c -> a
+     c -> d
+     b -> d
+     c is a one-node spider trap
+ # Taxation
+- How to get out of spider traps?
+- A random surfer can leave the graph at any moment.
+- New surfers can be started at any page at any moment.
+- Taxation: Allow each random surfer a probability 1 - β of teleporting to a random page
+     - v = βMv + (1 - β)1.
+     - Typically, β ∈ [0.8 – 0.9].
+ Example
+
+a ⟶ b
+c ⟶ d
+
+Transition matrix:
+[0 1/2 0 0]
+[1/3 0 0 1/2]
+[1/3 0 1 0]
+[1/3 1/2 0 0]
+
+v = BMv + (1 - β) 1
+n
+
+- β = 0.8 = 4/5
+[0 2/5 0 0]
+[4/15 0 0 2/5]
+v=
+[4/15 0 4/5 2/5]
+[4/15 2/5 0 0] + [1/20 1/20 1/20 1/20]
+
+v = [1, 148, 95, 19]
+148
+19
+148
+15
+ Summary
+
+Large-scale data poses new technical problems for:
+
+- Storage: Distributed file systems.
+- Computations: MapReduce programming model.
+
+- Split the data in chunks.
+- Map workers all execute the same operation on a chunk and return a key-value pair.
+- Reduce workers process all key-value pairs with the same key at once.
+
+Algorithmic costs of MapReduce:
+
+- Communication costs vs computation costs.
+- Reducer size and replication rate.
+
+Extensions of MapReduce: Spark and TensorFlow.
+
+- MapReduce for machine learning.
+- Link analysis with PageRank.
+ PageRank Summary
+
+- Robust and scalable algorithm with proven convergence guarantees
+- Distributed algorithm in Google's data center-drive breakthroughs in compute (Google MapReduce) and storage (Google File System)
+- Amenable to distributed computation via parallel computation (MapReduce in next Lecture)
+- MapReduce Code walkthrough: http://web.archive.org/web/20221216071408/https://michaelnielsen.org/blog/using-mapreduce-to-compute-pagerank

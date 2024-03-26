@@ -1,0 +1,27 @@
+Lecture 6: CAP Theorem
+
+Why this is important?
+- The future of cloud computing is distributed (Big Data Trend, etc.)
+- CAP theorem describes the trade-offs involved in distributed systems
+- A proper understanding of CAP theorem is essential to making decisions about the future of distributed system design
+- Misunderstanding can lead to erroneous or inappropriate design choices
+ Revisit CAP Theorem
+* Of the following three guarantees potentially offered by distributed systems:
+    * Consistency
+    * Availability
+    * Partition tolerance
+* Pick two
+* This suggests there are three kinds of distributed systems:
+    * CP
+    * AP
+    * CA
+Any problems?
+The CAP theorem states that it is impossible for a distributed system to simultaneously provide all three of the following guarantees:
+* Consistency: All nodes in the system have the same data at all times.
+* Availability: All nodes in the system are always available.
+* Partition tolerance: The system continues to operate correctly even if some of the nodes in the system fail.
+In other words, a distributed system can only provide two of the three CAP guarantees.
+The diagram shows the relationship between the three CAP guarantees. The X marks the point where all three guarantees are不可能同时满足. The three circles represent the three kinds of distributed systems that are possible:
+* CP systems: These systems provide consistency and partition tolerance, but not availability.
+* AP systems: These systems provide availability and partition tolerance, but not consistency.
+* CA systems: These systems provide consistency and availability, but not partition tolerance.

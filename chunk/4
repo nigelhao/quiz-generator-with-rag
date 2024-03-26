@@ -1,0 +1,23 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+Cloud economics
+A cloud automatically controls and optimizes resource use by leveraging a metering capability at some level of abstraction appropriate to the type of service.
+Resource usage can be monitored, controlled, and reported, providing transparency for both the provider and consumer.
+Cloud economics to match supply and demand. How to optimize cloud resources to match computing and storage demands?
+Cloud economics: Who determines price and pricing strategies?
+Pay-as-you-go, pay only for what you use.
+
+**Social cloud computing**
+Generalize cloud computing to include the sharing, bartering, and renting of computing resources across peers whose owners and operators are verified through a social network or reputation system.
+Basis of emerging Web 3.0 applications past the confines of formal commercial data centers operated by cloud providers to include anyone interested in participating within the cloud services sharing economy.
+Berkeley Open Infrastructure for Network Computing
+Subutai P2P Edge Cloud Platform (https://subutai.io)
+Decentralized applications (dApps)
+https://en.wikipedia.org/wiki/Social_cloud_computing
+
+Cloud Summary
+Cloud computing is an umbrella term used to refer to Internet-based development and services.
+A number of characteristics define cloud data, applications, services, and infrastructure:
+Remotely hosted: Services or data are hosted on remote infrastructure.
+Ubiquitous: Services or data are available from anywhere.
+Commodified: The result is a utility computing model similar to traditional that of traditional utilities, like gas and electricity - you pay for what you would want!

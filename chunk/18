@@ -1,0 +1,23 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+More popular TCP/IP model
+Application email, browser
+Transport specific data delivery
+  TCP, UDP
+Network internetworking, routing
+  IP
+Data link/MAC how to access local links
+  Ethernet, 802.11
+Physical how bits are represented
+  on wire, DSL, Bluetooth
+The TCP/IP model is a layered model of computer networking. It is the most widely used model for the Internet. The model is divided into four layers:
+- The physical layer is the lowest layer of the model. It is responsible for the physical connection between devices.
+- The data link layer is the second layer of the model. It is responsible for sending and receiving data between devices.
+- The network layer is the third layer of the model. It is responsible for routing data between devices.
+- The transport layer is the fourth layer of the model. It is responsible for ensuring that data is delivered reliably between devices.
+Each layer of the TCP/IP model has its own protocols. The physical layer uses protocols such as Ethernet and Wi-Fi. The data link layer uses protocols such as PPP and HDLC. The network layer uses protocols such as IP and ICMP. The transport layer uses protocols such as TCP and UDP.
+The TCP/IP model is a very important model in computer networking. It is used to design and implement networks of all sizes.
+
+Hourglass
+Our protocol stack
+The hourglass diagram shows the different layers of the protocol stack. The bottom layer is the physical layer, which is responsible for sending and receiving raw data. The next layer is the data link layer, which is responsible for ensuring that data is transmitted and received correctly. The third layer is the network layer, which is responsible for routing data between different networks. The fourth layer is the transport layer, which is responsible for ensuring that data is delivered reliably. The fifth layer is the session layer, which is responsible for establishing and maintaining connections between different applications. The sixth layer is the presentation layer, which is responsible for formatting data so that it can be understood by different applications. The seventh layer is the application layer, which is responsible for providing different applications to users.

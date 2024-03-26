@@ -1,0 +1,33 @@
+Lecture 7: PageRank Algorithm
+
+The History of PageRank
+
+- PageRank was developed by Larry Page (hence the name Page-Rank) and Sergey Brin at Stanford in 1999.
+- Shortly after, Page and Brin founded Google.
+- Challenges: Web contains many sources of information including spam.
+- What is the best answer to a web query "google" in 1998?
+- A good web search algorithm enables trust.
+- Use links as votes to rank pages.
+- Are all links equally important?
+- Links from important pages count more.
+- This question is recursive.
+
+The PageRank in Search Engines (1997)
+## Link Analysis
+* Consider links as votes of confidence in a page.
+* A hyperlink is the open Web's version of a "Like" button... even if the page is linked in a negative way.
+
+---
+
+Link Analysis
+So if we just count the number of inlinks a web-page receives we know its importance, right?
+The diagram shows a person standing next to a red box with a white X. The person is looking at the box. The text on the box says "Link Analysis".
+
+Link Spamming
+[Image of a website with the words 'semanticweb.com' and 'The Voice of Semantic Technology Business' at the top]
+Home Events Media Industry Verticals Answers
+Questions Tags Users Badges
+[Image of a search bar]
+[deleted] Kala Jadu Specialist +9196
+black magic specialist baba ji call now +919610897260
+http://www.blackmagicspecialist.net.in

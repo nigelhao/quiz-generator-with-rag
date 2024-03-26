@@ -1,0 +1,17 @@
+Lecture 4: Cloud CPU Scheduling
+
+Credit scheduler
+Weight: default value is 256. Range: [1,65535]
+Cap: optionally fix the CPU this VM can get, even if the CPU has idle cycles (NWC)
+default is 0, WC
+set to percentages. For example 30, meaning this VM can get 30% of the CPU at most.
+
+Credit scheduler - basics
+Time unit/slot: 30ms
+A VM has priority, which can be one of two values: "over" or "under" representing whether this VM has or hasn't yet exceeded its fair share of CPU resource in the ongoing accounting period.
+Each CPU manages a FIFO queue of runnable VMs sorted by priority (under precedes over).
+At each slot, the VM off the head of the queue gets to run
+
+Credit scheduler - accounting
+As a VM runs, it consumes credits. Every 30ms, a system-wide accounting thread recomputes the credits for each active VM.
+Every so often, the system bumps credit to each VM. The credit is allocated in a PS fashion (weighted fair sharing).

@@ -1,0 +1,17 @@
+Lecture 6: CAP Theorem
+
+Types of Consistency
+* Strong Consistency
+After the update completes, any subsequent access will return the same updated value.
+* Weak Consistency
+It is not guaranteed that subsequent accesses will return the updated value.
+* Eventual Consistency
+Specific form of weak consistency
+It is guaranteed that if no new updates are made to object, eventually all accesses will return the last updated value (e.g., propagate updates to replicas in a lazy fashion)
+ ## Eventual Consistency
+- A Facebook Example
+* Bob finds an interesting story and shares with Alice by posting on her Facebook wall
+* Bob asks Alice to check it out
+* Alice logs in her account, checks her Facebook wall but finds:
+ - Nothing is there!
+![Image of a laptop with a Facebook wall that says "Nothing is there!"]

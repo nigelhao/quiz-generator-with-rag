@@ -1,0 +1,15 @@
+Lecture 3: Virtualization in Cloud
+
+Virtual Machine Advantages:
+- Move whole images anywhere: completely decouple all software from hardware.
+- Can replicate computer images: run more copies.
+- If your service is overloaded, scale out by spinning up more instances.
+- Can arbitrarily start/stop/resume instances very quickly.
+- Must faster than shutting down machines.
+- Complete software encapsulation.
+- Common technique used in software tutorials: download this VM image and run it.
+- Web hosting: one server can run 100 virtual machines, each one thinks it has a complete, independent computer to configure and use.
+- Complete software isolation.
+- In theory, two VMs are completely isolated, can maybe only sense something due to timing (e.g., if they are sharing a CPU), more on this later.
+- Enabled us to have cloud computing.
+- Original business case was the desktop! E.g., need to run Windows and Linux in parallel, don't want 2 machines.

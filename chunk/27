@@ -1,0 +1,33 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+Traffic characteristics
+The characteristics of traffic can be described in terms of volume, speed, density, and composition.
+Volume is the number of vehicles that pass a given point on a roadway in a given time period. Speed is the average speed of vehicles on a roadway. Density is the number of vehicles per unit length of roadway. Composition is the percentage of different types of vehicles on a roadway.
+Volume, speed, density, and composition are related to each other in a number of ways. For example, as volume increases, speed and density also increase. As density increases, speed decreases. And as the composition of traffic changes, so too can the other characteristics.
+Traffic characteristics are important because they can be used to improve traffic flow and safety. By understanding the characteristics of traffic, engineers can design roadways that are more efficient and safer.
+Flow size, Facebook
+(a) Web servers
+(c) Hadoop
+
+Mice vs. elephants: many mice flows, a few elephants carrying most of the bytes -> Routing elephants is important
+A. Roy et al. Inside the social network's (datacenter) network. In Proc. of ACM SIGCOMM, 2015.
+Theseus: Shannon's Mouse-in-Maze
+Theseus (1952) AT&T Bell Labs
+Video demo by Shannon:
+https://www.youtube.com/watch?v=nS0luYZd4fs
+https://time.com/4311107/claude-shannon-100-years/
+Theseus: Shannon's Mouse-in-Maze
+A life-sized mouse robot in 1952... The Maze solves the Mouse!
+http://cyberneticzoo.com/mazesolvers/1952-–-theseus-maze-solving-mouse-–-claude-shannon-american/
+Theseus: Shannon's Mouse-in-Maze
+
+The image shows a maze with a mouse in it. The mouse is trying to find its way through the maze. There are four different starting points in the maze. The mouse learns by experience and trial-and-error. It remembers its route such that when placed in a new spot that was on the previous route, Theseus can ignore blind alleys and navigate correctly to the endpoint. When the maze topology changes, Theseus forgets outdated knowledge, relearns, and incorporates new knowledge into existing ones in memory.
+This Shannon's maze opens the door to new results in many fields such as graph theory (breadth-first-search) and AI applications (e.g., the Internet).
+Theseus: Shannon’s Mouse-in-Maze
+
+The trail of Theseus is highlighted by trial-and-error means. It does not necessarily choose the best way if there are two different ways to reach the target, although choosing the shorter one is highly probable.
+[Image of a maze with a mouse in it]
+Fig. 6—Shannon’s 1952 Maze
+http://cyberneticzoo.com/mazesolvers/1952-–-theseus-maze-solving-mouse-–-claude-shannon-american/
+Our Internet is a-Maze-ing
+Another that I learned was that in building self-learning systems it is equally important to forget, as it is to learn. For example, when you destroy parts of a network, the network must quickly adapt to routing traffic entirely differently. I found that by using two different time constants, one for learning and the other for forgetting provided the balanced properties desired. And, I found it helpful to view the network as an organism, as it had many of the characteristics of an organism as it responds to overloads, and sub-system failures.

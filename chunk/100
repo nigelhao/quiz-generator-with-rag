@@ -1,0 +1,14 @@
+Lecture 7: Pagerank Algorithm
+
+A Simple Version of PageRank
+R(u) = c
+u: a web page
+B_u: the set of u's backlinks
+N_v: the number of forward links of page v
+c: the normalization factor to make R(1) + ... + R(T) = 1 where there are T pages in total
+
+An example of Simplified PageRank
+In the above diagram, there are three web pages: Yahoo, Amazon, and Microsoft. The arrows between the pages indicate the links between them. The numbers on the arrows indicate the probability of a user clicking on the link. For example, the arrow from Yahoo to Amazon has a probability of 1/2, which means that if a user is on the Yahoo page, there is a 50% chance that they will click on the link to Amazon.
+The matrix M on the right side of the diagram represents the link structure of the web pages. The rows and columns of the matrix correspond to the web pages, and the elements of the matrix represent the probabilities of the links between the pages. For example, the element M(1, 2) represents the probability of a user clicking on the link from Yahoo to Amazon, which is 1/2.
+The vector r on the right side of the diagram represents the PageRank of the web pages. The PageRank of a web page is a measure of its importance, and it is calculated by taking into account the links to the page from other pages. The PageRank vector is calculated by multiplying the link structure matrix M by the PageRank vector r.
+In the first iteration, the PageRank vector is initialized to 1/3 for each page. After the first iteration, the PageRank vector is updated to [1/3, 1/3, 1/3]. This means that after the first iteration, each page has a PageRank of 1/3.

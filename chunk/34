@@ -1,0 +1,18 @@
+Lecture 3: Virtualization in Cloud
+
+**Four fundamental OS concepts**
+* **Thread**
+    * Single unique execution context
+    * Program Counter, Registers, Execution Flags, Stack
+* **Address Space w/ Translation**
+    * Programs execute in an address space that is distinct from the memory space of the physical machine
+* **Process**
+    * An instance of an executing program is a process consisting of an address space and one or more threads of control
+* **Dual Mode operation/Protection**
+    * Only the "system" has the ability to access certain resources
+    * The OS and the hardware are protected from user programs and user programs are isolated from one another by controlling the translation from program virtual addresses to machine physical addresses
+**OS Bottom Line: Run Programs**
+The diagram shows the relationship between the different components of an operating system (OS). The OS is responsible for managing the hardware and software resources of a computer system, and providing services to user programs.
+The bottom line of the OS is to run programs. To do this, the OS must first load the program into memory. The program is then executed by the processor, which follows the instructions in the program to perform the desired tasks.
+While the program is running, the OS provides it with services such as memory management, process scheduling, and input/output. The OS also protects itself and the program from each other, and from other programs that may be running on the system.
+The OS is a complex piece of software, but it is essential for the operation of a computer system. Without the OS, the computer would not be able to run programs or perform any useful tasks.

@@ -1,0 +1,110 @@
+Lecture 3: Virtualization in Cloud
+
+First OS Concept: Thread of Control
+- Thread: Single unique execution context
+ - Program Counter, Registers, Execution Flags, Stack
+- A thread is executing on a processor when it is resident in the processor registers.
+- PC register holds the address of executing instruction in the thread.
+- Certain registers hold the context of the thread
+ - Stack pointer holds the address of the top of stack
+ - Other conventions: Frame Pointer, Heap Pointer, Data
+May be defined by the instruction set architecture or by compiler conventions
+- Registers hold the root state of the thread.
+ - The rest is "in memory"
+
+---
+
+Second OS Concept: Program's Address Space
+- Address space -> the set of accessible addresses + state associated with them:
+- For a 32-bit processor there are 2^32 = 4 billion addresses
+- What happens when you read or write to an address?
+ - Perhaps Nothing
+ - Perhaps acts like regular memory
+ - Perhaps ignores writes
+ - Perhaps causes I/O operation
+ (Memory-mapped I/O)
+ - Perhaps causes exception (fault)
+The diagram shows the layout of a typical program's address space. The code segment contains the program's instructions,
+ while the data segment contains the program's data. The heap is a region of memory that is used for dynamic memory allocation. The stack is a region of
+ memory that is used for storing function calls and their local variables.
+Address Space: In a Picture
+- What's in the code segment? Data?
+- What's in the stack segment?
+ - How is it allocated? How big is it?
+- What's in the heap segment?
+ - How is it allocated? How big?
+
+The diagram shows the layout of the address space in a computer. The address space is divided into two segments: the code segment and the data segment. The code segment contains the instructions that are executed by the processor. The data segment contains the data that is used by the program.
+The processor registers are located at the top of the address space. The registers are used to store temporary data that is being processed by the processor. The program counter (PC) is a register that points to the next instruction that is to be executed. The stack pointer (SP) is a register that points to the top of the stack.
+The stack is a region of memory that is used to store temporary data that is not needed for a long period of time. The heap is a region of memory that is used to store data that is dynamically allocated. The heap is located at the bottom of the address space.
+Providing Illusion of Separate Address Space:
+Load new Translation Map on Switch
+In the above diagram, we can see how the virtual address space is divided into two parts, each with its own translation map. This allows for the illusion of separate address spaces for each process, even though they are all running in the same physical address space.
+The translation maps are used to convert virtual addresses to physical addresses. When a process accesses a virtual address, the translation map is used to look up the corresponding physical address. This address is then used to access the data in physical memory.
+The use of separate address spaces helps to protect each process from the others. If one process tries to access the memory of another process, it will cause a segmentation fault. This is because the translation map for the first process will not have an entry for the memory of the second process.
+Separate address spaces also help to improve performance. By keeping each process's memory separate, the operating system can avoid the need to constantly switch between different memory pages. This can lead to a significant improvement in performance, especially for systems that are running multiple processes at the same time.
+
+---
+
+Third OS Concept: Process
+* Process: execution environment with Restricted Rights
+    * Address Space with One or More Threads
+    * Owns memory (address space)
+    * Owns file descriptors, file system context, …
+    * Encapsulate one or more threads sharing process resources
+* Why processes?
+    * Protected from each other!
+    * OS Protected from them
+    * Navigate fundamental tradeoff between protection and efficiency
+    * Processes provides memory protection
+* Application instance consists of one or more processes
+Protection
+- Operating System must protect itself from user programs
+  - Reliability: compromising the operating system generally causes it to crash
+  - Security: limit the scope of what processes can do
+  - Privacy: limit each process to the data it is permitted to access
+  - Fairness: each should be limited to its appropriate share
+- It must protect User programs from one another
+  - Primary Mechanism: limit the translation from program address space to physical memory space
+    - Can only touch what is mapped in
+  - Additional Mechanisms:
+    - Privileged instructions, in/out instructions, special registers
+    - syscall processing, subsystem implementation
+      - (e.g., file access rights, etc)
+
+---
+
+Fourth OS Concept: Dual Mode Operation
+Hardware provides at least two modes:
+- "Kernel" mode (or "supervisor" or "protected")
+- "User" mode: Normal programs executed
+What is needed in the hardware to support "dual mode" operation?
+- a bit of state (user/system mode bit)
+- Certain operations / actions only permitted in system/kernel mode
+ - In user mode they fail or trap
+- User -> Kernel transition sets system mode AND saves the user PC
+ - Operating system code carefully puts aside user state then performs the necessary operations
+- Kernel -> User transition clears system mode AND restores appropriate user PC
+ - return-from-interrupt
+For example: UNIX System Structure
+The diagram shows the structure of a UNIX system. The system is divided into three parts: user mode, kernel mode, and hardware.
+The user mode is the part of the system that is accessible to the user. It contains the applications that the user runs, as well as the standard libraries that are used by the applications. The kernel mode is the part of the system that is responsible for managing the hardware. It contains the kernel, which is the core of the operating system, as well as the device drivers that allow the kernel to communicate with the hardware. The hardware is the physical components of the system, such as the CPU, memory, and storage devices.
+The user mode and the kernel mode are separated by a boundary called the system-call interface. This interface allows the applications in user mode to make requests to the kernel. The kernel then carries out the requests and returns the results to the applications.
+The hardware is accessed by the kernel through the device drivers. The device drivers are responsible for translating the requests from the kernel into commands that the hardware can understand.
+
+User/Kernel (Privileged) Mode
+The diagram shows the two modes of operation of a computer system: user mode and kernel mode. User mode is the mode in which the user is able to execute programs. Kernel mode is the mode in which the operating system executes privileged instructions.
+The user mode is less privileged than the kernel mode. This means that the user mode cannot access all of the resources of the computer system, such as the memory and the hardware. The kernel mode is more privileged than the user mode. This means that the kernel mode can access all of the resources of the computer system.
+The user mode is typically used for running applications. The kernel mode is typically used for running the operating system.
+When a user program makes a system call, it switches from user mode to kernel mode. The system call is then executed in kernel mode. When the system call is completed, the user program switches back to user mode.
+The user/kernel mode separation is an important security feature. It prevents user programs from accessing the resources of the computer system that they are not authorized to access. It also prevents user programs from crashing the operating system.
+
+Protection rings
+Enforced in hardware in Intel x86 architectures
+Least privileged
+Ring 3 - Applications
+Ring 2 - Device drivers
+Ring 1 - Device drivers
+Ring 0 - Kernel
+Most privileged
+The diagram shows the protection rings in an Intel x86 architecture. The rings are numbered from 0 to 3, with ring 0 being the most privileged and ring 3 being the least privileged. Each ring has a different level of access to the system's resources. Ring 0 has the highest level of access and can access all of the system's resources. Ring 1 has a lower level of access and can only access the system's resources that are specifically allowed by the operating system. Ring 2 has an even lower level of access and can only access the system's resources that are specifically allowed by the operating system and the hardware. Ring 3 has the lowest level of access and can only access the system's resources that are specifically allowed by the operating system, the hardware, and the application.

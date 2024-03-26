@@ -1,0 +1,14 @@
+Lecture 6: CAP Theorem
+
+Dynamic Tradeoff between C and A
+- An airline reservation system:
+ - When most of seats are available: it is ok to rely on somewhat out-of-date data, availability is more critical
+ - When the plane is close to be filled: it needs more accurate data to ensure the plane is not overbooked, consistency is more critical
+- Neither strong consistency nor guaranteed availability, but it may significantly increase the tolerance of network disruption
+ Discussion
+* In a cloud computing system (e.g., Amazon, Google cloud, etc), what are the trade-offs between consistency and availability you can think of? What is your strategy?
+* Hint -> Things you might want to consider:
+    * Different types of data (e.g., shopping cart, billing, product, etc.)
+    * Different types of operations (e.g., query, purchase, etc.)
+    * Different types of services (e.g., distributed lock, DNS, etc.)
+    * Different groups of users (e.g., users in different geographic areas, etc.)

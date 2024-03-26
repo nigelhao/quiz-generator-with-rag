@@ -1,0 +1,36 @@
+Lecture 3: Virtualization in Cloud
+
+Fourth OS Concept: Dual Mode Operation
+Hardware provides at least two modes:
+- "Kernel" mode (or "supervisor" or "protected")
+- "User" mode: Normal programs executed
+What is needed in the hardware to support "dual mode" operation?
+- a bit of state (user/system mode bit)
+- Certain operations / actions only permitted in system/kernel mode
+ - In user mode they fail or trap
+- User -> Kernel transition sets system mode AND saves the user PC
+ - Operating system code carefully puts aside user state then performs the necessary operations
+- Kernel -> User transition clears system mode AND restores appropriate user PC
+ - return-from-interrupt
+For example: UNIX System Structure
+The diagram shows the structure of a UNIX system. The system is divided into three parts: user mode, kernel mode, and hardware.
+The user mode is the part of the system that is accessible to the user. It contains the applications that the user runs, as well as the standard libraries that are used by the applications. The kernel mode is the part of the system that is responsible for managing the hardware. It contains the kernel, which is the core of the operating system, as well as the device drivers that allow the kernel to communicate with the hardware. The hardware is the physical components of the system, such as the CPU, memory, and storage devices.
+The user mode and the kernel mode are separated by a boundary called the system-call interface. This interface allows the applications in user mode to make requests to the kernel. The kernel then carries out the requests and returns the results to the applications.
+The hardware is accessed by the kernel through the device drivers. The device drivers are responsible for translating the requests from the kernel into commands that the hardware can understand.
+
+User/Kernel (Privileged) Mode
+The diagram shows the two modes of operation of a computer system: user mode and kernel mode. User mode is the mode in which the user is able to execute programs. Kernel mode is the mode in which the operating system executes privileged instructions.
+The user mode is less privileged than the kernel mode. This means that the user mode cannot access all of the resources of the computer system, such as the memory and the hardware. The kernel mode is more privileged than the user mode. This means that the kernel mode can access all of the resources of the computer system.
+The user mode is typically used for running applications. The kernel mode is typically used for running the operating system.
+When a user program makes a system call, it switches from user mode to kernel mode. The system call is then executed in kernel mode. When the system call is completed, the user program switches back to user mode.
+The user/kernel mode separation is an important security feature. It prevents user programs from accessing the resources of the computer system that they are not authorized to access. It also prevents user programs from crashing the operating system.
+
+Protection rings
+Enforced in hardware in Intel x86 architectures
+Least privileged
+Ring 3 - Applications
+Ring 2 - Device drivers
+Ring 1 - Device drivers
+Ring 0 - Kernel
+Most privileged
+The diagram shows the protection rings in an Intel x86 architecture. The rings are numbered from 0 to 3, with ring 0 being the most privileged and ring 3 being the least privileged. Each ring has a different level of access to the system's resources. Ring 0 has the highest level of access and can access all of the system's resources. Ring 1 has a lower level of access and can only access the system's resources that are specifically allowed by the operating system. Ring 2 has an even lower level of access and can only access the system's resources that are specifically allowed by the operating system and the hardware. Ring 3 has the lowest level of access and can only access the system's resources that are specifically allowed by the operating system, the hardware, and the application.

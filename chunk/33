@@ -1,0 +1,11 @@
+Lecture 3: Virtualization in Cloud
+
+OS review
+Credit: Prof. John Kubiatowicz's slides for CS162, Spring 2015, UC Berkeley
+What is an operating system?
+- Special layer of software that provides application software access to hardware resources
+- Convenient abstraction of complex hardware devices
+- Protected access to shared resources
+- Security and authentication
+- Communication amongst logical entities
+The diagram shows the relationship between the operating system (OS) and the hardware. The OS is a layer of software that sits between the hardware and the application software. The OS provides the application software with a convenient abstraction of the complex hardware devices. This allows the application software to be written without having to worry about the details of the underlying hardware. The OS also provides protected access to shared resources, such as memory and files. This ensures that the application software does not interfere with each other. Finally, the OS provides security and authentication services. This helps to protect the system from unauthorized access.

@@ -1,0 +1,18 @@
+Lecture 4: Cloud CPU Scheduling
+
+Simple earliest deadline first (SEDF)
+SEDF. EDF is a widely used scheduling algorithm in OS.
+Each VM specifies its CPU requirement with a tuple (s_i, p_i, x_i)
+VM i wants to receive at least s_i units of time in each period of length p_i.
+x_i: whether to receive extra CPU time (work conserving)
+For each VM, the scheduler keeps two variables:
+d_i: time at which VM i's current period ends, i.e. deadline
+r_i: remaining CPU time in the current period
+At each time slot, among the VMs whose r_i is positive, schedule the one with the earliest deadline to run. Ties are broken arbitrarily.
+
+SEDF example
+When x_i=0, non work conserving, the VM is made runnable periodically, i.e. r_i is reset to s_i at the start of each period.
+Example: VM 1: (1,2,0), VM 2: (2,7,0)
+The image shows a diagram with two horizontal lines representing the VMs. VM1 has a period of 1 and a deadline of 2. VM2 has a period of 2 and a deadline of 7. The x-axis represents time. The diagram shows that VM1 is runnable at time 0, 7, 14, etc. VM2 is runnable at time 0, 2, 7, 9, 14, etc.
+The least common multiple of the periods is 14. So the scheduling pattern will repeat every 14 slots.
+What's the CPU utilization? It suffices to look at the first 14 slots.

@@ -1,0 +1,21 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+Cloud: Massive Scale
+Facebook [GigaOM, 2012]
+30K in 2009 -> 60K in 2010 -> 100K in 2012
+Microsoft [DC knowledge]
+> 1 million,2013
+AWS EC2 [Randy Bias, 2009]
+40K, 8 cores per machine
+Google [DC knowledge]
+> 900K, 2013
+
+So what is a cloud?
+At its most basic, cloud computing is a way to access computing resources over the internet. Those resources could be anything from applications to storage to processing power.
+This diagram shows the different components of a cloud computing system.
+The cloud edge is the layer that connects the cloud to the end user. This includes devices like smartphones, tablets, and laptops.The cloud core is the layer that provides the actual computing resources. This includes things like servers, storage, and networking.The cloud services layer is the layer that provides the applications and services to the end user. This includes things like email, web hosting, and CRM software.The data centers and internet layer is the layer that provides the physical infrastructure for the cloud. This includes things like data centers, networks, and cables.
+
+A definition
+Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction
+Four types of cloud computing: private clouds, public clouds, hybrid clouds, and multiclouds
+National Institute of Standards and Technology (NIST), U.S. Department of Commerce

@@ -1,0 +1,25 @@
+Lecture 5a: Crowdsourcing in Cloud
+
+**The Story of Autograding in Nemo Bot**
+Utilizing crowdsourcing or human-assisted computation to extract knowledge from a large number of individuals to make predictions through an educational chatbot software interface, such as the Facebook Messenger chatbot platform, via the built-in image annotation feature to automate grading in large classes.
+*"Human-assisted Computation for Auto-Grading"*, Ling and Tan, IEEE ICDM Workshop on Machine Learning for Education 2018
+Grading is challenging and time-consuming, particularly for large classes and MOOCs. Autograding employs human computation to assist with the grading process. In autograding, humans grade a small sample of assignments, and then a machine learning model is trained on these assignments to grade the remaining ones.
+Autograding is a valuable tool for educators, saving them time and effort. However, it's essential to acknowledge its imperfections. The model can make errors, necessitating educators to review autograded assignments for accuracy.
+Despite its limitations, autograding can significantly aid educators, streamlining their workload and enhancing grading accuracy.
+The system architecture for human-assisted computation in autograding consists of three main components: a web backend, a chatbot interface, and a student response monitoring and statistics component.
+The web backend facilitates communication between students and the system, receiving quizzes and learning content from students and sending responses to the chatbot interface.
+The chatbot interface provides students with feedback on their quizzes and learning content using natural language processing to understand questions and provide helpful responses.
+The student response monitoring and statistics component monitors student progress and provides instructors with performance statistics, aiding in identifying struggling students who require additional assistance.
+*Fig. 2: Interface of the educational chatbot system.* (a) represents the web backend where instructors can edit and post self-assessment quizzes to students; (b) and (c) depict the chatbot interface, enabling students to respond and answer quizzes.
+
+---
+
+**The Story of Kasparov Against The World**
+A 1999 Game of Chess over the Internet:
+- Gary Kasparov (world chess champion) versus the Rest of The World (moves decided by majority vote)
+- Kasparov was heavily favored before the game began.
+- "Rest of The World" utilized online discussions and inputs from five well-known chess experts, including "The Computer Chess Team."
+- Many weak players received hints from their home computers, notoriously poor at endgames.
+Result: Kasparov won after 62 moves in four months.
+Kasparov described it as the hardest game he ever played, marking one of the greatest moments in AI and human history.
+[Source: Wikipedia - Kasparov versus the World](https://en.wikipedia.org/wiki/Kasparov_versus_the_World)

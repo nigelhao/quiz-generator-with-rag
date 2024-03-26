@@ -1,0 +1,24 @@
+Lecture 6: CAP Theorem
+
+Consistency or Availability
+Consistency and Availability is not a "binary" decision
+AP systems relax consistency in favor of availability – but are not inconsistent
+CP systems sacrifice availability for consistency- but are not unavailable
+This suggests both AP and CP systems can offer a degree of consistency, and availability, as well as partition tolerance
+The diagram shows a Venn diagram with three circles. The circles are labeled "C" (for consistency), "A" (for availability), and "P" (for partition tolerance). The "X" marks the spot where all three circles overlap.
+The diagram illustrates that there is a trade-off between consistency and availability. AP systems relax consistency in favor of availability, while CP systems sacrifice availability for consistency. However, both types of systems can offer a degree of partition tolerance.
+ AP: Best Effort Consistency
+* Example:
+    * Web Caching
+    * DNS
+* Trait:
+    * Optimistic
+    * Expiration/Time-to-live
+    * Conflict resolution
+ CP: Best Effort Availability
+* **Example:**
+    * Majority protocols
+    * Distributed Locking (Google Chubby Lock service)
+* **Trait:**
+    * Pessimistic locking
+    * Make minority partition unavailable

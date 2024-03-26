@@ -1,0 +1,15 @@
+Lecture 4: Cloud CPU Scheduling
+
+CPU Scheduling
+Implemented in the hypervisor
+Fairness
+- Idea: use weights
+- Each VM gets a share of CPU in proportion to the weight
+- Weighted max-min; Proportional fairness, Priority scheduling
+Utilization
+- What if a VM is just idle, while the other has lots of things to do? (suppose they have equal weights)
+- Should the host CPU allocate all the available cycles to the busy VM?
+* Work-conserving: The host CPU is idle if and only if there is no runnable VM. The weights act as guarantees. Utilization is good.
+* Non work-conserving: Weights are caps. Each VM owns its fraction of CPU.
+A Tradeoff
+Tradeoff between fairness and utilization work-conserving schedulers are more efficient, but less fair non work-conserving schedulers are less efficient, but more fair

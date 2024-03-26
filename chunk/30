@@ -1,0 +1,13 @@
+Lecture 3: Virtualization in Cloud
+
+The old model
+A server for every application
+Software and hardware are tightly coupled
+The diagram shows the old model of computing, where each application has its own dedicated server. This model is tightly coupled, meaning that the software and hardware are closely integrated and cannot be easily separated. This makes it difficult to scale and maintain the system, as changes to the software or hardware require changes to the other.
+Big disadvantage: low utilization
+
+The new model
+* Physical resources are virtualized. OS and applications as a single unit by encapsulating them into virtual machines
+* Separate applications and hardware
+The diagram shows the new model for virtualization. Physical resources are virtualized, and the operating system and applications are encapsulated into virtual machines. This allows for greater flexibility and scalability, as well as improved security.
+Big advantage: improved utilization

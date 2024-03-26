@@ -1,0 +1,33 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+Disadvantages of Cloud Computing
+Requires a constant Internet connection:
+Cloud computing is impossible if you cannot connect to the Internet. Since you use the Internet to connect to both your applications and documents, if you do not have an Internet connection you cannot access anything, even your own documents. A dead Internet connection means no work and in areas where Internet connections are few or inherently unreliable, this could be a deal-breaker.
+Does not work well with low-speed connections:
+Similarly, a low-speed Internet connection, such as that found with dial-up services, makes cloud computing painful at best and often impossible. Web-based applications require a lot of bandwidth to download, as do large documents.
+Features might be limited:
+This situation is bound to change, but today many web-based applications simply are not as full-featured as their desktop-based applications.
+- For example, you can do a lot more with Microsoft PowerPoint than with Google Presentation's web-based offering
+Can be slow:
+Even with a fast connection, web-based applications can sometimes be slower than accessing a similar software program on your desktop PC.
+Everything about the program, from the interface to the current document, has to be sent back and forth from your computer to the computers in the cloud.
+If the cloud servers happen to be backed up at that moment, or if the Internet is having a slow day, you would not get the instantaneous access you might expect from desktop applications.
+Stored data might not be secure:
+With cloud computing, all your data is stored on the cloud.
+The question is How secure is the cloud?
+Can unauthorized users gain access to your confidential data?
+Stored data can be lost:
+Theoretically, data stored in the cloud is safe, replicated across multiple machines.
+But on the off chance that your data goes missing, you have no physical or local backup.
+Put simply, relying on the cloud puts you at risk if the cloud lets you down.
+HPC Systems:
+Not clear that you can run compute-intensive HPC applications that use MPI/OpenMP!
+Scheduling is important with this type of application
+- As you want all the VM to be co-located to minimize communication latency!
+
+General Concerns:
+Each cloud systems
+ uses different protocols and different APIs
+- May not be possible to run applications between cloud based systems
+Amazon has created its own DB system (not SQL), and
+ workflow system (many popular workflow systems out there)- so your normal applications will have to be adapted to execute on these platforms.

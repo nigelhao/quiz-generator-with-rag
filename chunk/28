@@ -1,0 +1,9 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+Dynamic Routing, 1961
+Baran: I first thought that it might be possible to build a system capable of smart routing through the network after reading about Shannon's mouse through a maze mechanism. But instead of remembering only a single path, I wanted a scheme that not only remembered but also knew when to forget, if the network was chopped up. It is interesting to note that the early simulation showed that after the hypothetical network was 50% instantly destroyed, that the surviving pieces of the network reconstituted themselves within a half a second of real-world time and again worked efficiently in handling the packet flow.
+How would the packets know how to do that?
+Baran: Through the use of a very simple routing algorithm. Imagine that you are a hypothetical postman and mail comes in from different directions, North, South, East, and West. You, the postman would look at the cancellation dates on the
+Paul Baran: Father of Packet Switching
+Packet switching is the method by which the Internet works, as it features delivery of packets of data between devices over a shared network.
+https://ethw.org/Oral-History:Paul_Baran

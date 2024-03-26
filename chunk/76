@@ -1,0 +1,5 @@
+Lecture 5b: Cloud Security
+
+**DES**
+> Data Encryption Algorithm. Been used for over two decades. DES is a block cipher. It encrypts data in blocks of 64 bits. The key is 56 bits.
+Plaintext | Initial permutation | LPT and RPT 16 rounds with key | Final permutation | Ciphertext

@@ -1,0 +1,11 @@
+Lecture 3: Virtualization in Cloud
+
+The VM image storage node:
+- Stores VM images used for creating new VM instances.
+- Responds to controller node requests related to VM image management.
+Subtleties
+A Storage Area Network (SAN) is a network linking storage devices to servers, typically via a fabric channel.
+iSCSI, a block-level storage protocol, facilitates data transfer over TCP/IP networks. It operates by transferring data in fixed-size blocks and is commonly employed to connect servers to storage devices within a SAN.
+In the diagram:
+- Each of the two computing nodes is connected to two VMs.
+- The computing nodes link to the SAN via iSCSI, which constitutes a fabric-based network connecting storage devices to servers.

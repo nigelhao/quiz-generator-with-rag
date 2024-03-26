@@ -1,0 +1,8 @@
+Lecture 5b: Cloud Security
+
+**Some Concepts**
+- Cryptography: a mechanism of encoding messages so that they can be sent securely.
+- Brute-force attack: try all combinations and permutations to decipher a message.
+- Encryption: encoding the plaintext into ciphertext.
+- Decryption: the reverse process.
+Encryption/decryption involves two aspects: the algorithm and the key. The sender and receiver must agree on a common algorithm for encryption/decryption. The key is used to make the process of cryptography secure. The algorithm is known to everybody.

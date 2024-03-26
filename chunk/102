@@ -1,0 +1,9 @@
+Lecture 7: Pagerank Algorithm
+
+The winner's curse can be a problem for investors because it can lead them to pay too much for a company. If a company's market share is greater than the sum of the market shares of the two companies that merged, then it is likely that the company is overvalued.
+
+## Random Walks in Graphs
+- ### The Random Surfer Model
+  - The simplified model: the standing probability distribution of a random walk on the graph of the web simply keeps clicking successive links at random.
+- ### The Modified Model
+  - The modified model: the “random surfer" simply keeps clicking successive links at random, but periodically "gets bored" and jumps to a random page based on the distribution of E.

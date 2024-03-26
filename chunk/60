@@ -1,0 +1,19 @@
+Lecture 4: Cloud CPU Scheduling
+
+Credit scheduler
+Xen's latest PS (proportional share) scheduler featuring automatic load balancing across physical CPUs.
+Default scheduler in Xen.
+Each VM is assigned a weight and a cap.
+> Idea based on Stride Scheduling
+Jobs have a “stride” value
+- A stride value describes the counter pace when the job should give up the CPU
+- Stride value is inverse in proportion to the job's number of tickets (more tickets = smaller stride)
+
+Total system tickets = 10,000
+- Job A has 100 tickets
+- Job B has 50 tickets
+- Job C has 250 tickets
+Astride = 10000/100 = 100 stride
+Bstride = 10000/50 = 200 stride
+Cstride = 10000/250 = 40 stride
+Stride scheduler tracks “pass” values for each job (A, B, C)

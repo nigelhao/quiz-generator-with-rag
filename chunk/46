@@ -1,0 +1,12 @@
+Lecture 3: Virtualization in Cloud
+
+### RAID 0
+- Stripes data across disks
+- For n disks of size S, total capacity becomes nS bytes
+The diagram illustrates RAID 0's data striping mechanism, enhancing data access speed. However, RAID 0 lacks redundancy, resulting in total data loss if one disk fails.
+## RAID 0 Problems
+- Failure of one disk leads to the failure of the entire RAID array
+- Assuming each disk has a failure probability p per month
+- Probability of all n disks not failing: (1-p)^n
+- For example, if p = 0.001 and n = 20, there's a 2% chance of RAID array failure each month
+The diagram presents a RAID 0 array with six disks, illustrating the probability calculation for array failure due to disk failure.

@@ -1,0 +1,11 @@
+Lecture 7: Pagerank Algorithm
+
+Web Spamming by Gaming Pagerank
+- Since 2000, Google Search has become the default gateway to the web.
+- There is a very high premium to appear on the first few pages of search results.
+  - E-commerce sites.
+  - Advertising-driven sites.
+- Spamming: Manipulating the text of web pages in order to appear relevant to queries.
+- Approximately 10-15% of web pages are spam.
+- Spammers' goal: Maximize the page rank of a target page t.
+- Spammers' technique: Manipulating the text of web pages to appear relevant to queries and get as many links from accessible pages as possible to the target page.

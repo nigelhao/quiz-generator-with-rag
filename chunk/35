@@ -1,0 +1,13 @@
+Lecture 3: Virtualization in Cloud
+
+First OS Concept: Thread of Control
+- Thread: Single unique execution context
+ - Program Counter, Registers, Execution Flags, Stack
+- A thread is executing on a processor when it is resident in the processor registers.
+- PC register holds the address of executing instruction in the thread.
+- Certain registers hold the context of the thread
+ - Stack pointer holds the address of the top of stack
+ - Other conventions: Frame Pointer, Heap Pointer, Data
+May be defined by the instruction set architecture or by compiler conventions
+- Registers hold the root state of the thread.
+ - The rest is "in memory"

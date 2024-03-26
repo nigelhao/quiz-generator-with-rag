@@ -1,0 +1,25 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+[2005] Firehose 1.0
+Spine Block
+32x10G to 32 aggregation blocks
+Aggregation Block
+(32x10G to 32 spine blocks)
+Stage 2, 3 or 4 board
+ToR (Stage 1) board: 2x10G up, 24x1G down
+Stage 2, 3, 4 board: 4x10G up, 4x10G down
+Stage 5 board: 8x10G down
+An aggr block has 16 ToRs (320 machines). 32 spine blocks each connect to 32 aggr blocks, resulting in a fabric that scales to 10K machines with 1G average bandwidth
+
+2012 Jupiter
+Jupiter is a large-scale, shared-memory NUMA system designed at IBM Research. It is based on a 3-level hierarchical topology. The top level consists of 8 NUMA nodes, each with 32 cores and 64GB of memory. The middle level consists of 16 compute nodes, each with 8 cores and 32GB of memory. The bottom level consists of 64 memory nodes, each with 4GB of memory. The system is interconnected with a high-speed network that provides 10GB/s of bandwidth between each pair of nodes.
+The diagram shows the system architecture of Jupiter. The top level consists of 8 NUMA nodes, each with 32 cores and 64GB of memory. The middle level consists of 16 compute nodes, each with 8 cores and 32GB of memory. The bottom level consists of 64 memory nodes, each with 4GB of memory. The system is interconnected with a high-speed network that provides 10GB/s of bandwidth between each pair of nodes.
+
+Facebook's fabric
+With 96 pods, the topology can accommodate 73,728 10Gbps hosts. In Facebook's Altoona data center, each aggregation switch connects to 48 ToR switches in its pod, and 12 out of the 48 possible core switches on its plane, resulting in a 4:1 oversubscription.
+The diagram shows the Facebook fabric, which is a network topology that is used to connect the servers in Facebook's data centers. The fabric is designed to be scalable, reliable, and efficient.
+The fabric is made up of three layers:
+- The core layer is made up of a number of core switches that are connected to each other in a mesh topology. The core switches are responsible for routing traffic between the different pods in the fabric.
+- The aggregation layer is made up of a number of aggregation switches that are connected to the core switches. The aggregation switches are responsible for aggregating traffic from the ToR switches in the pods and sending it to the core switches.
+- The ToR layer is made up of a number of ToR switches that are connected to the aggregation switches. The ToR switches are responsible for connecting the servers in the pods to the fabric.
+The fabric is designed to be scalable so that it can be easily expanded to accommodate more servers. The fabric is also designed to be reliable so that it can withstand the failure of individual switches or links. The fabric is also designed to be efficient so that it can handle a large amount of traffic without experiencing congestion.

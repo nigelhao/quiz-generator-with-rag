@@ -1,0 +1,16 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+History
+How can computers be connected and talk to each other?
+The roots of computer networking can be traced back to the development of telephone networks. In 1961, Leonard Kleinrock published his first paper on packet switching, which showed that this method of data transmission was more efficient than circuit switching for bursty traffic. Packet switching was later adopted as the basis for the ARPANET (Advanced Research Projects Agency Network), which was the first wide-area computer network.
+Evolution - 1969 First link on ARPANet between UCLA and SRI (Stanford Research Institute)
+Evolution - 1969 By the end of 1969, four nodes, UCLA, SRI, UCSB, Utah
+Evolution - 1971 September 1971
+http://personalpages.manchester.ac.uk/staff/m.dodge/cybergeography/atlas/historical.html
+Evolution - 1980
+http://personalpages.manchester.ac.uk/staff/m.dodge/cybergeography/atlas/historical.html
+Milestones
+- In 1973, R. Metcalfe invented Ethernet (in Xerox PARC)
+- In 1974, Vinton Cerf and Robert Kahn invented TCP/IP
+- The term “internet” was adopted around the 70s as an abbreviation of internetworking
+- Killer applications: Email, Web, peer-to-peer (P2P), search engine, video, mobile, social media

@@ -1,0 +1,19 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+TCP overview
+TCP: Transmission Control Protocol - Point-to-point; reliable in-order byte stream (sequence numbers); full duplex - Connection-oriented, handshaking before data exchange - Flow control: not sending too fast for the receiver to process (src and dst may have different network speeds). recv window, rwnd - Congestion control: avoid congestion collapse (too many sources sending too much). congestion window, cwnd
+Reliable transfer - Use sequence number, and send acknowledgment packets indicating the sequence number up to which the receiver has received. - If some packets are received out-of-order, or are lost, the receiver will only ACK the last seq num of the contiguous stream. - Packet loss can be detected by timeouts and duplicated ACKs.
+
+TCP flow control
+Receiver controls sender so the sender won't overflow the receiver's buffer by sending too fast.
+Receiver advertises buffer space by including a rwnd value in the header.
+Sender limits the amount of un-acked data to receiver's rwnd value.
+The diagram shows the TCP flow control mechanism. The sender sends data to the receiver. The receiver buffers the data. The receiver sends acknowledgments (ACKs) to the sender. The sender uses the ACKs to control the flow of data.
+The rwnd value is the amount of free space in the receiver's buffer. The sender can send up to rwnd bytes of data without receiving an ACK.
+The TCP flow control mechanism ensures that the sender does not overwhelm the receiver with data. This prevents the receiver's buffer from overflowing and causing data loss.
+TCP congestion control "Too many sources sending too fast for the network to handle" Manifestations: lost packets (buffer overflow at routers), long delays (queuing in router buffers).
+
+TCP congestion control
+TCP relies on packet drops as a signal of congestion. Packet drops are detected by duplicated ACKs. Thus, when TCP sees duplicated ACKs, it will interpret as congestion is experienced.
+However, packet drops may not be caused by congestion, e.g., in wireless networks.
+Duplicated ACKs may not be caused by packet drops. They may be due to a change of network path and some packets arrive late but not dropped.

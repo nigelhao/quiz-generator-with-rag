@@ -1,0 +1,20 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+## Positive Linear System
+At the \(k+1\)th congestion event, source s's window satisfies
+$$w_s(k+1) = \beta_s w_s(k) + \sum_{i=1}^n \alpha_i \left( 1 - \beta_i \right) w_i(k)$$
+Let \(w(k) = (w_1(k),...,w_n(k))^T\) and write a positive system:
+$$w(k+1) = Aw(k),$$
+where
+$$A = \begin{bmatrix} \beta_1 & 0 & \cdots & 0 \\\ 0 & \beta_2 & \cdots & 0 \\\ \vdots & \vdots & \ddots & \vdots \\\ 0 & 0 & \cdots & \beta_n \end{bmatrix} + \frac{1}{\sum_{i=1}^n \alpha_i} \begin{bmatrix} \alpha_1 \\\ \alpha_2 \\\ \vdots \\\ \alpha_n \end{bmatrix} (1-\beta_1, \cdots, 1-\beta_n)$$
+
+Visualizing the Theories Behind AIMD
+In the diagram, the X-axis represents User 1's allocation and the Y-axis represents User 2's allocation. The fairness line represents the line where both users receive an equal allocation. The efficiency line represents the line where the total allocation is maximized. The bottleneck link capacity adjusted by optimization-based dual algorithm is the line that represents the maximum allocation that can be achieved by any user, given the current state of the network.
+The diagram shows that the AIMD algorithm can achieve a fair and efficient allocation of resources between users. This is because the AIMD algorithm adjusts the allocation of resources between users based on the current state of the network. This ensures that both users receive an equal allocation of resources and that the total allocation is maximized.
+
+## Positive Linear System
+The spectrum of the matrix A (e.g., the Perron-Frobenius eigenvalue and eigenvectors) provides insights on fairness, rate of convergence and transient response:
+$$\lim_{k \to \infty} w(k) = \begin{pmatrix} \frac{\alpha_1}{1 - \beta_1} & \dots & \frac{\alpha_n}{1 - \beta_n} \end{pmatrix}^T$$
+which, if specialized to the case of αi = 1 and βi = 0.5 for all i, is proportional to the all-ones vector as it should be.
+Fairness line as Perron-Frobenius right eigenvector
+Classical power method algorithm can simulate AIMD and to visualize the iterates as shown in Figure 2

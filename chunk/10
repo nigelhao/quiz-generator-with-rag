@@ -1,0 +1,13 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+Opportunities and Challenges
+The use of the cloud provides a number of opportunities:
+IaaS enables services to be used without any understanding of their infrastructure.
+Cloud computing works using economies of scale:
+- IaaS and PaaS potentially lower the outlay expense for start up companies, as they would no longer need to buy their own software or servers.
+- Cost would be by on-demand pricing in IaaS, PaaS, and SaaS.
+- Cloud providers claim costs by establishing an ongoing revenue stream.
+Data and services are stored remotely but accessible from "anywhere" in SaaS.
+
+Opportunities and Challenges
+In parallel there has been backlash against cloud computing: Use of cloud computing means dependence on others and that could possibly limit flexibility and innovation: The others are likely become the bigger Internet companies like Google and IBM, who may monopolise the market. Some argue that this use of supercomputers is a return to the time of mainframe computing that the PC was a reaction against. Security could prove to be a big issue: It is still unclear how safe out-sourced data to SaaS is and when using these services ownership of data in SaaS is not always clear. There are also issues relating to policy and access: If your data is stored abroad whose policy do you adhere to? What happens if the remote server goes down? How will you then access files? There have been cases of users being locked out of accounts and losing access to data.

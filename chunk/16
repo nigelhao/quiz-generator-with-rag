@@ -1,0 +1,18 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+A layering architecture
+The diagram shows a layering architecture. The architecture is divided into three layers: the presentation layer, the business logic layer, and the data access layer.
+The presentation layer is responsible for interacting with the user. It handles the user interface and the presentation of data to the user.
+The business logic layer is responsible for handling the logic of the application. It contains the business rules and the logic for processing data.
+The data access layer is responsible for accessing the data. It handles the interaction with the database and the retrieval and storage of data.
+
+Layering
+How to build an internet that connects all different kinds of networks, each of which may use a completely different technology?
+Answer: layering, with well-defined interfaces
+Best summarized by David Clark, MIT, “The Design Philosophy of the DARPA Internet Protocols"
+
+Why layering?
+- Functions are separated into layers. Layers are "blackboxes" to the upper- or lower-layer protocols.
+- Allow distinct technologies for the same function.
+  - physical: Ethernet, 3G, WiFi, satellite, optical, quantum, etc.
+- Allow them to inter-operate using standardized interfaces

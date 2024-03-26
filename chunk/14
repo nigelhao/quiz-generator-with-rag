@@ -1,0 +1,32 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+Some basic concepts
+Diagrams are a great way to visualize information. They can help you to see the relationships between different parts of a system and to identify patterns and trends. There are many different types of diagrams, each with its own strengths and weaknesses. Some of the most common types include:
+Flowcharts: Flowcharts are used to represent the flow of information or data through a system. They can be used to identify bottlenecks and inefficiencies in a process.
+Block diagrams: Block diagrams are used to represent the components of a system and the relationships between them. They can be used to identify the major components of a system and how they interact with each other.
+Organizational charts: Organizational charts are used to represent the hierarchy of an organization. They can be used to identify the different levels of management and the reporting relationships between them.
+Venn diagrams: Venn diagrams are used to represent the relationships between different sets of data. They can be used to identify the similarities and differences between different sets of data.
+Pie charts: Pie charts are used to represent the proportions of different parts of a whole. They can be used to identify the relative sizes of different parts of a whole.
+Bar charts: Bar charts are used to represent the values of different variables. They can be used to compare the values of different variables and to identify trends.
+Line charts: Line charts are used to represent the changes in a variable over time. They can be used to identify trends and to make predictions about the future.
+
+Building blocks
+- Nodes: end-hosts, or hosts (PC, server), switches, routers, middleboxes
+- Links: coax cable, optical fiber, wireless, etc.
+  - point-to-point
+  - multiple access (shared)
+Switching approaches
+- Circuit switching:
+  - (early) telephone networks
+  - Connection oriented, dedicated communication link between two nodes
+- Packet switching:
+  - computer networks
+  - Connection-less, shared communication links, no set-up
+  - Data is divided into packets and transferred independently
+Addressing, routing
+- Address: byte-string that identifies a node
+- Routing: process of forwarding messages to the destination node based on its address
+- Types of addresses:
+  - unicast: node-specific
+  - broadcast: all nodes on the network
+  - multicast: a group/subset of nodes

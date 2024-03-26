@@ -1,0 +1,17 @@
+Lecture 3: Virtualization in Cloud
+
+Para-virtualization
+> Developed to overcome the performance penalty of full virtualization with hardware emulation.
+> “Para” means “besides,” “with,” or “alongside.”
+In computing, para-virtualization is a virtualization technique enabling multiple operating systems to run on a single physical machine. It requires special hardware support.
+Para-virtualization modifies the guest operating system to acknowledge the hypervisor's presence, enabling cooperation that can enhance performance and security.
+One advantage of para-virtualization is its potential for better performance than full virtualization, as guests do not require interception and emulation by the hypervisor, reducing overhead.
+Another advantage is improved security, as para-virtualized guests lack direct hardware access, mitigating security risks.
+However, para-virtualization demands special hardware support, possibly increasing implementation costs. Additionally, para-virtualized guests may lack full portability compared to fully virtualized ones.
+Overall, para-virtualization suits organizations needing multiple OSes on a single physical machine, offering good performance, security, and relative ease of implementation.
+Diagram:
+The diagram depicts layers of a para-virtualized system: host hardware (physical computer), hypervisor (managing virtual machines), guest operating system (running inside VM), and guest applications (programs within the guest OS).
+Can be achieved in two ways:
+- Recompiled OS kernel (Linux)
+- Para-virtualization drivers for select hardware (e.g., GPU, NIC)
+Guest OS is aware of its virtualized environment, communicating with the hypervisor via specialized APIs for privileged instructions. These system calls, known as "hypercalls," enhance performance as the hypervisor focuses on VM isolation and coordination.

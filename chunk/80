@@ -1,0 +1,23 @@
+Lecture 6: CAP Theorem
+
+## CAP Theorem
+* Conjectured by Prof. Eric Brewer at PODC (Principle of Distributed Computing) 2000 keynote talk
+* Described the trade-offs involved in distributed system
+* It is impossible for a web service to provide following three guarantees at the same time:
+    * Consistency
+    * Availability
+    * Partition-tolerance
+The CAP theorem states that it is impossible for a distributed computer system to simultaneously provide all of the following three guarantees:
+* Consistency: All nodes in the system have the same data at all times.
+* Availability: Every request to the system is guaranteed to succeed.
+* Partition tolerance: The system continues to operate correctly even if some of the nodes in the system fail.
+In other words, a distributed system can only provide two out of the three guarantees. This is because there is a trade-off between consistency and availability. If a system is strongly consistent, then it may not be available all the time. Conversely, if a system is highly available, then it may not be strongly consistent.
+The CAP theorem is a fundamental limitation of distributed systems. It is important to understand this theorem when designing distributed systems, as it can help you to make informed decisions about the trade-offs that you need to make.
+ ## CAP Theorem
+* Consistency:
+ * All nodes should see the same data at the same time
+* Availability:
+ * Node failures do not prevent survivors from continuing to operate
+* Partition-tolerance:
+ * The system continues to operate despite network partitions
+* A distributed system can satisfy any two of these guarantees at the same time but not all three

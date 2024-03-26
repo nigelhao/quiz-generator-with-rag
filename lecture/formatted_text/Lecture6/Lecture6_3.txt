@@ -1,0 +1,155 @@
+Lecture 6: CAP Theorem
+
+Why this is important?
+- The future of cloud computing is distributed (Big Data Trend, etc.)
+- CAP theorem describes the trade-offs involved in distributed systems
+- A proper understanding of CAP theorem is essential to making decisions about the future of distributed system design
+- Misunderstanding can lead to erroneous or inappropriate design choices
+ Revisit CAP Theorem
+* Of the following three guarantees potentially offered by distributed systems:
+    * Consistency
+    * Availability
+    * Partition tolerance
+* Pick two
+* This suggests there are three kinds of distributed systems:
+    * CP
+    * AP
+    * CA
+Any problems?
+The CAP theorem states that it is impossible for a distributed system to simultaneously provide all three of the following guarantees:
+* Consistency: All nodes in the system have the same data at all times.
+* Availability: All nodes in the system are always available.
+* Partition tolerance: The system continues to operate correctly even if some of the nodes in the system fail.
+In other words, a distributed system can only provide two of the three CAP guarantees.
+The diagram shows the relationship between the three CAP guarantees. The X marks the point where all three guarantees are不可能同时满足. The three circles represent the three kinds of distributed systems that are possible:
+* CP systems: These systems provide consistency and partition tolerance, but not availability.
+* AP systems: These systems provide availability and partition tolerance, but not consistency.
+* CA systems: These systems provide consistency and availability, but not partition tolerance.
+
+---
+
+In practice, most distributed systems are either CP or AP systems. CA systems are rare because they are difficult to design and implement.
+ A popular misconception: 2 out 3
+- How about CA?
+- Can a distributed system (with unreliable network) really be not tolerant of partitions?
+The diagram shows a Venn diagram with two circles. The left circle is labeled "C" and the right circle is labeled "A". The intersection of the two circles is labeled "CA".
+The question is "Can a distributed system (with unreliable network) really be not tolerant of partitions?". The answer is "yes".
+A distributed system is a system that is composed of multiple computers that are connected by a network. A partition is a division of the network into two or more parts, such that the computers in one part cannot communicate with the computers in the other part.
+A distributed system can be tolerant of partitions if it is designed in such a way that it can continue to operate even if one or more partitions occur. This can be done by using techniques such as replication, load balancing, and fault tolerance.
+However, if a distributed system is not designed to be tolerant of partitions, then it may not be able to continue to operate if a partition occurs. This can lead to data loss, service outages, and other problems.
+
+A few witnesses
+- Coda Hale, Yammer software engineer:
+- “Of the CAP theorem's Consistency, Availability, and Partition Tolerance, Partition Tolerance is mandatory in distributed systems. You cannot not choose it."
+http://codahale.com/you-cant-sacrifice-partition-tolerance/
+Werner Vogels, Amazon CTO
+- "An important observation is that in larger distributed-scale systems, network partitions are a given; therefore, consistency and availability cannot be achieved at the same time."
+ A few witnesses
+- Daniel Abadi, Co-founder of Hadapt
+- So in reality, there are only two types of systems
+...
+I.e., if there is a partition, does the system give up availability or consistency?
+http://dbmsmusings.blogspot.com/2010/04/problems-with-cap-and-yahoos-little.html
+
+---
+
+Consistency or Availability
+Consistency and Availability is not a "binary" decision
+AP systems relax consistency in favor of availability – but are not inconsistent
+CP systems sacrifice availability for consistency- but are not unavailable
+This suggests both AP and CP systems can offer a degree of consistency, and availability, as well as partition tolerance
+The diagram shows a Venn diagram with three circles. The circles are labeled "C" (for consistency), "A" (for availability), and "P" (for partition tolerance). The "X" marks the spot where all three circles overlap.
+The diagram illustrates that there is a trade-off between consistency and availability. AP systems relax consistency in favor of availability, while CP systems sacrifice availability for consistency. However, both types of systems can offer a degree of partition tolerance.
+ AP: Best Effort Consistency
+* Example:
+    * Web Caching
+    * DNS
+* Trait:
+    * Optimistic
+    * Expiration/Time-to-live
+    * Conflict resolution
+ CP: Best Effort Availability
+* **Example:**
+    * Majority protocols
+    * Distributed Locking (Google Chubby Lock service)
+* **Trait:**
+    * Pessimistic locking
+    * Make minority partition unavailable
+
+---
+
+Types of Consistency
+* Strong Consistency
+After the update completes, any subsequent access will return the same updated value.
+* Weak Consistency
+It is not guaranteed that subsequent accesses will return the updated value.
+* Eventual Consistency
+Specific form of weak consistency
+It is guaranteed that if no new updates are made to object, eventually all accesses will return the last updated value (e.g., propagate updates to replicas in a lazy fashion)
+ ## Eventual Consistency
+- A Facebook Example
+* Bob finds an interesting story and shares with Alice by posting on her Facebook wall
+* Bob asks Alice to check it out
+* Alice logs in her account, checks her Facebook wall but finds:
+ - Nothing is there!
+![Image of a laptop with a Facebook wall that says "Nothing is there!"]
+
+---
+
+## Eventual Consistency
+### A Facebook Example
+- Bob tells Alice to wait a bit and check out later
+- Alice waits for a minute or so and checks back:
+- She finds the story Bob shared with her!
+The diagram shows a Facebook wall. On the left, Bob is posting a story. On the right, Alice is checking her feed. The arrow between them indicates that Bob's story will eventually be visible to Alice.
+* **Reason**: It is possible because Facebook uses an eventual consistent model
+* **Why Facebook chooses eventual consistent model over the strong consistent one?**
+    * Facebook has more than 1 billion active users
+    * It is non-trivial to efficiently and reliably store the huge amount of data generated at any given time
+    * Eventual consistent model offers the option to reduce the load and improve availability
+### A Dropbox Example
+* Dropbox enabled immediate consistency via synchronization in many cases.
+* However, what happens in case of a network partition?
+* Let's do a simple experiment here:
+    * Open a file in your dropbox
+    * Disable your network connection (e.g., WiFi, 4G)
+    * Try to edit the file in the dropbox: can you do that?
+    * Re-enable your network connection: what happens to your dropbox folder?
+- Dropbox embraces eventual consistency:
+    - Immediate consistency is impossible in case of a network partition
+    - Users will feel bad if their word documents freeze each time they hit Ctrl+S, simply due to the large latency to update all devices across WAN
+    - Dropbox is oriented to personal syncing, not on collaboration, so it is not a real limitation.
+### An ATM Example
+- In design of automated teller machine (ATM):
+ - Strong consistency appear to be a nature choice
+ - However, in practice, A beats C
+ - Higher availability means higher revenue
+ - ATM will allow you to withdraw money even if the machine is partitioned from the network
+ - However, it puts a limit on the amount of withdraw (e.g., $200)
+ - The bank might also charge you a fee when a overdraft happens
+The diagram shows an ATM machine. The user is able to withdraw money from the ATM even if the machine is partitioned from the network. However, there is a limit on the amount of money that can be withdrawn. The bank might also charge a fee if the user overdrafts their account.
+
+---
+
+Dynamic Tradeoff between C and A
+- An airline reservation system:
+ - When most of seats are available: it is ok to rely on somewhat out-of-date data, availability is more critical
+ - When the plane is close to be filled: it needs more accurate data to ensure the plane is not overbooked, consistency is more critical
+- Neither strong consistency nor guaranteed availability, but it may significantly increase the tolerance of network disruption
+ Discussion
+* In a cloud computing system (e.g., Amazon, Google cloud, etc), what are the trade-offs between consistency and availability you can think of? What is your strategy?
+* Hint -> Things you might want to consider:
+    * Different types of data (e.g., shopping cart, billing, product, etc.)
+    * Different types of operations (e.g., query, purchase, etc.)
+    * Different types of services (e.g., distributed lock, DNS, etc.)
+    * Different groups of users (e.g., users in different geographic areas, etc.)
+
+---
+
+Summary of CAP Theorem
+* In the presence of a network partition:
+* In order to keep the replicas consistent, you need to block.
+    - From an outside observer, the system appears to be unavailable.
+* If we still serve the requests from two partitions, then the replicas will diverge.
+    - The system is available, but no consistency.
+* The CAP theorem explains this dilemma.

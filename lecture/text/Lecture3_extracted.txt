@@ -1,0 +1,708 @@
+ Nanyang Technological University, Singapore
+
+CE/CZ4052 Cloud Computing
+
+Virtualization in Cloud
+
+Dr. Tan, Chee Wei
+Email: cheewei.tan@ntu.edu.sg
+Office: N4-02c-104
+ Outline
+
+Concepts
+Virtualization architecture
+CPU and OS basics
+Types of CPU virtualization
+Cloud infrastructures
+ What is virtualization?
+Virtualization is a broad term. It can be applied to all types of resources (CPU, memory, network, etc.)
+Allows one computer to “look like” multiple computers, doing multiple jobs, by sharing the resources of a single machine across multiple environments.
+ History
+
+Believe it or not:
+- Virtualization started in the 1960s in IBM's mainframe
+
+The image shows a woman standing next to an IBM mainframe computer. The computer is large and takes up most of the room. The woman is wearing a lab coat and is looking at the computer.
+ Virtualization
+
+A 'non-virtualized' system has a single OS that controls all hardware platform resources.
+
+A virtualized system makes it possible to run multiple virtual machines on a single physical platform.
+
+In the diagram, the non-virtualized system has a single operating system that is responsible for managing all of the hardware resources, such as the processor, memory, and storage. The virtualized system, on the other hand, has a virtualization layer that allows multiple operating systems to run on the same physical hardware. Each operating system runs in its own virtual machine, which is isolated from the other virtual machines. This allows for greater flexibility and security, as each operating system can be configured and managed independently.
+ The old model
+
+A server for every application
+Software and hardware are tightly coupled
+
+The diagram shows the old model of computing, where each application has its own dedicated server. This model is tightly coupled, meaning that the software and hardware are closely integrated and cannot be easily separated. This makes it difficult to scale and maintain the system, as changes to the software or hardware require changes to the other.
+ The old model
+Big disadvantage: low utilization
+App App App App App App
+App App
+X86
+Windows
+XP
+X86
+Windows
+2003
+X86
+Suse
+X86
+Red Hat
+ The new model
+* Physical resources are virtualized. OS and applications as a single unit by encapsulating them into virtual machines
+* Separate applications and hardware
+
+The diagram shows the new model for virtualization. Physical resources are virtualized, and the operating system and applications are encapsulated into virtual machines. This allows for greater flexibility and scalability, as well as improved security.
+ The new model
+Big advantage: improved utilization
+App. A      App. B      App. C      App. D
+X86 Windows XP      X86 Windows 2003      X86 Suse Linux      X86 Red Hat Linux
+                                                                  
+X86 Multi-Core, Multi Processor
+ Some terms
+
+The diagram shows the relationship between applications, the operating system, the virtualization layer, and the hardware architecture.
+
+The applications are at the top level and interact with the operating system. The operating system provides a layer of abstraction between the applications and the hardware. The virtualization layer allows multiple operating systems to run on a single physical machine. The hardware architecture is the foundation of the system and provides the basic instructions that the operating system and applications need to run.
+
+The x86 architecture is a family of instruction sets that are used in most personal computers. The CPU is the central processing unit and is responsible for executing instructions. The memory is used to store data and instructions that are being processed by the CPU. The NIC is the network interface controller and is responsible for connecting the computer to a network. The disk is used to store data that is not currently being processed by the CPU.
+ Hosted architecture
+A hosted architecture installs and runs the virtualization layer as an application on top of an operating system
+ Hosted architecture example
+
+VMware Workstation allows multiple standard operating systems and their applications to run with high performance in secure and transportable virtual machines. Each virtual machine is equivalent to a PC with a unique network address and full complement of hardware choices.
+
+Click this button to create a new virtual machine. You then can install and run a variety of standard operating systems in the virtual machine.
+
+Click this button to create a new team. You then can add several virtual machines and connect them with private team LAN segments.
+
+Click this button to browse for virtual machines or teams and to select one to display in this panel. You then can interact with the guest operating system within this display as you would a standard PC.
+ Red Hat Enterprise Linux 4 - VMware Workstation
+
+You do not have VMware Tools installed.
+
+vmware
+
+Starting
+Press F2 to enter SETUP, F12 for Network Boot, ESC for Boot Menu
+
+10:49 AM
+ **Red Hat Enterprise Linux 4 - VMware Workstation**
+
+**File Edit View VM Team Windows Help**
+
+**Favorites**
+
+Red Hat Enterprise Linux 4
+Windows 2000 Server
+
+**Home**
+Red Hat Enterprise Linux 4
+Windows 2000 Server
+
+**Applications**
+Computer
+Tom's Home
+Trash
+
+**Actions**
+Mon Mar 27, 11:36 AM
+
+**You do not have VMware Tools installed.**
+
+start
+Image:Qemu.jp...
+Microsoft Powe...
+Inbox for tjg9...
+Red Hat Enterp...
+2 IMs
+Red Hat Enterp...
+50°
+11:27 AM
+ Hosted architecture
+* Indirect access to hardware through the host OS
+* Performance penalty, usually for desktops and personal use
+ Hypervisor architecture
+The hypervisor architecture installs the virtualization layer, called hypervisor, directly on a clean x86-based system.
+Installer is usually an ISO installing a tailor-made OS.
+The diagram shows the hypervisor architecture. The hypervisor is a software layer that runs on top of the hardware and provides virtualization services to the guest operating systems. The guest operating systems are isolated from each other and from the hardware by the hypervisor. This allows multiple guest operating systems to run on the same hardware simultaneously.
+ Hypervisor architecture
+- It has direct access to hardware resources
+- A hypervisor is more efficient than a hosted architecture and delivers greater scalability, robustness, and performance
+- For production use
+ CPU virtualization
+
+CPU virtualization allows a single physical CPU to be divided into multiple virtual CPUs. Each virtual CPU can run its own operating system and applications independently of the others. This allows for greater flexibility and efficiency in the use of computing resources.
+
+There are two main types of CPU virtualization: full virtualization and paravirtualization. Full virtualization creates a completely isolated environment for each virtual CPU, while paravirtualization requires the guest operating systems to be aware of the virtualization layer.
+
+Full virtualization is more secure than paravirtualization, but it is also more performance-intensive. Paravirtualization is less secure, but it is also more efficient.
+
+CPU virtualization is a powerful technology that can be used to improve the efficiency and flexibility of computing resources. It is used in a wide variety of applications, including cloud computing, virtualization, and desktop virtualization.
+ OS review
+
+Credit: Prof. John Kubiatowicz's slides for CS162, Spring 2015, UC Berkeley
+ What is an operating system?
+
+- Special layer of software that provides application software access to hardware resources
+- Convenient abstraction of complex hardware devices
+- Protected access to shared resources
+- Security and authentication
+- Communication amongst logical entities
+
+The diagram shows the relationship between the operating system (OS) and the hardware. The OS is a layer of software that sits between the hardware and the application software. The OS provides the application software with a convenient abstraction of the complex hardware devices. This allows the application software to be written without having to worry about the details of the underlying hardware. The OS also provides protected access to shared resources, such as memory and files. This ensures that the application software does not interfere with each other. Finally, the OS provides security and authentication services. This helps to protect the system from unauthorized access.
+ **Four fundamental OS concepts**
+* **Thread**
+    * Single unique execution context
+    * Program Counter, Registers, Execution Flags, Stack
+* **Address Space w/ Translation**
+    * Programs execute in an address space that is distinct from the memory space of the physical machine
+* **Process**
+    * An instance of an executing program is a process consisting of an address space and one or more threads of control
+* **Dual Mode operation/Protection**
+    * Only the "system" has the ability to access certain resources
+    * The OS and the hardware are protected from user programs and user programs are isolated from one another by controlling the translation from program virtual addresses to machine physical addresses
+ **OS Bottom Line: Run Programs**
+
+The diagram shows the relationship between the different components of an operating system (OS). The OS is responsible for managing the hardware and software resources of a computer system, and providing services to user programs.
+
+The program source is the human-readable code that is written by a programmer. This is then compiled into an executable file, which is a binary file that can be executed by the computer. When the executable file is run, the OS loads the instructions and data segments of the file into memory. The OS also creates a stack and heap for the program. The stack is used to store local variables and function calls, while the heap is used to store dynamically allocated memory.
+
+The OS then transfers control to the program. The program can then execute its instructions and access the data in memory. The OS provides services to the program, such as input/output, file management, and memory management. The OS also protects itself and the program from each other. For example, the OS prevents the program from accessing memory that is being used by the OS itself.
+
+The program eventually terminates, and the OS regains control. The OS then cleans up any resources that were used by the program, and prepares the system for the next program to be run.
+ First OS Concept: Thread of Control
+
+- Thread: Single unique execution context
+ - Program Counter, Registers, Execution Flags, Stack
+- A thread is executing on a processor when it is resident in the processor registers.
+- PC register holds the address of executing instruction in the thread.
+- Certain registers hold the context of thread
+ - Stack pointer holds the address of the top of stack
+ - Other conventions: Frame Pointer, Heap Pointer, Data
+May be defined by the instruction set architecture or by compiler conventions
+- Registers hold the root state of the thread.
+ - The rest is "in memory"
+ Second OS Concept: Program's Address Space
+
+- Address space is the set of accessible addresses plus the state associated with them.
+- For a 32-bit processor, there are 2^32 = 4 billion addresses.
+- What happens when you read or write to an address?
+ - Perhaps nothing
+ - Perhaps acts like regular memory
+ - Perhaps ignores writes
+ - Perhaps causes I/O operation
+>> (Memory-mapped I/O)
+ - Perhaps causes an exception (fault)
+
+The diagram shows the layout of a typical program's address space. The code segment contains the program's instructions. The static data segment contains the program's global variables. The heap segment is used for dynamic memory allocation. The stack segment is used for storing local variables and function call arguments.
+ **Address Space: In a Picture**
+
+- What's in the code segment? Data?
+- What's in the stack segment?
+ - How is it allocated? How big is it?
+- What's in the heap segment?
+ - How is it allocated? How big?
+
+The diagram shows the layout of the address space in a computer. The address space is divided into two segments: the code segment and the data segment. The code segment contains the instructions that are executed by the processor. The data segment contains the data that is used by the program.
+
+The processor registers are located at the top of the address space. The registers are used to store temporary data that is being processed by the processor. The program counter (PC) is a register that points to the next instruction that is to be executed. The stack pointer (SP) is a register that points to the top of the stack.
+
+The stack is a region of memory that is used to store temporary data that is not needed for a long period of time. The heap is a region of memory that is used to store data that is dynamically allocated. The heap is located at the bottom of the address space.
+ Providing Illusion of Separate Address Space:
+Load new Translation Map on Switch
+
+The diagram shows how a computer's memory is divided into two parts: virtual address space and physical address space. Virtual address space is the memory that is visible to a program, while physical address space is the actual memory that is used by the computer.
+
+Each program has its own virtual address space, which is isolated from the virtual address spaces of other programs. This isolation is provided by the operating system, which uses a technique called memory management to keep track of which parts of physical memory are being used by each program.
+
+When a program is loaded into memory, the operating system creates a translation map for the program. This translation map tells the computer how to translate virtual addresses into physical addresses. When the program accesses a virtual address, the computer uses the translation map to find the corresponding physical address and then accesses the data at that physical address.
+
+This system allows multiple programs to run at the same time without interfering with each other. Each program has its own private virtual address space, so it can only access the data that it is supposed to access. The operating system uses memory management to ensure that each program has enough physical memory to run properly.
+ Third OS Concept: Process
+* Process: execution environment with Restricted Rights
+    * Address Space with One or More Threads
+    * Owns memory (address space)
+    * Owns file descriptors, file system context, …
+    * Encapsulate one or more threads sharing process resources
+* Why processes?
+    * Protected from each other!
+    * OS Protected from them
+    * Navigate fundamental tradeoff between protection and efficiency
+    * Processes provides memory protection
+* Application instance consists of one or more processes
+ Protection
+
+- Operating System must protect itself from user programs
+  - Reliability: compromising the operating system generally causes it to crash
+  - Security: limit the scope of what processes can do
+  - Privacy: limit each process to the data it is permitted to access
+  - Fairness: each should be limited to its appropriate share
+- It must protect User programs from one another
+  - Primary Mechanism: limit the translation from program address space to physical memory space
+    - Can only touch what is mapped in
+  - Additional Mechanisms:
+    - Privileged instructions, in/out instructions, special registers
+    - syscall processing, subsystem implementation
+      - (e.g., file access rights, etc)
+ **Fourth OS Concept: Dual Mode Operation**
+Hardware provides at least two modes:
+- "Kernel" mode (or "supervisor" or "protected")
+- "User" mode: Normal programs executed
+
+What is needed in the hardware to support "dual mode" operation?
+- a bit of state (user/system mode bit)
+- Certain operations / actions only permitted in system/kernel mode
+>> In user mode they fail or trap
+- User->Kernel transition sets system mode AND saves the user PC
+>> Operating system code carefully puts aside user state then performs the necessary operations
+- Kernel->User transition clears system mode AND restores appropriate user PC
+>> return-from-interrupt
+ For example: UNIX System Structure
+
+The diagram shows the structure of a UNIX system. The system is divided into three parts: user mode, kernel mode, and hardware.
+
+The user mode is the part of the system that is accessible to the user. It contains the applications that the user runs, as well as the standard libraries that are used by the applications. The kernel mode is the part of the system that is responsible for managing the hardware. It contains the kernel, which is the core of the operating system, as well as the device drivers that allow the kernel to communicate with the hardware. The hardware is the physical components of the system, such as the CPU, memory, and storage devices.
+
+The user mode and the kernel mode are separated by a boundary called the system-call interface. This interface allows the applications in user mode to make requests to the kernel. The kernel then carries out the requests and returns the results to the applications.
+
+The hardware is accessed by the kernel through the device drivers. The device drivers are responsible for translating the requests from the kernel into commands that the hardware can understand.
+ ## User/Kernel (Privileged) Mode
+
+The diagram shows the two modes of operation of a computer system: user mode and kernel mode. User mode is the mode in which the user is able to execute programs. Kernel mode is the mode in which the operating system executes privileged instructions.
+
+The user mode is less privileged than the kernel mode. This means that the user mode cannot access all of the resources of the computer system, such as the memory and the hardware. The kernel mode can access all of the resources of the computer system.
+
+The user mode is typically used for running applications. The kernel mode is typically used for running the operating system.
+
+When a user program makes a system call, it switches from user mode to kernel mode. The system call is then executed in kernel mode. When the system call is completed, the program switches back to user mode.
+
+The diagram also shows the different types of interrupts that can occur in a computer system. Interrupts are events that cause the processor to stop what it is doing and execute a special piece of code. There are two types of interrupts: hardware interrupts and software interrupts.
+
+Hardware interrupts are caused by external events, such as a key being pressed or a mouse being moved. Software interrupts are caused by internal events, such as a program error.
+
+When an interrupt occurs, the processor stops what it is doing and executes the interrupt handler. The interrupt handler is a piece of code that is designed to handle the specific type of interrupt that has occurred.
+
+After the interrupt handler has finished executing, the processor resumes what it was doing before the interrupt occurred.
+ Protection rings
+
+Enforced in hardware in Intel x86 architectures
+
+Least privileged
+Ring 3
+Ring 2
+Ring 1
+Ring 0
+Kernel
+Device drivers
+Device drivers
+Applications
+Source: Wikipedia
+
+Most privileged
+
+The diagram shows the protection rings in an Intel x86 architecture. The rings are numbered from 0 to 3, with ring 0 being the most privileged and ring 3 being the least privileged. Each ring has a different level of access to the system's resources. Ring 0 has the highest level of access and can access all of the system's resources. Ring 1 has a lower level of access and can only access the system's resources that are specifically allowed by the operating system. Ring 2 has an even lower level of access and can only access the system's resources that are specifically allowed by the operating system and the hardware. Ring 3 has the lowest level of access and can only access the system's resources that are specifically allowed by the operating system, the hardware, and the application.
+ How to virtualize a CPU?
+
+- Basically, the CPU does not care whether you are the guest OS or not
+- Have the PC point to somewhere in the RAM
+- If it's unprivileged code, code that executes in userspace
+- It's safe to run no matter it is from the guest OS or host OS
+- Why?
+ What about privileged code?
+
+Currently, there're 3 implementations
+- Full virtualization
+- Para virtualization
+- Hardware-assisted virtualization
+ Types of CPU virtualization
+
+CPU virtualization allows multiple operating systems to run on a single physical machine. There are two main types of CPU virtualization: full virtualization and paravirtualization.
+
+Full virtualization creates a completely isolated virtual machine environment for each operating system. This means that each operating system has its own copy of the CPU, memory, and I/O devices. This type of virtualization is more secure and reliable, but it also has higher performance overhead.
+
+Paravirtualization requires the guest operating system to be aware of the virtualization layer. This allows the virtualization layer to make optimizations that improve performance. However, paravirtualization is less secure than full virtualization because the guest operating system has direct access to the virtualization layer.
+
+There are also two main types of hypervisors: Type 1 and Type 2.
+
+A Type 1 hypervisor, also known as a bare-metal hypervisor, runs directly on the hardware. This type of hypervisor has the lowest performance overhead, but it is also more difficult to install and configure.
+
+A Type 2 hypervisor, also known as a hosted hypervisor, runs on top of an existing operating system. This type of hypervisor is easier to install and configure, but it has higher performance overhead.
+ Full virtualization
+
+A diagram of full virtualization.
+
+The diagram shows how full virtualization works. The guest operating system runs on top of the hypervisor, which in turn runs on top of the host operating system. The hypervisor is responsible for managing the hardware resources and ensuring that the guest operating system is isolated from the host operating system.
+
+The guest operating system is unaware that it is running in a virtualized environment. It believes that it has direct access to the hardware resources. However, all of the hardware resources are actually being managed by the hypervisor. The hypervisor intercepts all of the guest operating system's requests for hardware resources and translates them into requests that the host operating system can understand.
+
+Full virtualization provides a high level of isolation between the guest operating system and the host operating system. This isolation is important for security and stability reasons. It ensures that the guest operating system cannot access the host operating system's files or memory, and vice versa.
+
+Full virtualization is also very efficient. It does not require any modifications to the guest operating system, and it does not require the hypervisor to be aware of the guest operating system's internals. This makes full virtualization a very portable and flexible solution.
+ Full virtualization
+
+In full virtualization, the hypervisor emulates the hardware for the guest operating system. This allows the guest operating system to run on any hardware platform, as long as there is a hypervisor available for that platform.
+
+The hypervisor is a software layer that runs on the host operating system. It is responsible for managing the virtual machines and providing them with the resources they need. The hypervisor also ensures that the guest operating systems are isolated from each other and from the host operating system.
+
+Each guest operating system runs in its own virtual machine. The virtual machine is a software container that provides the guest operating system with a complete set of virtual hardware. The virtual hardware is emulated by the hypervisor.
+
+The guest operating system is unaware that it is running in a virtual machine. It believes that it is running on real hardware. This is because the hypervisor intercepts all of the guest operating system's attempts to access the hardware and emulates the hardware's response.
+
+Full virtualization has the advantage of being very portable. A guest operating system can be run on any hardware platform, as long as there is a hypervisor available for that platform. However, full virtualization can also be very slow. This is because the hypervisor must emulate all of the hardware for the guest operating system.
+ Full virtualization
+>Binary translation – step 1: trapping I/O calls
+
+Guest applications are in ring 3. Whenever the guest OS asks for hardware, e.g. asking BIOS for a list of hardware, it’s trapped by the hypervisor. The hypervisor is in ring 0 and the host OS is in ring 1. The host hardware is below the hypervisor.
+ Full virtualization
+
+>Binary translation – step 2: emulate/translate
+
+Guest Code	                                Translation Cache
+mov ebx, eax 	                                 mov ebx, eax
+cli 	disable interrupt	                       and ebx, ~0xfff
+and ebx, ~0xfff	                               mov [VIF], 0
+mov ebx, cr3	                                 mov [CO ARG], ebx
+sti	enable interrupt	                       call HANDLE CR3
+ret	                                               mov [VIF], 1
+                                                           test [INT PEND], 1
+                                                           jne call HANDLE INTS
+                                                           jmp HANDLE RET
+
+Generally speaking, non-virtualizable instructions are translated into safe instructions.
+
+Using built-in function from VMM
+ Full virtualization
+* The guest OS is tricked to think that it's running privileged code in Ring 0, while it's actually running in Ring 1 of the host with the hypervisor emulating the hardware and trapping privileged code
+* Unprivileged instructions are directly executed on CPU
+ Full virtualization
+
+Advantages:
+
+Keeps the guest OS unmodified
+Prevents an unstable VMs from impacting system performance; VM portability
+
+Disadvantages:
+
+Performance is not good
+ Para-virtualization
+> Developed to overcome the performance penalty of full virtualization with hardware emulation
+> “Para” means “besides,” “with,” or “alongside.”
+ Para-virtualization
+
+In computing, para-virtualization is a virtualization technique that allows multiple operating systems to run on a single physical machine. It is a type of hardware virtualization, which means that it requires special hardware support in order to function.
+
+Para-virtualization works by modifying the guest operating system to make it aware of the presence of the hypervisor. This allows the guest operating system to cooperate with the hypervisor, which improves performance and security.
+
+One of the main advantages of para-virtualization is that it is more efficient than full virtualization. This is because para-virtualized guests do not need to be emulated, which can save a significant amount of processing power.
+
+Another advantage of para-virtualization is that it is more secure than full virtualization. This is because para-virtualized guests are not able to directly access the hardware, which makes it more difficult for them to be compromised.
+
+However, para-virtualization also has some disadvantages. One disadvantage is that it requires special hardware support, which can make it more expensive to implement than full virtualization.
+
+Another disadvantage of para-virtualization is that it can be more difficult to configure and manage than full virtualization. This is because para-virtualized guests need to be modified in order to work with the hypervisor.
+
+Overall, para-virtualization is a good option for businesses that need to run multiple operating systems on a single physical machine. It is more efficient and secure than full virtualization, but it can be more expensive to implement and manage.
+
+Diagram:
+
+The diagram shows the different layers of a para-virtualized system. The bottom layer is the host hardware, which is the physical computer that is running the hypervisor. The next layer up is the hypervisor, which is a software program that manages the virtual machines. The third layer up is the guest operating system, which is the operating system that is running inside the virtual machine. The top layer is the guest applications, which are the programs that are running inside the guest operating system.
+ Para-virtualization
+
+Can be done in two ways:
+
+A recompiled OS kernel. Easy for Linux, Windows doesn't support
+
+Paravirtualization drivers for some hardware, e.g. GPU, NIC
+ Para-virtualization
+Guest OS is aware that it runs in a virtualized environment. It talks to the hypervisor through specialized APIs to run privileged instructions.
+These system calls, in the guest OS, are also called "hypercalls."
+Performance is improved. The hypervisor can focus on isolating VMs and coordinating.
+ Hardware-assisted
+
+In the diagram, there are two modes: root mode and non-root mode.
+In non-root mode, there are four rings: ring 0, ring 1, ring 2, and ring 3.
+In root mode, there are two rings: ring -1 and ring 0.
+
+The guest OS kernel runs in ring 0.
+The hypervisor runs in ring -1.
+Guest applications run in ring 3.
+
+Hardware-assisted virtualization is likely to emerge as the standard for server virtualization into the future.
+For example, Intel® VT-x and AMD® V.
+ Cloud infrastructures
+
+55
+ Cloud & Virtualization
+- Cloud computing is usually related to virtualization
+- Because of elasticity
+- Launching new VMs in a virtualized environment is cheap and fast
+- A cloud infrastructure is in fact a virtual machine management infrastructure
+ An IaaS Cloud
+
+The diagram shows an IaaS cloud. It has a controller node, which is responsible for managing the cloud. There are also two computing nodes, which are responsible for running the virtual machines. Each computing node has a VM image storage node, which is responsible for storing the virtual machine images.
+
+The controller node is responsible for managing the cloud. It keeps track of the resources that are available in the cloud, and it allocates those resources to the virtual machines. The controller node also ensures that the virtual machines are running properly.
+
+The computing nodes are responsible for running the virtual machines. They provide the CPU, memory, and storage resources that the virtual machines need to run. The computing nodes also ensure that the virtual machines are isolated from each other.
+
+The VM image storage node is responsible for storing the virtual machine images. These images are used to create new virtual machines. The VM image storage node also ensures that the virtual machine images are backed up and protected.
+ ## Subtleties
+
+The diagram shows a storage area network (SAN), which is a network of storage servers connected using a fabric channel. The SAN is connected to two computing nodes, each of which is running two virtual machines (VMs).
+
+iSCSI is a protocol that allows SCSI commands to be sent over IP networks. This allows VMs to access storage on the SAN as if it were local storage.
+ Redundant Array of Inexpensive Disks (RAID)
+
+- Disks have limited space: biggest disk today is ~15TB
+- What if you need more than 15TB?
+ - Could make bigger and bigger disks -- but cost is non-linear
+- Use virtualization: put multiple physical disks together to look like one bigger virtual disk
+
+World's biggest hard drive: Meet Western Digital's 15TB monster
+Western Digital packs another terabyte into its 3.5-inch hard disk drives.
+By Liam Tung | October 26, 2018--12:49 GMT (05:49 PDT) | Topic: Storage
+ **RAID (Redundant Array of Inexpensive Disks)**
+- Disks have limited space: biggest disk today is ~15TB
+- What if you need more than 15TB?
+ - Could make bigger and bigger disks -- but cost is non-linear
+- Use virtualization: put multiple physical disks together to look like one bigger virtual disk
+
+Diagram:
+A diagram shows a RAID system with six physical disks. The disks are connected to a RAID controller, which manages the data storage and retrieval. The RAID controller presents the virtual disk to the operating system as a single logical unit.
+
+The diagram also shows how data is written to and read from the RAID system. When data is written to the RAID system, the RAID controller stripes the data across the physical disks. This means that the data is written to multiple disks in parallel, which improves performance. When data is read from the RAID system, the RAID controller reads the data from all of the physical disks in parallel and then combines the data into a single stream. This also improves performance.
+
+The RAID system also provides data redundancy. If one of the physical disks fails, the RAID controller can still read the data from the other disks and reconstruct the failed disk. This protects the data from being lost.
+ ## RAID: a lot of advantages
+
+- Size: we can make arbitrarily large disks
+- Speed: if we lay out data well, we can read from N disks in parallel, not just one
+- Cost: N inexpensive disks is cheaper than one huge disk
+
+The diagram shows how RAID works. Data is striped across multiple disks, which allows for faster read and write speeds. If one disk fails, the data can be reconstructed from the other disks. This makes RAID a very reliable storage solution.
+ ### RAID 0
+- Stripe data across disks
+- n disks of size S, have nS bytes!
+
+The diagram shows how data is striped across disks in a RAID 0 configuration. Each disk is divided into blocks of data, and these blocks are then distributed across the disks in a striped pattern. This allows for faster data access, as multiple disks can be read or written to simultaneously. However, RAID 0 does not provide any redundancy, so if one disk fails, all of the data on the array will be lost.
+ ## RAID 0 Problems
+
+- If one disk fails, the entire RAID array fails
+- Suppose each disk has a probability p of failing per month
+- Probability each disk does not fail is (1-p)
+- Probability all n disks do not fail is (1-p) ^ n
+- Suppose p = 0.001; if n=20, there's a 2% chance the RAID array will fail each month
+
+The diagram shows a RAID 0 array with 6 disks. Each disk has a probability of 0.001 of failing per month. This means that the probability of all 6 disks not failing in a month is (1-0.001) ^ 6 = 0.999996. Therefore, the probability of the RAID array failing in a month is 1 - 0.999996 = 0.000004.
+ Redundant Array of Inexpensive Disks: RAID 1
+
+- Key idea: arrange the data on the disks so the array can survive failures
+- Simplest approach is mirroring, RAID 1
+- Halves capacity, but still less expensive than a big disk
+- Probability 2 replicas fail is 1-(1-p²)n/2
+ - If p = 0.001, if n=20, there's a .00001% chance the RAID array will fail each month
+
+The diagram shows how RAID 1 works. Data is written to two disks in parallel. If one disk fails, the data can still be read from the other disk.
+ The Power of XOR
+
+There are better ways to have recovery data than simple replication.
+- Exclusive OR (XOR)
+- Suppose we have two drives, A and B
+- One extra drive C: C = A ⊕ B
+- If B fails, then you can recover B: B = A ⊕ C
+
+A	B	C
+0	0	0
+0	1	1
+1	0	1
+1	1	0
+
+Diagram:
+Block A and B are XORed together to get C. If B fails, we can XOR A and C to get B.
+ RAID 5: Resiliency With Less Cost
+
+- RAID 5 stripes the data across disks, sets aside 1 disk worth of storage as parity.
+- Parity is the XOR of all of that sector on all of the other drives.
+- Writes write two drives: data and parity; parity is spread: lose 1/n of storage.
+- Requires two drives to fail: n=6, p=0.001, failure ≈ 0.000015.
+- If one drive fails, it can be recovered from the parity bits (just XOR other disks).
+
+The diagram shows how RAID 5 works. Data is striped across six disks. Parity is calculated for each stripe and stored on a seventh disk. If one disk fails, the data can be reconstructed from the remaining disks using the parity information.
+ **RAID 5: Resiliency With Less Cost**
+
+Suppose we have 6 disks total, one parity disk
+We lose disk 4
+Question 1: Can we still service reads? If so, how does one read from disk 4?
+Question 2: Can we still service writes? If so, how does one write to disk 4?
+Question 3: How do we recover disk 4?
+
+The diagram shows a RAID 5 array with 6 disks. Each disk is labeled with a number from 1 to 6. The parity disk is disk 6.
+
+To answer the first question, we need to know how RAID 5 works. RAID 5 is a type of disk striping that uses parity to protect data. Data is striped across all of the disks in the array, and a parity disk is used to store parity information. This parity information can be used to reconstruct data if one of the disks in the array fails.
+
+In this case, we have lost disk 4. We can still service reads from the array because we can use the parity information to reconstruct the data on disk 4. To read data from disk 4, we would first read the data from the other disks in the array. We would then use the parity information to reconstruct the data on disk 4.
+
+To answer the second question, we need to know how writes are performed in a RAID 5 array. When data is written to the array, it is striped across all of the disks in the array. The parity information is also updated. This ensures that the data is protected in case of a disk failure.
+
+In this case, we have lost disk 4. We can still service writes to the array because we can use the parity information to reconstruct the data on disk 4. To write data to disk 4, we would first write the data to the other disks in the array. We would then use the parity information to reconstruct the data on disk 4.
+
+To answer the third question, we need to know how to recover a failed disk in a RAID 5 array. To recover a failed disk, we would first need to identify the failed disk. We would then need to remove the failed disk from the array. We would then need to rebuild the array using the remaining disks.
+
+In this case, we have lost disk 4. To recover disk 4, we would first need to identify the failed disk. We would then need to remove the failed disk from the array. We would then need to rebuild the array using the remaining disks.
+ Reed-Solomon Coding
+
+- What if chances more than can fail becomes dangerous (thousands of drives)?
+- Reed-Solomon coding: turn k data blocks into n, can recover from any (n-k) failures
+ - E.g., turn 223 data blocks into 255, can recover from any 32 failures
+ - Used in CDs, DVDs, QR codes, Mars Rovers, and most cloud storage systems
+- RAID 6: use Reed-Solomon to have two parity drives
+
+The diagram shows how Reed-Solomon coding works. 
+- Data is divided into blocks.
+- Each block is encoded with a parity block.
+- The parity blocks are stored on a separate drive.
+- If any one drive fails, the data can be reconstructed from the remaining drives.
+ Virtual Machine
+- Software that makes code (running in a process) think that it's running on raw hardware
+- A virtual machine monitor runs in the host operating system
+ - It loads and run disk images for guest operating systems
+ - Operations in the guest operating system that are normally not allowed trap into the virtual machine monitor
+   - Guest operating system tries to change page tables
+   - Guest operating system tries to disable interrupts
+ - Virtual machine monitor emulates the hardware
+
+guest OS
+guest OS
+guest OS
+..................
+VMM vi bash
+Host OS
+..............
+
+Diagram:
+The diagram shows a virtual machine running on a host operating system. The virtual machine has three guest operating systems running on it. The host operating system is responsible for managing the virtual machine and its resources. The virtual machine monitor is responsible for running the guest operating systems.
+ Amazon Elastic Compute Cloud (EC2)
+
+- Amazon computing service: a virtual computer is called an instance
+- Many different kinds of instance: general purpose, memory-optimized, compute-optimized, GPUs, etc.
+- There's generally a full instance size, and you can have 1/2 of it
+- Four a1.large is the same as one a1.2xlarge
+- Two a 1.2x large is the same as one a1.4xlarge
+
+| VCPU | ECU | Memory (GiB) | Instance Storage (GB) | Linux/UNIX Usage |
+|---|---|---|---|---|
+| a1.medium | 1 | N/A | 2 GiB | EBS Only | $0.0255 per Hour |
+| a1.large | 2 | N/A | 4 GiB | EBS Only | $0.051 per Hour |
+| a1.xlarge | 4 | N/A | 8 GiB | EBS Only | $0.102 per Hour |
+| a1.2xlarge | 8 | N/A | 16 GiB | EBS Only | $0.204 per Hour |
+| a1.4xlarge | 16 | N/A | 32 GiB | EBS Only | $0.408 per Hour |
+| a1.metal | 16 | N/A | 32 GiB | EBS Only | $0.408 per Hour |
+ Amazon EC2 Example
+
+a1.2xlarge      a1.large     a1.large     a1.large     a1.large
+...................................................................
+...................................................................
+VMM             management
+Host OS
+VCPU    ECU   Memory (GIB)   Instance Storage (GB)   Linux/UNIX Usage
+General Purpose - Current Generation
+a1.medium       1     N/A        2 GIB        EBS Only      $0.0255 per Hour
+a1.large        2     N/A        4 GIB        EBS Only      $0.051 per Hour
+a1.xlarge       4     N/A        8 GIB        EBS Only      $0.102 per Hour
+a1.2xlarge      8     N/A        16 GIB       EBS Only      $0.204 per Hour
+a1.4xlarge      16    N/A        32 GIB       EBS Only      $0.408 per Hour
+a1.metal        16    N/A        32 GIB       EBS Only      $0.408 per Hour
+
+The diagram shows an Amazon EC2 instance. The instance has a single VCPU and 2 GiB of memory. It is running a Linux operating system and is using 0.0255 Linux/UNIX Units per hour. The instance is also using 2 GiB of EBS storage.
+ Virtual Machine Advantages
+- Move whole images anywhere: completely decouple all software from hardware
+- Can replicate computer images: run more copies
+ - If your service is overloaded, scale out by spinning up more instances
+- Can arbitrarily start/stop/resume instances very quickly
+ - Must faster than shutting down machines
+- Complete software encapsulation
+ - Common technique used in software tutorials: download this VM image and run it
+- Web hosting: one server can run 100 virtual machines, each one thinks it has a complete, independent computer to configure and use
+- Complete software isolation
+ - In theory, two VMs are completely isolated, can maybe only sense something due to timing (e.g., if they are sharing a CPU), more on this later
+- Enabled us to have cloud computing
+ - Original business case was the desktop! E.g., need to run Windows and Linux in parallel, don't want 2 machines.
+ Modern Virtual Machines Invented in 1997
+
+Using the SimOS Machine Simulator to
+Study Complex Computer Systems
+
+MENDEL ROSENBLUM, EDOUARD BUGNION, SCOTT DEVINE, and
+STEPHEN A. HERROD
+Computer Systems Laboratory, Stanford University
+
+SimOS is an environment for studying the hardware and software of computer systems.
+SimOS simulates the hardware of a computer system in enough detail to boot a commercial
+operating system and run realistic workloads on top of it. This paper identifies two challenges
+that machine simulators such as SimOS must overcome in order to effectively analyze large
+complex workloads: handling long workload execution times and collecting data effectively. To
+study long-running workloads, SimOS includes multiple interchangeable simulation models
+for each hardware component. By selecting the appropriate combination of simulation models,
+the user can explicitly control the tradeoff between simulation speed and simulation detail. To
+handle the large amount of low-level data generated by the hardware simulation models,
+SimOS contains flexible annotation and event classification mechanisms that map the data
+back to concepts meaningful to the user. SimOS has been extensively used to study new
+computer hardware designs, to analyze application performance, and to study operating
+systems. We include two case studies that demonstrate how a low-level machine simulator
+such as SimOS can be used to study large and complex workloads.
+ # **Latency Numbers Every Programmer Should Know**
+*(Peter Norvig and Jeff Dean)*
+
+- L1 cache reference - 0.5ns
+- Branch mispredict - 5ns
+- L2 cache reference - 7ns
+- Mutex lock/unlock - 25ns
+- Main memory reference - 100ns
+- Compress 1K with Zippy - 3,000ns (3us)
+- Send 1K over 1Gbps network - 10,000ns (10us)
+- Read 4K randomly from SSD - 150,000ns (150us)
+- Round trip within a datacenter - 250,000ns (250us)
+- Read 1MB sequentially from RAM - 500,000ns (500us)
+- Read 1MB sequentially from SSD - 1,000,000ns (1,000us) (1ms)
+- Hard disk seek - 10,000,000ns (10,000us) (10ms)
+- Read 1MB sequentially from disk - 20,000,000ns (20,000us) (20ms)
+- Send packet CA->Netherlands->CA - 150,000,000ns (150,000us) (150ms)
+ Caching
+
+Performance optimization
+Keeping a copy of some data
+Usually, closer to where the data is needed
+Or, something that might be reused (don't recompute)
+Used everywhere in computer systems
+Registers
+Processor caches
+File system buffer cache
+DNS caching
+memcached
+Database page cache
+Spark analytics framework
+Web browser page/image cache
+Phone email/SMS cache
+ Why Is Caching Useful?
+There is a basic tradeoff in performance and size.
+- If you make it bigger, it's slower.
+ - Takes longer to get to (due to size).
+ - Addressing it is more complex (more bits to switch on).
+- Faster storage is more expensive.
+ - 16GB RAM: $59.99
+ - 1TB HDD: $59.99
+ - 4TB HDD: $116.99
+ - 4TB SSD: $499.99
+Think about the places your web page might be stored...
+
+The diagram shows the different levels of caching, from the CPU cache to the web cache. 
+Each level of caching is closer to the user than the previous level, and therefore has a lower latency. 
+This means that data that is frequently accessed can be retrieved more quickly from a higher level of the cache.
+The different caching levels are as follows:
+- CPU cache: The CPU cache is the smallest and fastest level of caching. It is located on the CPU die and is used to store frequently accessed data and instructions.
+- Memory cache: The memory cache is larger than the CPU cache and is used to store data that is not currently being used by the CPU.
+- Web cache: The web cache is used to store web pages and other web content. It is located on the web server and is used to improve the performance of web browsing.
+- Proxy cache: The proxy cache is used to store web pages and other web content that is frequently accessed by users. It is located on a proxy server, which is a server that sits between the user and the web server.

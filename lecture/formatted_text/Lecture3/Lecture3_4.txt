@@ -1,0 +1,98 @@
+Lecture 3: Virtualization in Cloud
+
+How to virtualize a CPU?
+- Essentially, the CPU doesn't differentiate between the guest OS and the host OS.
+- Allocate a portion of RAM for PC to point to.
+- Unprivileged code, running in userspace, is safe to execute whether from the guest OS or the host OS.
+- What about privileged code?
+Currently, there are 3 implementations:
+- Full virtualization
+- Para-virtualization
+- Hardware-assisted virtualization
+
+Types of CPU virtualization
+CPU virtualization allows multiple operating systems to run on a single physical machine. There are two main types of CPU virtualization: full virtualization and para-virtualization.
+Full virtualization creates a completely isolated virtual machine environment for each operating system. This means that each operating system has its own copy of the CPU, memory, and I/O devices. This type of virtualization is more secure and reliable, but it also has higher performance overhead.
+Para-virtualization requires the guest operating system to be aware of the virtualization layer. This allows the virtualization layer to make optimizations that improve performance. However, para-virtualization is less secure than full virtualization because the guest operating system has direct access to the virtualization layer.
+
+There are also two main types of hypervisors: Type 1 and Type 2.
+A Type 1 hypervisor, also known as a bare-metal hypervisor, runs directly on the hardware. This type of hypervisor has the lowest performance overhead, but it is also more difficult to install and configure.
+A Type 2 hypervisor, also known as a hosted hypervisor, runs on top of an existing operating system. This type of hypervisor is easier to install and configure, but it has higher performance overhead.
+
+---
+
+Full virtualization
+A diagram of full virtualization.
+The diagram illustrates how full virtualization functions. The guest operating system operates within a virtual machine, isolated from the host operating system. The hypervisor manages the virtual machine and ensures it has the necessary resources.
+The guest operating system manages the guest applications. The guest applications run in ring 3, which is the least privileged ring. The guest OS kernel runs in ring 1, a more privileged ring. The hypervisor runs in ring 0, the most privileged ring.
+The host operating system manages the host applications. The host applications run in ring 3, while the host OS kernel runs in ring 0.
+The hypervisor manages the hardware, ensuring that the guest operating system has access to the required hardware resources without compromising the host OS or hardware.
+In full virtualization, the hypervisor emulates the hardware for the guest operating system, enabling it to run on any hardware platform supported by the hypervisor.
+The hypervisor, a privileged software, operates on the host operating system, creating and managing virtual machines. It also grants virtual machines access to the host OS's hardware resources.
+The guest operating system functions like a normal operating system within a virtual machine, unaware of its virtualized environment. The hypervisor provides the guest OS with the illusion of running on real hardware.
+Full virtualization offers high portability, allowing the guest OS to run on any supported hardware platform. However, it can suffer from performance issues due to the need for hardware emulation.
+The hypervisor presents an emulated hardware set to the VM's guest operating system, including CPU, motherboard, memory, disk, disk controller, and network cards.
+For instance, Microsoft Virtual Server 2005 emulates an Intel 21140 NIC card and Intel 440BX chipset, maintaining consistent emulated hardware regardless of the host system's actual hardware.
+>Binary translation – step 1: trapping I/O calls
+When the guest OS requests hardware access (e.g., querying BIOS for hardware list), the hypervisor traps the request.
+Ring 3: Guest applications
+Ring 2:
+Ring 1: Guest OS kernel
+Ring 0: Hypervisor, Host OS
+Host hardware
+>Binary translation – step 2: emulate/translate
+Guest Program Counter
+Guest Code Translation Cache
+mov ebx, eax
+{
+mov ebx, eax
+cli (disable interrupt)
+mov [VIF], 0
+and ebx, ~0xfff
+and ebx, ~0xfff (reading page table address)
+mov ebx, cr3
+mov [CO ARG], ebx
+Using built-in sti (enable interrupt)
+call HANDLE CR3 function from VMM
+ret
+mov [VIF], 1
+test [INT PEND], 1
+jne Generally speaking, non-virtualizable instructions are translated into safe instructions.
+call HANDLE INTS
+jmp HANDLE RET
+- The guest OS is deceived into thinking it's running privileged code in Ring 0, while it's actually in Ring 1 of the host, with the hypervisor emulating hardware and trapping privileged code.
+- Unprivileged instructions are executed directly on the CPU.
+Advantages:
+- Keeps the guest OS unmodified.
+- Prevents unstable VMs from impacting system performance; enhances VM portability.
+Disadvantages:
+- Performance is suboptimal.
+
+---
+
+Para-virtualization
+> Developed to overcome the performance penalty of full virtualization with hardware emulation.
+> “Para” means “besides,” “with,” or “alongside.”
+In computing, para-virtualization is a virtualization technique enabling multiple operating systems to run on a single physical machine. It requires special hardware support.
+Para-virtualization modifies the guest operating system to acknowledge the hypervisor's presence, enabling cooperation that can enhance performance and security.
+One advantage of para-virtualization is its potential for better performance than full virtualization, as guests do not require interception and emulation by the hypervisor, reducing overhead.
+Another advantage is improved security, as para-virtualized guests lack direct hardware access, mitigating security risks.
+However, para-virtualization demands special hardware support, possibly increasing implementation costs. Additionally, para-virtualized guests may lack full portability compared to fully virtualized ones.
+Overall, para-virtualization suits organizations needing multiple OSes on a single physical machine, offering good performance, security, and relative ease of implementation.
+Diagram:
+The diagram depicts layers of a para-virtualized system: host hardware (physical computer), hypervisor (managing virtual machines), guest operating system (running inside VM), and guest applications (programs within the guest OS).
+Can be achieved in two ways:
+- Recompiled OS kernel (Linux)
+- Para-virtualization drivers for select hardware (e.g., GPU, NIC)
+Guest OS is aware of its virtualized environment, communicating with the hypervisor via specialized APIs for privileged instructions. These system calls, known as "hypercalls," enhance performance as the hypervisor focuses on VM isolation and coordination.
+
+---
+
+Hardware-assisted
+The diagram illustrates two modes: root mode and non-root mode.
+In root mode, there are four rings: -1, 0, 1, and 2.
+In non-root mode, there are three rings: 0, 1, and 2.
+The guest OS kernel operates in ring 0, while the hypervisor operates in ring -1.
+Guest applications run in ring 3.
+Host hardware is at the diagram's bottom, indicating virtualization by the host hardware.
+Text below suggests hardware-assisted virtualization as a likely future standard for server virtualization.

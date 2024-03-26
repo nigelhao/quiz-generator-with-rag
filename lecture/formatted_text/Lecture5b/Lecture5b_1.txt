@@ -1,0 +1,86 @@
+Lecture 5b: Cloud Security
+
+"Three people can keep a secret only if two of them are dead!" - Benjamin Franklin
+
+**Principles of Security**
+The principle of security states that information should be protected from unauthorized access, use, disclosure, disruption, modification, or destruction. This principle is often referred to as the CIA triad, which stands for confidentiality, integrity, and availability.
+Confidentiality means that information should only be accessible to authorized users. Integrity means that information should be accurate and complete. Availability means that information should be available to authorized users when they need it.
+The principle of security is essential for protecting information from a variety of threats, including cyberattacks, natural disasters, and human error. There are a number of security measures that can be taken to protect information, including:
+- Using strong passwords and encryption
+- Implementing firewalls and intrusion detection systems
+- Backing up data regularly
+- Educating employees about security risks
+By taking these measures, organizations can help to protect their information from unauthorized access, use, disclosure, disruption, modification, or destruction.
+
+---
+
+**Principles:**
+- Confidentiality
+- Integrity
+- Authentication
+- Non-repudiation
+
+**Confidentiality**
+Alice wants to make sure no one except Bob gets the envelope, and even if someone else gets it, that person does not come to know about the details of the envelope.
+**Integrity**
+An attacker may not know the details of the envelope, but he/she can intercept and burn the envelope. Alice and Bob want to make sure no one can tamper with the contents of the message (location, date, etc.).
+
+**Authentication**
+Bob wants to make sure that the invite is indeed from Alice, not from someone else posing as Alice.
+
+**Non-repudiation**
+Later some tabloids found out about Alice's invite, but Alice claimed that she never sent the message to Bob, i.e., Alice repudiates (happens a lot...). There should be some mechanism to defeat such a possibility of denying something which you have done.
+"I didn't invite him. He invited me to the hotel!"
+
+---
+
+**Plain Text and Cipher Text**
+A cryptosystem has five important characteristics:
+1. **Security:** The cryptosystem should be resistant to attack. An attacker should not be able to read the plaintext without knowing the key.
+2. **Usability:** The cryptosystem should be easy to use. The encryption and decryption processes should be efficient and easy to implement.
+3. **Scalability:** The cryptosystem should be able to handle large amounts of data. It should be able to encrypt and decrypt data quickly, even for large files.
+4. **Reliability:** The cryptosystem should be reliable. It should not fail or lose data.
+5. **Flexibility:** The cryptosystem should be flexible. It should be able to be used in a variety of applications.
+In addition to these five characteristics, a cryptosystem may also have other desirable properties, such as:
+- **Forward secrecy:** The cryptosystem should not be vulnerable to attacks that exploit knowledge of past keys.
+- **Backward secrecy:** The cryptosystem should not be vulnerable to attacks that exploit knowledge of future keys.
+- **Deniability:** The cryptosystem should allow a user to deny that they have encrypted or decrypted a message.
+- **Integrity:** The cryptosystem should ensure that the plaintext is not modified during transmission.
+- **Non-repudiation:** The cryptosystem should prevent a user from denying that they sent or received a message.
+
+The choice of cryptosystem depends on the specific application. For example, a cryptosystem that is used to protect sensitive government data will need to have a high level of security. A cryptosystem that is used to protect data that is transmitted over the Internet will need to be efficient and scalable.
+
+**Plain text:**
+> Can be understood by anyone knowing the language
+Hi Bob, I really like you and I know you have some problems with your new movie. Maybe you wanna talk about it with me, say this Saturday 8pm at Hotel A? Alice
+**Ciphertext:**
+> Use some scheme to codify the message, so that it's not easily understood by someone who doesn't know the coding scheme.
+KI Ere, Luhdoob olnh brx dqg L nqrz brx kdyh vrph sureohpv zlwk brxu qhz prylh. Pdbeh brx zdqqd wdon derxw lw zlwk ph, vdb wklv Vdwxugdb 8sp dw Krwho D? Dolfh
+
+---
+
+**Two Methods**
+There are two primary ways in which a plain text message can be codified to obtain a ciphertext: Substitution and Transposition.
+
+**Substitution**
+- Modified Caesar Cipher: each alphabet is replaced by one that is k places down the line, where k is from 1 to 25.
+- You need 25 attempts at most to crack k and decipher the ciphertext.
+- Instead of a uniform substitution scheme, you can have a random substitution.
+- Polygram Substitution Cipher: replace a block of alphabets with another. “HELLO” -> “YUQQW”, “HELL” -> "TEUI"
+
+**Transposition**
+In addition to replacing the alphabets, we also perform some permutation over them.
+Rail Fence Technique: Write down the plain text as a sequence of diagonals. Read the text written as above as a sequence of rows.
+Plain text: "Come home tomorrow"
+Cipher text: Cmhmtmrooeoeoorw
+In transposition, the position of letters in the plaintext is changed to produce the ciphertext. The key is the permutation that is applied to the plaintext to produce the ciphertext.
+
+
+---
+
+**Some Concepts**
+- Cryptography: a mechanism of encoding messages so that they can be sent securely.
+- Brute-force attack: try all combinations and permutations to decipher a message.
+- Encryption: encoding the plaintext into ciphertext.
+- Decryption: the reverse process.
+Encryption/decryption involves two aspects: the algorithm and the key. The sender and receiver must agree on a common algorithm for encryption/decryption. The key is used to make the process of cryptography secure. The algorithm is known to everybody.

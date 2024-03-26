@@ -1,0 +1,21 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+Resource pooling
+The provider's resources are pooled to serve consumers using a multi-tenant model, with different physical and virtual resources dynamically allocated according to consumer demand.
+Location independence: the customer generally has no control or knowledge over the exact location of the provided resources but may be able to specify location at a higher level of abstraction (e.g., country, state, or datacenter).
+Advantage for providers: efficiency in utilization
+
+Cloud rapid elasticity
+Resources can be rapidly and elastically scaled up and down. Suppose your business grows and needs 40 servers now. Elastic provisioning outperforms static provisioning
+The diagram shows the comparison between static capacity with cloud elasticity. The x-axis is time in days, and the y-axis is resources. The blue line represents static provisioning, and the green line represents elastic provisioning.
+Static provisioning is when you provision resources based on your peak load. This means that you have enough resources to handle your maximum possible traffic. However, this can be inefficient because you are paying for resources that you are not always using.
+Elastic provisioning is when you provision resources based on your current needs. This means that you can scale up or down your resources as needed. This can be more efficient because you are only paying for the resources that you are using.
+With cloud computing
+30 instances at
+$0.055/hr = $36/day
+0 idle instances at $0.05/hr = $/day
+outages=0
+Active
+Idle
+Advantage for consumers: flexible, quick and easy
+The diagram shows the scaling of cloud elasticity. The x-axis is time, and the y-axis is load. The yellow line represents the active instances, and the green line represents the idle instances. The graph shows that the number of active instances increases as the load increases. The number of idle instances decreases as the load increases. This shows that cloud elasticity can be used to scale the number of instances to meet the demand.

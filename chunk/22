@@ -1,0 +1,19 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+AIMD:
+- Sender increases sending rate (window size), probing for unused bandwidth, until loss occurs
+- Additive increase: Increase cwnd by 1 MSS (maximum segment size) every RTT until loss detected
+- Multiplicative decrease: Cut cwnd by half when loss is detected
+AIMD sawtooth behavior: Probing for bandwidth
+## TCP Congestion Control
+Typical TCP cwnd behavior
+AIMD sawtooth behavior: Probing for bandwidth
+Additively increase window size until loss occurs (then cut window in half)
+Classical Visual Proof of AIMD
+In the diagram, the classical AIMD visual proof is illustrated. The X-axis represents User 1's allocation, while the Y-axis represents User 2's allocation. The fairness line represents the line where both users receive an equal allocation. The efficiency line represents the line where the total allocation is maximized. The AIMD abstraction is visually proven by the fact that the Nash equilibrium (x0, x0) is on the fairness line and the efficiency line. This means that the AIMD abstraction captures both fairness and efficiency.
+
+# Perron-Frobenius Theory Approach to AIMD
+**Perspective via positive linear systems theory**
+Let ws(k) denote the congestion window size of source s immediately before the kth network congestion event is detected by all the sources as shown in Figure 2.
+Let as and 0 < βs < 1 be the additive and multiplicative parameters of source s using the AIMD algorithm (that are conventionally set as 1 and 0.5) respectively.
+Let qmax and P be, respectively, the maximum queue length of the congested bottleneck link and the maximum instantaneous number of sent unacknowledged packets that are in transit (e.g., P = qmax + BT where B is the bottleneck link service rate in packets per second and T is the round-trip time).

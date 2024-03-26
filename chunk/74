@@ -1,0 +1,9 @@
+Lecture 5b: Cloud Security
+
+**Cryptography**
+Broadly, there are two mechanisms used in cryptography:
+1. **Symmetric Key Cryptography:** the same key is used for encryption and decryption.
+2. **Asymmetric Key Cryptography:** two different keys are used.
+
+**Symmetric Key Cryptography**
+The communication channel is insecure. How can we settle on the key to be used for cryptography over this insecure channel?

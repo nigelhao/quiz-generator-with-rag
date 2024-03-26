@@ -1,0 +1,10 @@
+Lecture 6: CAP Theorem
+
+Tradeoffs in Distributed System
+* Let's just do best effort to make things consistent.
+* Eventual consistency
+    * Popularized by the CAP theorem.
+    * The main problem is network partitions.
+The diagram shows a distributed system with three nodes, A, B, and C. Each node has a replica of the data. The client can access any of the nodes to read or write data.
+In the example above, the client writes data to node A. Node A then replicates the data to nodes B and C. However, due to a network partition, node B is unable to replicate the data from node A. As a result, the data on node B is inconsistent with the data on nodes A and C.
+Eventual consistency ensures that the data will eventually become consistent across all nodes in the system, but it does not guarantee that the data will be consistent at any given point in time.

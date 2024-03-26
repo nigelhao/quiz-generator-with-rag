@@ -1,0 +1,24 @@
+Lecture 6: CAP Theorem
+
+In practice, most distributed systems are either CP or AP systems. CA systems are rare because they are difficult to design and implement.
+ A popular misconception: 2 out 3
+- How about CA?
+- Can a distributed system (with unreliable network) really be not tolerant of partitions?
+The diagram shows a Venn diagram with two circles. The left circle is labeled "C" and the right circle is labeled "A". The intersection of the two circles is labeled "CA".
+The question is "Can a distributed system (with unreliable network) really be not tolerant of partitions?". The answer is "yes".
+A distributed system is a system that is composed of multiple computers that are connected by a network. A partition is a division of the network into two or more parts, such that the computers in one part cannot communicate with the computers in the other part.
+A distributed system can be tolerant of partitions if it is designed in such a way that it can continue to operate even if one or more partitions occur. This can be done by using techniques such as replication, load balancing, and fault tolerance.
+However, if a distributed system is not designed to be tolerant of partitions, then it may not be able to continue to operate if a partition occurs. This can lead to data loss, service outages, and other problems.
+
+A few witnesses
+- Coda Hale, Yammer software engineer:
+- “Of the CAP theorem's Consistency, Availability, and Partition Tolerance, Partition Tolerance is mandatory in distributed systems. You cannot not choose it."
+http://codahale.com/you-cant-sacrifice-partition-tolerance/
+Werner Vogels, Amazon CTO
+- "An important observation is that in larger distributed-scale systems, network partitions are a given; therefore, consistency and availability cannot be achieved at the same time."
+ A few witnesses
+- Daniel Abadi, Co-founder of Hadapt
+- So in reality, there are only two types of systems
+...
+I.e., if there is a partition, does the system give up availability or consistency?
+http://dbmsmusings.blogspot.com/2010/04/problems-with-cap-and-yahoos-little.html

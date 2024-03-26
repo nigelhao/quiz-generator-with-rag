@@ -1,0 +1,22 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+Academia: Fat-tree
+The Clos topology is built upon commodity switches. The diagram shows a Clos topology with three levels: core, aggregation, and edge. The core level consists of a single switch that connects all the aggregation switches. The aggregation level consists of two switches that connect the edge switches to the core switch. The edge level consists of four switches that connect the hosts to the aggregation switches.
+The Clos topology is a scalable, commodity data center network architecture. It is scalable because it can be easily expanded to support more hosts. It is also cost-effective because it uses commodity switches. The Clos topology is a popular choice for data centers because it provides high performance and scalability.
+
+Fat-tree
+A k-pod fat-tree has k pods, each with two layers of k/2 switches. Each aggregation switch has k/2 ports to unique core switches and k/2 aggregation switches in a pod. So the total number of core switches is (k/2)².
+The diagram shows a 4-pod fat-tree. Each pod has two layers of 2 switches each. The first layer of switches is connected to the hosts. The second layer of switches is connected to the core switches. The core switches are connected to each other in a full mesh.
+- Each core switch has one port to each pod.
+- Each edge switch has k/2 hosts. k/2 edge switches in each of k pods. So a k-pod fat-tree can support k³/4 hosts.
+The diagram shows a fat-tree network topology. A fat-tree network is a type of data center network that is designed to provide high scalability and performance. The network is made up of multiple layers of switches, with each layer connecting to the next layer in a tree-like structure. The top layer of the network is made up of core switches, which are connected to each other in a full mesh. The next layer down is made up of aggregation switches, which are connected to the core switches in a star topology. The bottom layer of the network is made up of edge switches, which are connected to the aggregation switches in a tree topology.
+The fat-tree network topology is designed to provide high scalability and performance by distributing traffic across multiple paths. This helps to reduce congestion and improve the overall performance of the network. The network is also designed to be fault-tolerant, so that if one or more switches fail, the network can still continue to operate.
+
+Advantages of fat-tree
+In traditional hierarchical networks, switches in aggregation and core layers need to be more powerful and have more ports per device. High-end, high port density switches are extremely expensive.
+Scale out vs. scale up
+Fat-tree: (5k2/4) k-port switches support k^3/4 hosts
+48-port 1GigE switches: 27,648 hosts using 2,880 switches.
+Advantages of fat-tree
+- Rearrangeably non-blocking: for arbitrary communication patterns, there is some set of paths that will saturate all the bandwidth available to the end hosts in the topology.
+- Hierarchical topologies are not rearrangeably non-blocking.

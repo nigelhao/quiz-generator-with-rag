@@ -1,0 +1,71 @@
+Lecture 6: CAP Theorem
+
+Tradeoffs in Distributed System
+* Let's just do best effort to make things consistent.
+* Eventual consistency
+    * Popularized by the CAP theorem.
+    * The main problem is network partitions.
+The diagram shows a distributed system with three nodes, A, B, and C. Each node has a replica of the data. The client can access any of the nodes to read or write data.
+In the example above, the client writes data to node A. Node A then replicates the data to nodes B and C. However, due to a network partition, node B is unable to replicate the data from node A. As a result, the data on node B is inconsistent with the data on nodes A and C.
+Eventual consistency ensures that the data will eventually become consistent across all nodes in the system, but it does not guarantee that the data will be consistent at any given point in time.
+
+---
+
+## CAP Theorem
+* Conjectured by Prof. Eric Brewer at PODC (Principle of Distributed Computing) 2000 keynote talk
+* Described the trade-offs involved in distributed system
+* It is impossible for a web service to provide following three guarantees at the same time:
+    * Consistency
+    * Availability
+    * Partition-tolerance
+The CAP theorem states that it is impossible for a distributed computer system to simultaneously provide all of the following three guarantees:
+* Consistency: All nodes in the system have the same data at all times.
+* Availability: Every request to the system is guaranteed to succeed.
+* Partition tolerance: The system continues to operate correctly even if some of the nodes in the system fail.
+In other words, a distributed system can only provide two out of the three guarantees. This is because there is a trade-off between consistency and availability. If a system is strongly consistent, then it may not be available all the time. Conversely, if a system is highly available, then it may not be strongly consistent.
+The CAP theorem is a fundamental limitation of distributed systems. It is important to understand this theorem when designing distributed systems, as it can help you to make informed decisions about the trade-offs that you need to make.
+ ## CAP Theorem
+* Consistency:
+ * All nodes should see the same data at the same time
+* Availability:
+ * Node failures do not prevent survivors from continuing to operate
+* Partition-tolerance:
+ * The system continues to operate despite network partitions
+* A distributed system can satisfy any two of these guarantees at the same time but not all three
+
+---
+
+## CAP Theorem
+The CAP theorem, also known as Brewer's theorem, is a fundamental theorem in computer science that states that it is impossible for a distributed computer system to simultaneously provide all of the following three guarantees:
+* **Consistency:** All nodes in the system have the same data at all times.
+* **Availability:** Every request to the system is guaranteed to succeed.
+* **Partition tolerance:** The system continues to operate correctly even if some of the nodes in the system fail.
+In other words, a distributed system can only provide two out of the three guarantees. This is because there is a trade-off between consistency and availability. If a system is strongly consistent, then it may not be available all the time. Conversely, if a system is highly available, then it may not be strongly consistent.
+
+The CAP theorem has important implications for the design of distributed systems. For example, a system that requires strong consistency may need to sacrifice some availability. Conversely, a system that requires high availability may need to sacrifice some consistency.
+The CAP theorem is a fundamental limitation of distributed systems. However, it is important to note that the CAP theorem does not mean that it is impossible to build reliable distributed systems. It simply means that there are trade-offs that need to be made when designing distributed systems.
+
+## Diagram
+The CAP theorem can be illustrated using a Venn diagram. The diagram shows that the three guarantees of the CAP theorem are located at the vertices of an equilateral triangle. The center of the triangle represents the point at which all three guarantees are met. However, as we move away from the center of the triangle, we start to lose one or more of the guarantees.
+For example, if we move towards the Consistency vertex, we start to lose Availability. This is because a system that is strongly consistent may not be able to handle all requests. Conversely, if we move towards the Availability vertex, we start to lose Consistency. This is because a system that is highly available may not be able to guarantee that all nodes in the system have the same data at all times.
+The CAP theorem is a fundamental limitation of distributed systems. However, it is important to note that the CAP theorem does not mean that it is impossible to build reliable distributed systems. It simply means that there are trade-offs that need to be made when designing distributed systems.
+
+---
+
+A simple example:
+Hotel Booking: are we double-booking the same room?
+In the above diagram, there are two people, Bob and Dong. They are both trying to book the same hotel room. The hotel has a policy that does not allow double-booking. So, if Bob books the room first, then Dong will not be able to book the same room. Similarly, if Dong books the room first, then Bob will not be able to book the same room.
+This is an example of the CAP theorem. The CAP theorem states that in a distributed system, you can only have two out of the following three properties:
+* Consistency: All nodes in the system have the same data at all times.
+* Availability: All nodes in the system are always available.
+* Partition tolerance: The system can continue to operate even if some of the nodes in the system fail.
+In this example, the hotel booking system can only have two out of the three properties. It can be consistent and available, but it cannot be partition tolerant. This is because if the system is partitioned, then the two nodes will not be able to communicate with each other. This means that they will not be able to share data, and they will not be able to book the same room.
+Hotel Booking: are we double-booking the same room?
+Bob cannot see Dong's booking, and vice versa. If both try to book the same room at the same time, is it possible for the hotel booking system to double-book the room?
+Hotel Booking: are we double-booking the same room?
+In the above diagram, we have a simple example of the CAP theorem. We have two clients, Bob and Dong, who are both trying to book the same hotel room. The hotel booking system is trying to ensure that only one of them can book the room.
+The CAP theorem states that in a distributed system, you can only have two out of the following three properties:
+* Consistency: All nodes in the system have the same data at all times.
+* Availability: All nodes in the system are always available.
+* Partition tolerance: The system can continue to operate even if some of the nodes fail.
+In this example, the hotel booking system is trying to achieve consistency and partition tolerance. However, it cannot achieve availability because both Bob and Dong are able to book the same room.

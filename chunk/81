@@ -1,0 +1,16 @@
+Lecture 6: CAP Theorem
+
+## CAP Theorem
+The CAP theorem, also known as Brewer's theorem, is a fundamental theorem in computer science that states that it is impossible for a distributed computer system to simultaneously provide all of the following three guarantees:
+* **Consistency:** All nodes in the system have the same data at all times.
+* **Availability:** Every request to the system is guaranteed to succeed.
+* **Partition tolerance:** The system continues to operate correctly even if some of the nodes in the system fail.
+In other words, a distributed system can only provide two out of the three guarantees. This is because there is a trade-off between consistency and availability. If a system is strongly consistent, then it may not be available all the time. Conversely, if a system is highly available, then it may not be strongly consistent.
+
+The CAP theorem has important implications for the design of distributed systems. For example, a system that requires strong consistency may need to sacrifice some availability. Conversely, a system that requires high availability may need to sacrifice some consistency.
+The CAP theorem is a fundamental limitation of distributed systems. However, it is important to note that the CAP theorem does not mean that it is impossible to build reliable distributed systems. It simply means that there are trade-offs that need to be made when designing distributed systems.
+
+## Diagram
+The CAP theorem can be illustrated using a Venn diagram. The diagram shows that the three guarantees of the CAP theorem are located at the vertices of an equilateral triangle. The center of the triangle represents the point at which all three guarantees are met. However, as we move away from the center of the triangle, we start to lose one or more of the guarantees.
+For example, if we move towards the Consistency vertex, we start to lose Availability. This is because a system that is strongly consistent may not be able to handle all requests. Conversely, if we move towards the Availability vertex, we start to lose Consistency. This is because a system that is highly available may not be able to guarantee that all nodes in the system have the same data at all times.
+The CAP theorem is a fundamental limitation of distributed systems. However, it is important to note that the CAP theorem does not mean that it is impossible to build reliable distributed systems. It simply means that there are trade-offs that need to be made when designing distributed systems.

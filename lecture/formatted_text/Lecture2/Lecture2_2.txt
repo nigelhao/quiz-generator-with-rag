@@ -1,0 +1,120 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+A layering architecture
+The diagram shows a layering architecture. The architecture is divided into three layers: the presentation layer, the business logic layer, and the data access layer.
+The presentation layer is responsible for interacting with the user. It handles the user interface and the presentation of data to the user.
+The business logic layer is responsible for handling the logic of the application. It contains the business rules and the logic for processing data.
+The data access layer is responsible for accessing the data. It handles the interaction with the database and the retrieval and storage of data.
+
+Layering
+How to build an internet that connects all different kinds of networks, each of which may use a completely different technology?
+Answer: layering, with well-defined interfaces
+Best summarized by David Clark, MIT, “The Design Philosophy of the DARPA Internet Protocols"
+
+Why layering?
+- Functions are separated into layers. Layers are "blackboxes" to the upper- or lower-layer protocols.
+- Allow distinct technologies for the same function.
+  - physical: Ethernet, 3G, WiFi, satellite, optical, quantum, etc.
+- Allow them to inter-operate using standardized interfaces
+
+---
+
+OSI reference model
+The OSI model is a layered architecture for computer networks. It was developed by the International Organization for Standardization (ISO) in the 1980s. The OSI model divides the network into seven layers, each of which has a specific function. The layers are:
+- Physical layer: The physical layer is the lowest layer of the OSI model. It is responsible for the physical connection between two devices. This layer defines the electrical, mechanical, and functional specifications for the physical connection.
+- Data link layer: The data link layer is responsible for ensuring that data is transmitted and received correctly between two devices. This layer defines the protocols for error detection and correction, flow control, and addressing.
+- Network layer: The network layer is responsible for routing data between two devices. This layer defines the protocols for determining the best path for data to take and for ensuring that data is delivered to the correct destination.
+- Transport layer: The transport layer is responsible for ensuring that data is delivered reliably between two devices. This layer defines the protocols for error recovery, flow control, and congestion control.
+- Session layer: The session layer is responsible for establishing and maintaining a connection between two devices. This layer defines the protocols for opening and closing connections and for managing the flow of data between devices.
+- Presentation layer: The presentation layer is responsible for formatting data so that it can be understood by the application layer. This layer defines the protocols for data compression, encryption, and formatting.
+- Application layer: The application layer is the highest layer of the OSI model. It is responsible for providing the user with access to network services. This layer defines the protocols for applications such as email, file transfer, and web browsing.
+
+---
+
+More popular TCP/IP model
+Application email, browser
+Transport specific data delivery
+  TCP, UDP
+Network internetworking, routing
+  IP
+Data link/MAC how to access local links
+  Ethernet, 802.11
+Physical how bits are represented
+  on wire, DSL, Bluetooth
+The TCP/IP model is a layered model of computer networking. It is the most widely used model for the Internet. The model is divided into four layers:
+- The physical layer is the lowest layer of the model. It is responsible for the physical connection between devices.
+- The data link layer is the second layer of the model. It is responsible for sending and receiving data between devices.
+- The network layer is the third layer of the model. It is responsible for routing data between devices.
+- The transport layer is the fourth layer of the model. It is responsible for ensuring that data is delivered reliably between devices.
+Each layer of the TCP/IP model has its own protocols. The physical layer uses protocols such as Ethernet and Wi-Fi. The data link layer uses protocols such as PPP and HDLC. The network layer uses protocols such as IP and ICMP. The transport layer uses protocols such as TCP and UDP.
+The TCP/IP model is a very important model in computer networking. It is used to design and implement networks of all sizes.
+
+Hourglass
+Our protocol stack
+The hourglass diagram shows the different layers of the protocol stack. The bottom layer is the physical layer, which is responsible for sending and receiving raw data. The next layer is the data link layer, which is responsible for ensuring that data is transmitted and received correctly. The third layer is the network layer, which is responsible for routing data between different networks. The fourth layer is the transport layer, which is responsible for ensuring that data is delivered reliably. The fifth layer is the session layer, which is responsible for establishing and maintaining connections between different applications. The sixth layer is the presentation layer, which is responsible for formatting data so that it can be understood by different applications. The seventh layer is the application layer, which is responsible for providing different applications to users.
+
+---
+
+TCP/IP
+Transmission Control Protocol/Internet Protocol (TCP/IP) is a suite of communication protocols used to connect networked computers. It is the basis for the Internet and most other modern computer networks.
+TCP/IP is a layered protocol stack, meaning that it is composed of multiple layers, each of which performs a specific function. The layers are as follows:
+- Physical layer: This layer defines the physical connection between two devices, such as a network cable or a wireless connection.
+- Data link layer: This layer ensures that data is transmitted and received correctly between two devices.
+- Network layer: This layer routes data packets from one device to another across a network.
+- Transport layer: This layer ensures that data is delivered reliably and in the correct order.
+- Application layer: This layer provides the interface between the user and the network. It includes protocols such as HTTP, FTP, and SMTP.
+TCP/IP is a connection-oriented protocol, meaning that it establishes a connection between two devices before data is transmitted. This ensures that data is delivered reliably and in the correct order.
+TCP/IP is a widely used protocol suite, and it is the foundation of the Internet. It is also used in many other types of networks, such as private networks and corporate networks.
+Host: IP address A
+Application P3 Transport Network Link Physical
+Source IP, port: B, 80 Dest IP, port: A, 9157
+Source IP, port: A, 9157 Dest IP, port: B, 80
+Server: IP address B
+Application P4 Transport Network Link Physical
+Source IP, port: C, 5775 Dest IP, port: B, 80
+Source IP, port: C, 9157
+Dest IP, port: B, 80
+Host: IP address C
+Application P2 P3 Transport Network Link Physical
+
+---
+
+Internet Protocol - IP
+Connectionless, packet-based
+Best-effort, inherently unreliable - packets may be lost, dropped, delayed, delivered out-of-order - no guarantee
+Header format
+| 0 | 4 | 8 | 16 | 19 | 31 | |---|---|---|---|---|---| | Version | HLen | TOS | Length | Ident | Flags | Offset | | TTL | Protocol | Checksum | SourceAddr | DestinationAddr | Options (variable) | Pad (variable) | Data |
+
+Routing
+Routing in a nutshell:
+- Every packet header has the destination address.
+- If the router is directly connected to the destination network, forward to the host.
+- Else, forward to some router.
+Example
+| Network | Next hop | | :--- | :--- | | Network 1 | R1 | | Network 2 | R3 | | All else | R0 |
+Provide reliable data transfer to applications over unreliable IP network
+(a) Provided service
+The transport layer provides a reliable data transfer service to applications. It ensures that data is delivered to the receiving application in the same order it was sent, and that no data is lost or corrupted during transmission.
+(b) Service implementation
+The transport layer uses a variety of techniques to implement reliable data transfer. One common technique is to use a reliable data transfer protocol, such as TCP. TCP ensures reliable data transfer by using a combination of acknowledgement and retransmission mechanisms.
+The diagram shows the relationship between the transport layer and the other layers of the OSI model. The transport layer is located between the network layer and the application layer. It receives data from the network layer and passes it to the application layer. It also receives data from the application layer and passes it to the network layer.
+
+---
+
+TCP overview
+TCP: Transmission Control Protocol - Point-to-point; reliable in-order byte stream (sequence numbers); full duplex - Connection-oriented, handshaking before data exchange - Flow control: not sending too fast for the receiver to process (src and dst may have different network speeds). recv window, rwnd - Congestion control: avoid congestion collapse (too many sources sending too much). congestion window, cwnd
+Reliable transfer - Use sequence number, and send acknowledgment packets indicating the sequence number up to which the receiver has received. - If some packets are received out-of-order, or are lost, the receiver will only ACK the last seq num of the contiguous stream. - Packet loss can be detected by timeouts and duplicated ACKs.
+
+TCP flow control
+Receiver controls sender so the sender won't overflow the receiver's buffer by sending too fast.
+Receiver advertises buffer space by including a rwnd value in the header.
+Sender limits the amount of un-acked data to receiver's rwnd value.
+The diagram shows the TCP flow control mechanism. The sender sends data to the receiver. The receiver buffers the data. The receiver sends acknowledgments (ACKs) to the sender. The sender uses the ACKs to control the flow of data.
+The rwnd value is the amount of free space in the receiver's buffer. The sender can send up to rwnd bytes of data without receiving an ACK.
+The TCP flow control mechanism ensures that the sender does not overwhelm the receiver with data. This prevents the receiver's buffer from overflowing and causing data loss.
+TCP congestion control "Too many sources sending too fast for the network to handle" Manifestations: lost packets (buffer overflow at routers), long delays (queuing in router buffers).
+
+TCP congestion control
+TCP relies on packet drops as a signal of congestion. Packet drops are detected by duplicated ACKs. Thus, when TCP sees duplicated ACKs, it will interpret as congestion is experienced.
+However, packet drops may not be caused by congestion, e.g., in wireless networks.
+Duplicated ACKs may not be caused by packet drops. They may be due to a change of network path and some packets arrive late but not dropped.

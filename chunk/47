@@ -1,0 +1,21 @@
+Lecture 3: Virtualization in Cloud
+
+Redundant Array of Inexpensive Disks: RAID 1
+- Key idea: organize data to withstand failures
+- Simplest approach: mirroring (RAID 1)
+- Halves capacity but remains more economical than a single large disk
+- Probability of two replicas failing: 1-(1-p^2)^(n/2)
+- For instance, if p = 0.001 and n = 20, the chance of RAID array failure is ≈ 0.00001% each month
+The diagram demonstrates RAID 1's mirroring concept, ensuring data availability even if one disk fails.
+The Power of XOR
+- XOR enables better recovery data methods than simple replication
+- Exclusive OR (XOR) operation
+- Example: with drives A and B, an additional drive C is calculated as C = A ⊕ B
+- If B fails, recovery can be done using B = A ⊕ C
+A	B	C
+0	0	0
+0	1	1
+1	0	1
+1	1	0
+Diagram:
+Blocks A and B are XORed to generate C. In case of B's failure, B can be recovered using A and C through XOR.

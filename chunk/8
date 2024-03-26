@@ -1,0 +1,19 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+SaaS
+Software-as-a-Service (SaaS)
+Providers give you a piece of software/application, and take care of updating, maintaining and troubleshooting the application.
+As end user, you simply use the software using the Internet.
+Business model of SaaS: business-to-business (B2B), business-to-clients (B2C) that cover numerous retail end users Nowadays, many institutions use Google Apps, Apple cloud, and Office 365 for emails, video meetings, calendars, etc.
+Business uses SaaS for payment and transactions. The legal industry relies on SaaS for compliance, while the creative industry relies on SaaS for artwork (e.g., computer-generated images). Engineers rely on SaaS to design circuits/software. Students rely on SaaS to learn and collaborate.
+What are the scientific applications of SaaS?
+SaaS Maturity Model
+Level 1: Ad-Hoc/Custom – One Instance per customer
+Level 2: Configurable per customer
+Level3: configurable & Multi-Tenant-Efficient
+Level 4: Scalable, Configurable & Multi-Tenant-Efficient
+The diagram shows the four levels of SaaS maturity.
+Level 1 is Ad-Hoc/Custom. In this level, each customer has their own dedicated instance of the software. This is the least efficient level of SaaS maturity, as it requires the most resources to maintain.
+Level 2 is Configurable per customer. In this level, customers can configure their own instances of the software. This is more efficient than Level 1, as it allows customers to tailor the software to their specific needs.
+Level 3 is configurable & Multi-Tenant-Efficient. In this level, multiple customers share a single instance of the software. This is more efficient than Level 2, as it reduces the number of resources required to maintain the software.
+Level 4 is Scalable, Configurable & Multi-Tenant-Efficient. In this level, the software is able to scale to meet the needs of multiple customers. This is the most efficient level of SaaS maturity, as it provides the best balance of cost and performance.

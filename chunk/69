@@ -1,0 +1,13 @@
+Lecture 5b: Cloud Security
+
+"Three people can keep a secret only if two of them are dead!" - Benjamin Franklin
+
+**Principles of Security**
+The principle of security states that information should be protected from unauthorized access, use, disclosure, disruption, modification, or destruction. This principle is often referred to as the CIA triad, which stands for confidentiality, integrity, and availability.
+Confidentiality means that information should only be accessible to authorized users. Integrity means that information should be accurate and complete. Availability means that information should be available to authorized users when they need it.
+The principle of security is essential for protecting information from a variety of threats, including cyberattacks, natural disasters, and human error. There are a number of security measures that can be taken to protect information, including:
+- Using strong passwords and encryption
+- Implementing firewalls and intrusion detection systems
+- Backing up data regularly
+- Educating employees about security risks
+By taking these measures, organizations can help to protect their information from unauthorized access, use, disclosure, disruption, modification, or destruction.

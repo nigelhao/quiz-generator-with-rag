@@ -1,0 +1,23 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+Virtualization
+Virtual workspaces:
+- An abstraction of an execution environment that can be made dynamically available to authorized clients by using well-defined protocols,
+- Resource quota (e.g. CPU, memory share),
+- Software configuration (e.g. O/S, provided services).
+Implement on Virtual Machines (VMs):
+- Abstraction of a physical host machine,
+- Hypervisor intercepts and emulates instructions from VMs. and allows management of
+ VMs,
+- VMWare, Xen, etc.
+Provide infrastructure API:
+- Plug-ins to hardware/support structures
+Diagram:
+The diagram shows the components of a virtualized stack. The bottom layer is the hardware, which is virtualized by the hypervisor. The hypervisor provides an API to the guest operating systems, which are then able to run applications. The applications are isolated from each other by the hypervisor.
+
+Virtual Machines
+VM technology allows multiple virtual machines to run on a single physical machine.
+The diagram shows how multiple virtual machines can run on a single physical machine. Each virtual machine has its own operating system and applications. The virtual machines are isolated from each other, so they cannot interfere with each other. The physical machine's hardware is shared between the virtual machines.
+There are several different ways to implement virtualization. One common way is to use a hypervisor. A hypervisor is a software program that runs on the physical machine's hardware. The hypervisor creates and manages the virtual machines. Another way to implement virtualization is to use containers. Containers are lightweight virtualization environments that do not require a hypervisor.
+Virtualization has several benefits. It can improve security, reliability, and scalability. Virtualization can also be used to test new operating systems and applications.
+Performance: Para-virtualization (e.g., Xen) is very close to raw physical performance!

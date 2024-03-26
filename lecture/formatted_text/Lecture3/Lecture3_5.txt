@@ -1,0 +1,28 @@
+Lecture 3: Virtualization in Cloud
+
+Cloud & Virtualization
+- Cloud computing is often associated with virtualization due to its elasticity.
+- Launching new VMs in a virtualized environment is both cost-effective and rapid.
+- A cloud infrastructure essentially functions as a virtual machine management infrastructure.
+
+An IaaS Cloud
+The diagram depicts an IaaS cloud comprising a controller node responsible for cloud management, along with two computing nodes tasked with running virtual machines (VMs). These VMs are stored on a VM image storage node.
+The controller node:
+- Manages the cloud, tracking VM deployments across computing nodes.
+- Ensures VMs are adequately resourced.
+- Handles user requests for VM creation, management, and termination.
+The computing nodes:
+- Provide CPU, memory, and storage resources for VM operations.
+- Execute commands from the controller node regarding VM management.
+
+---
+
+The VM image storage node:
+- Stores VM images used for creating new VM instances.
+- Responds to controller node requests related to VM image management.
+Subtleties
+A Storage Area Network (SAN) is a network linking storage devices to servers, typically via a fabric channel.
+iSCSI, a block-level storage protocol, facilitates data transfer over TCP/IP networks. It operates by transferring data in fixed-size blocks and is commonly employed to connect servers to storage devices within a SAN.
+In the diagram:
+- Each of the two computing nodes is connected to two VMs.
+- The computing nodes link to the SAN via iSCSI, which constitutes a fabric-based network connecting storage devices to servers.

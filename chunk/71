@@ -1,0 +1,24 @@
+Lecture 5b: Cloud Security
+
+**Plain Text and Cipher Text**
+A cryptosystem has five important characteristics:
+1. **Security:** The cryptosystem should be resistant to attack. An attacker should not be able to read the plaintext without knowing the key.
+2. **Usability:** The cryptosystem should be easy to use. The encryption and decryption processes should be efficient and easy to implement.
+3. **Scalability:** The cryptosystem should be able to handle large amounts of data. It should be able to encrypt and decrypt data quickly, even for large files.
+4. **Reliability:** The cryptosystem should be reliable. It should not fail or lose data.
+5. **Flexibility:** The cryptosystem should be flexible. It should be able to be used in a variety of applications.
+In addition to these five characteristics, a cryptosystem may also have other desirable properties, such as:
+- **Forward secrecy:** The cryptosystem should not be vulnerable to attacks that exploit knowledge of past keys.
+- **Backward secrecy:** The cryptosystem should not be vulnerable to attacks that exploit knowledge of future keys.
+- **Deniability:** The cryptosystem should allow a user to deny that they have encrypted or decrypted a message.
+- **Integrity:** The cryptosystem should ensure that the plaintext is not modified during transmission.
+- **Non-repudiation:** The cryptosystem should prevent a user from denying that they sent or received a message.
+
+The choice of cryptosystem depends on the specific application. For example, a cryptosystem that is used to protect sensitive government data will need to have a high level of security. A cryptosystem that is used to protect data that is transmitted over the Internet will need to be efficient and scalable.
+
+**Plain text:**
+> Can be understood by anyone knowing the language
+Hi Bob, I really like you and I know you have some problems with your new movie. Maybe you wanna talk about it with me, say this Saturday 8pm at Hotel A? Alice
+**Ciphertext:**
+> Use some scheme to codify the message, so that it's not easily understood by someone who doesn't know the coding scheme.
+KI Ere, Luhdoob olnh brx dqg L nqrz brx kdyh vrph sureohpv zlwk brxu qhz prylh. Pdbeh brx zdqqd wdon derxw lw zlwk ph, vdb wklv Vdwxugdb 8sp dw Krwho D? Dolfh

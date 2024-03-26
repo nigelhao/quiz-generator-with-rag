@@ -1,0 +1,10 @@
+Lecture 3: Virtualization in Cloud
+
+Hardware-assisted
+The diagram illustrates two modes: root mode and non-root mode.
+In root mode, there are four rings: -1, 0, 1, and 2.
+In non-root mode, there are three rings: 0, 1, and 2.
+The guest OS kernel operates in ring 0, while the hypervisor operates in ring -1.
+Guest applications run in ring 3.
+Host hardware is at the diagram's bottom, indicating virtualization by the host hardware.
+Text below suggests hardware-assisted virtualization as a likely future standard for server virtualization.

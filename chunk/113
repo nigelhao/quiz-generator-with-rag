@@ -1,0 +1,22 @@
+Lecture 7: Pagerank Algorithm
+
+Summary
+Large-scale data poses new technical problems for:
+- storage → distributed file systems.
+- computations → MapReduce programming model.
+Split the data in chunks.
+Map workers all execute the same operation on a chunk and return a key-val pair.
+Reduce workers process all key-val pairs with the same key at once.
+
+Algorithmic costs of MapReduce:
+- Communication costs vs. computation costs.
+- Reducer size and replication rate.
+Extensions of MapReduce: Spark and TensorFlow.
+MapReduce for machine learning.
+Link analysis with PageRank.
+
+PageRank Summary
+- Robust and scalable algorithm with proven convergence guarantees
+- Distributed algorithm in Google's data center-drive breakthroughs in compute (Google MapReduce) and storage (Google File System)
+- Amenable to distributed computation via parallel computation (MapReduce in next Lecture)
+- MapReduce Code walkthrough: http://web.archive.org/web/20221216071408/https://michaelnielsen.org/blog/using-mapreduce-to-compute-pagerank

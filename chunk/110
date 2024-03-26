@@ -1,0 +1,36 @@
+Lecture 7: Pagerank Algorithm
+
+## PageRank with random walkers
+- Start random surfers at all pages with equal probability
+$$V_0 = [1/n, 1/n, . . ., 1/n]$$
+- After one step, the distribution will be
+$$V_1 = MV_0$$
+- After k steps:
+$$V_k = M^kV_0$$
+- Markov process: The distribution approaches a limiting distribution V such that V = MV if
+ - The graph is strongly connected: can get from a node to any other node.
+ - No dead ends: nodes that have no out-links.
+v = Mv.
+- Surfers are stationary.
+- The more important a page, and the more likely it is to have a surfer.
+- v is... the principal eigenvector of M. (M stochastic has largest eigenvalue 1.)
+- Power iteration: compute v by iterative matrix-vector multiplications.
+- Stop when ||v^t - v^(t-1)|| <= epsilon.
+- How eigenvectors are computed in large dimensions (e.g. Lanczos method.)
+- Amenable to MapReduce parallelization.
+- Equivalent to previous PageRank formulation:
+v_i = \Sigma d_ij / d_j
+Example
+a ⟶ b
+c ⟶ d
+
+Transition matrix:
+[0 1/2 1 0]
+[1/3 0 0 1/2]
+[1/3 1/2 0 0]
+[0 0 1 0]
+- Initialization: V0 = [1/4, 1/4, 1/4, 1/4].
+- After one step: V1 = [9/24, 5/24, 5/24, 5/24].
+- After two steps: V2 = [15/48, 11/48, 11/48, 11/48].
+- ...
+- Converges to: V = [1/3, 2/9, 2/9, 2/9].

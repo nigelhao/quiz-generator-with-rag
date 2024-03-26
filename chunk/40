@@ -1,0 +1,48 @@
+Lecture 3: Virtualization in Cloud
+
+Full virtualization
+A diagram of full virtualization.
+The diagram illustrates how full virtualization functions. The guest operating system operates within a virtual machine, isolated from the host operating system. The hypervisor manages the virtual machine and ensures it has the necessary resources.
+The guest operating system manages the guest applications. The guest applications run in ring 3, which is the least privileged ring. The guest OS kernel runs in ring 1, a more privileged ring. The hypervisor runs in ring 0, the most privileged ring.
+The host operating system manages the host applications. The host applications run in ring 3, while the host OS kernel runs in ring 0.
+The hypervisor manages the hardware, ensuring that the guest operating system has access to the required hardware resources without compromising the host OS or hardware.
+In full virtualization, the hypervisor emulates the hardware for the guest operating system, enabling it to run on any hardware platform supported by the hypervisor.
+The hypervisor, a privileged software, operates on the host operating system, creating and managing virtual machines. It also grants virtual machines access to the host OS's hardware resources.
+The guest operating system functions like a normal operating system within a virtual machine, unaware of its virtualized environment. The hypervisor provides the guest OS with the illusion of running on real hardware.
+Full virtualization offers high portability, allowing the guest OS to run on any supported hardware platform. However, it can suffer from performance issues due to the need for hardware emulation.
+The hypervisor presents an emulated hardware set to the VM's guest operating system, including CPU, motherboard, memory, disk, disk controller, and network cards.
+For instance, Microsoft Virtual Server 2005 emulates an Intel 21140 NIC card and Intel 440BX chipset, maintaining consistent emulated hardware regardless of the host system's actual hardware.
+>Binary translation – step 1: trapping I/O calls
+When the guest OS requests hardware access (e.g., querying BIOS for hardware list), the hypervisor traps the request.
+Ring 3: Guest applications
+Ring 2:
+Ring 1: Guest OS kernel
+Ring 0: Hypervisor, Host OS
+Host hardware
+>Binary translation – step 2: emulate/translate
+Guest Program Counter
+Guest Code Translation Cache
+mov ebx, eax
+{
+mov ebx, eax
+cli (disable interrupt)
+mov [VIF], 0
+and ebx, ~0xfff
+and ebx, ~0xfff (reading page table address)
+mov ebx, cr3
+mov [CO ARG], ebx
+Using built-in sti (enable interrupt)
+call HANDLE CR3 function from VMM
+ret
+mov [VIF], 1
+test [INT PEND], 1
+jne Generally speaking, non-virtualizable instructions are translated into safe instructions.
+call HANDLE INTS
+jmp HANDLE RET
+- The guest OS is deceived into thinking it's running privileged code in Ring 0, while it's actually in Ring 1 of the host, with the hypervisor emulating hardware and trapping privileged code.
+- Unprivileged instructions are executed directly on the CPU.
+Advantages:
+- Keeps the guest OS unmodified.
+- Prevents unstable VMs from impacting system performance; enhances VM portability.
+Disadvantages:
+- Performance is suboptimal.

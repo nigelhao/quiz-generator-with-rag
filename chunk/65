@@ -1,0 +1,24 @@
+Lecture 5a: Crowdsourcing in Cloud
+
+How do I add reCAPTCHA to my website?
+You can add reCAPTCHA to your website by following these steps:
+1. Sign up for a reCAPTCHA account.
+2. Add the reCAPTCHA code to your website.
+3. Customize the reCAPTCHA settings.
+Once you have added reCAPTCHA to your website, it will start to protect your site from spam and abuse.
+What are the different types of reCAPTCHA?
+There are two types of reCAPTCHA:
+* reCAPTCHA v2: This is the most common type of reCAPTCHA. It presents users with a challenge that involves identifying objects in a series of images.
+* reCAPTCHA v3: This is a newer type of reCAPTCHA that is designed to be more user-friendly. It does not require users to solve a challenge, but it still provides effective protection against spam and abuse.
+Which type of reCAPTCHA should I use?
+The type of reCAPTCHA that you should use depends on your specific needs. If you are concerned about spam and abuse, you should use reCAPTCHA v2. If you are looking for a more user-friendly option, you should use reCAPTCHA v3.
+How can I improve the accuracy of reCAPTCHA?
+There are a few things that you can do to improve the accuracy of reCAPTCHA:
+* Use a strong password for your reCAPTCHA account.
+* Make sure that the reCAPTCHA code is properly installed on your website.
+* Customize the reCAPTCHA settings to fit your specific needs.
+* Monitor the reCAPTCHA logs to identify any potential problems.
+By following these tips, you can help to improve the accuracy of reCAPTCHA and protect your website from spam and abuse.
+Roughly 200 million CAPTCHAs are typed every day.
+10s of human time per CAPTCHA.
+Can we use this human effort for good?

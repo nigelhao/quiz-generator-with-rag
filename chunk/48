@@ -1,0 +1,14 @@
+Lecture 3: Virtualization in Cloud
+
+RAID 5: Resiliency With Less Cost
+- RAID 5 stripes data across disks and reserves one disk's capacity as parity
+- Parity is XOR of data sector across other drives
+- Writes involve both data and parity, reducing storage by 1/n
+- Requires two drives to fail: for n = 6 and p = 0.001, failure probability is approximately 0.000015
+- In case of one drive failure, data can be reconstructed using parity bits
+The diagram showcases RAID 5's operation, striping data across disks and using parity for redundancy.
+Suppose there are 6 disks, including one parity disk. If disk 4 fails:
+Question 1: Can reads still be serviced? If yes, how to read from disk 4?
+Question 2: Can writes still be serviced? If yes, how to write to disk 4?
+Question 3: How is disk 4 recovered?
+The diagram illustrates a RAID 5 array with 6 disks and addresses the mentioned questions regarding disk failure and array operations.

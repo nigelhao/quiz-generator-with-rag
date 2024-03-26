@@ -1,0 +1,9 @@
+Lecture 6: CAP Theorem
+
+Summary of CAP Theorem
+* In the presence of a network partition:
+* In order to keep the replicas consistent, you need to block.
+    - From an outside observer, the system appears to be unavailable.
+* If we still serve the requests from two partitions, then the replicas will diverge.
+    - The system is available, but no consistency.
+* The CAP theorem explains this dilemma.

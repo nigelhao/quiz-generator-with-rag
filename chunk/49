@@ -1,0 +1,16 @@
+Lecture 3: Virtualization in Cloud
+
+Reed-Solomon Coding
+- For scenarios with higher failure probabilities (e.g., thousands of drives)
+- Reed-Solomon coding converts k data blocks into n, capable of recovering from any (n-k) failures
+- Example: converting 223 data blocks into 255 enables recovery from any 32 failures
+- Widely used in CDs, DVDs, QR codes, Mars Rovers, and most cloud storage systems
+- RAID 6 utilizes Reed-Solomon for two parity drives
+The diagram depicts how Reed-Solomon coding operates, dividing data into blocks and generating parity blocks for recovery.
+
+RAID invented in 1988 (4 years after first Macintosh)
+A Case for Redundant Arrays of Inexpensive Disks (RAID)
+David A. Patterson, Garth Gibson, and Randy H. Katz
+Computer Science Division
+Department of Electrical Engineering and Computer Sciences
+571 Evans Hall

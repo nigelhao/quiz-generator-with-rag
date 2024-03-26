@@ -1,0 +1,87 @@
+Lecture 4: Cloud CPU Scheduling
+
+Motivation
+When multiple VMs send instructions to the host, which instructions should the host CPU execute first?
+
+Resource contention
+On a host with 1GHz CPU, how to emulate a 400MHz CPU?
+CPU scheduling is important in delivering performance guarantees and resource isolation.
+
+---
+
+CPU Scheduling
+Implemented in the hypervisor
+Fairness
+- Idea: use weights
+- Each VM gets a share of CPU in proportion to the weight
+- Weighted max-min; Proportional fairness, Priority scheduling
+Utilization
+- What if a VM is just idle, while the other has lots of things to do? (suppose they have equal weights)
+- Should the host CPU allocate all the available cycles to the busy VM?
+* Work-conserving: The host CPU is idle if and only if there is no runnable VM. The weights act as guarantees. Utilization is good.
+* Non work-conserving: Weights are caps. Each VM owns its fraction of CPU.
+A Tradeoff
+Tradeoff between fairness and utilization work-conserving schedulers are more efficient, but less fair non work-conserving schedulers are less efficient, but more fair
+
+---
+
+Simple earliest deadline first (SEDF)
+SEDF. EDF is a widely used scheduling algorithm in OS.
+Each VM specifies its CPU requirement with a tuple (s_i, p_i, x_i)
+VM i wants to receive at least s_i units of time in each period of length p_i.
+x_i: whether to receive extra CPU time (work conserving)
+For each VM, the scheduler keeps two variables:
+d_i: time at which VM i's current period ends, i.e. deadline
+r_i: remaining CPU time in the current period
+At each time slot, among the VMs whose r_i is positive, schedule the one with the earliest deadline to run. Ties are broken arbitrarily.
+
+SEDF example
+When x_i=0, non work conserving, the VM is made runnable periodically, i.e. r_i is reset to s_i at the start of each period.
+Example: VM 1: (1,2,0), VM 2: (2,7,0)
+The image shows a diagram with two horizontal lines representing the VMs. VM1 has a period of 1 and a deadline of 2. VM2 has a period of 2 and a deadline of 7. The x-axis represents time. The diagram shows that VM1 is runnable at time 0, 7, 14, etc. VM2 is runnable at time 0, 2, 7, 9, 14, etc.
+The least common multiple of the periods is 14. So the scheduling pattern will repeat every 14 slots.
+What's the CPU utilization? It suffices to look at the first 14 slots.
+
+---
+
+## **SEDF - schedulability**
+Any VM set is schedulable by SEDF if and only if (iff)
+$$\Sigma_{i} \frac{S_i}{P_i} < 1$$
+► Run the schedulability test first before admitting a new VM
+
+ **SEDF - time granularity**
+The time granularity of the period impacts scheduler fairness.
+Example: VM 1: (2,4,0), VM 2: (2,7,0)
+In the above example, there are two virtual machines, VM1 and VM2. VM1 has a period of 2ms and an execution time of 4ms. VM2 has a period of 2ms and an execution time of 7ms. The time granularity is 1ms.
+If the time granularity is too small, then the scheduler will be unfair to VM1. This is because VM1 will only be able to run for 4ms out of every 7ms, while VM2 will be able to run for 7ms out of every 7ms.
+If the time granularity is too large, then the scheduler will be unfair to VM2. This is because VM2 will have to wait for a long time before it can run.
+The optimal time granularity is one that is fair to both VM1 and VM2. In this example, a time granularity of 4ms would be fair. This is because VM1 would be able to run for 4ms out of every 7ms, and VM2 would be able to run for 3ms out of every 7ms.
+The image shows two virtual machines (VM1 and VM2) running on a single physical machine. The x-axis represents time, and the y-axis represents the memory address. Each VM has its own memory space, and the memory addresses are shown in hexadecimal.
+VM1 is running a program that accesses memory addresses 2, 4, and 0 in that order. VM2 is running a program that accesses memory addresses 2, 7, and 0 in that order. The red boxes indicate the memory addresses that are being accessed by the VMs.
+At time 0, both VMs are accessing memory address 2. At time 1, VM1 is accessing memory address 4, while VM2 is still accessing memory address 2. At time 2, VM1 is accessing memory address 0, while VM2 is accessing memory address 7. At time 3, both VMs are accessing memory address 0.
+
+SEDF - work-conserving
+In WC mode (x_i = 1), a VM is always runnable (given it has work to do). r_i is reset to s_i immediately after it reduces to 0, and d_i is incremented by p_i at the same time.
+The slack CPU time is allocated to VMs (whose x_i=1) in a weighted fair sharing manner.
+Diagrams show two virtual machines (VM) each with different sets of parameters.
+VM1 and VM2 both have a parameter set of (1,2,0) and (1,4,0) respectively.
+The second set of parameters for VM1 and VM2 are (1,2,1) and (1,4,1) respectively.
+Q: what about the following case?
+VM 1: (1,2,1), VM 2: (1,4,0)
+Q: or this one?
+VM 1: (1,2,0), VM 2: (1,4,1)
+
+---
+
+SEDF - more examples
+Exercise for tutorial Try to schedule the following cases.
+VM 1: (2,6, 0), VM 2: (1, 3, 0), VM 3: (1,6, 0)
+VM 1: (1,8,0), VM 2: (2,5, 0), VM 3: (4, 6, 10)
+Optional and experimental: Try to set x_i=1 for some of the VMs...
+
+**SEDF - summary**
+Features:
+- Fairness depends on the value of the period
+- WC and NWC modes
+Disadvantage:
+- Implements per-CPU scheduling. Lacks global load balancing on multiprocessors

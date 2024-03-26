@@ -1,0 +1,77 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+History
+How can computers be connected and talk to each other?
+The roots of computer networking can be traced back to the development of telephone networks. In 1961, Leonard Kleinrock published his first paper on packet switching, which showed that this method of data transmission was more efficient than circuit switching for bursty traffic. Packet switching was later adopted as the basis for the ARPANET (Advanced Research Projects Agency Network), which was the first wide-area computer network.
+Evolution - 1969 First link on ARPANet between UCLA and SRI (Stanford Research Institute)
+Evolution - 1969 By the end of 1969, four nodes, UCLA, SRI, UCSB, Utah
+Evolution - 1971 September 1971
+http://personalpages.manchester.ac.uk/staff/m.dodge/cybergeography/atlas/historical.html
+Evolution - 1980
+http://personalpages.manchester.ac.uk/staff/m.dodge/cybergeography/atlas/historical.html
+Milestones
+- In 1973, R. Metcalfe invented Ethernet (in Xerox PARC)
+- In 1974, Vinton Cerf and Robert Kahn invented TCP/IP
+- The term “internet” was adopted around the 70s as an abbreviation of internetworking
+- Killer applications: Email, Web, peer-to-peer (P2P), search engine, video, mobile, social media
+
+---
+Some basic concepts
+Diagrams are a great way to visualize information. They can help you to see the relationships between different parts of a system and to identify patterns and trends. There are many different types of diagrams, each with its own strengths and weaknesses. Some of the most common types include:
+Flowcharts: Flowcharts are used to represent the flow of information or data through a system. They can be used to identify bottlenecks and inefficiencies in a process.
+Block diagrams: Block diagrams are used to represent the components of a system and the relationships between them. They can be used to identify the major components of a system and how they interact with each other.
+Organizational charts: Organizational charts are used to represent the hierarchy of an organization. They can be used to identify the different levels of management and the reporting relationships between them.
+Venn diagrams: Venn diagrams are used to represent the relationships between different sets of data. They can be used to identify the similarities and differences between different sets of data.
+Pie charts: Pie charts are used to represent the proportions of different parts of a whole. They can be used to identify the relative sizes of different parts of a whole.
+Bar charts: Bar charts are used to represent the values of different variables. They can be used to compare the values of different variables and to identify trends.
+Line charts: Line charts are used to represent the changes in a variable over time. They can be used to identify trends and to make predictions about the future.
+
+Building blocks
+- Nodes: end-hosts, or hosts (PC, server), switches, routers, middleboxes
+- Links: coax cable, optical fiber, wireless, etc.
+  - point-to-point
+  - multiple access (shared)
+Switching approaches
+- Circuit switching:
+  - (early) telephone networks
+  - Connection oriented, dedicated communication link between two nodes
+- Packet switching:
+  - computer networks
+  - Connection-less, shared communication links, no set-up
+  - Data is divided into packets and transferred independently
+Addressing, routing
+- Address: byte-string that identifies a node
+- Routing: process of forwarding messages to the destination node based on its address
+- Types of addresses:
+  - unicast: node-specific
+  - broadcast: all nodes on the network
+  - multicast: a group/subset of nodes
+
+---
+Multiplexing
+Time-division multiplexing (TDM)
+Frequency-division multiplexing (FDM)
+The diagram shows a time-division multiplexing (TDM) system with three inputs, L1, L2, and L3, and three outputs, R1, R2, and R3. The switch connects each input to each output in a round-robin fashion. For example, in the first time slot, L1 is connected to R1, L2 is connected to R2, and L3 is connected to R3. In the second time slot, L1 is connected to R2, L2 is connected to R3, and L3 is connected to R1. This continues until all of the inputs have been connected to all of the outputs.
+TDM is a technique for sending multiple signals over a single channel by dividing the channel into multiple time slots. Each signal is assigned a specific time slot, and the signals are sent one after the other. TDM is used in a variety of applications, such as telecommunications and computer networking.
+
+Statistical multiplexing
+- On-demand time-division. Schedule link on a per-packet basis
+- Packets that contend for the link enter a buffer(s)/queue(s)
+- Different scheduling disciplines can be used to decide which packet to transmit next
+- Buffer (queue) overflow is called congestion
+Say host A sends data to host B in a bursty manner. On average, A generates 100Kbps in 10% of the time and idles for 90% of the time. In circuit switching, given a link with 1Mbps, how many hosts can be supported simultaneously? 10 with no delay (no queuing). In packet switching, how many? About 30 with a very low probability of queuing delay.
+Statistical multiplexing gain: not everybody is transmitting at the same time, meaning the total bandwidth required is less than if all users transmitted simultaneously. This depends on users' traffic characteristics. For bursty data transmission, more bandwidth can be saved as compared to continuous data transmission. The statistical multiplexing gain is vital in telecommunications network design, helping to provide high-speed data services to a large number of users without having to provision enough bandwidth for simultaneous transmission.
+
+Performance metrics
+- Bandwidth, throughput:
+  - amount of data transmitted per unit time
+  - 1 Mbps = 10^6 bits per second, 1 MBps = 8 Mbps
+- Latency (delay):
+  - total time from one end to another
+  - latency = propagation + transmission + queue
+  - propagation = distance / C, transmission = size / bandwidth
+- Relative importance:
+  - 1B flow: queuing delay dominates
+  - 1ms/100ms vs. 1MBps/100MBps
+  - 25MB flow: transmission delay, i.e., throughput, dominates
+  - 1ms/100ms vs. 1MBps/100MBps

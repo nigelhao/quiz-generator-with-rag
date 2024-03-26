@@ -1,0 +1,12 @@
+Lecture 3: Virtualization in Cloud
+
+What is virtualization?
+Virtualization is a broad term. It can be applied to all types of resources (CPU, memory, network, etc.)
+Allows one computer to “look like” multiple computers, doing multiple jobs, by sharing the resources of a single machine across multiple environments.
+History
+Believe it or not:
+- Virtualization started in the 1960s in IBM's mainframe
+The image shows a woman standing next to an IBM mainframe computer. The computer is large and takes up most of the room. The woman is wearing a lab coat and is looking at the computer.
+A 'non-virtualized' system has a single OS that controls all hardware platform resources.
+A virtualized system makes it possible to run multiple virtual machines on a single physical platform.
+In the diagram, the non-virtualized system has a single operating system that is responsible for managing all of the hardware resources, such as the processor, memory, and storage. The virtualized system, on the other hand, has a virtualization layer that allows multiple operating systems to run on the same physical hardware. Each operating system runs in its own virtual machine, which is isolated from the other virtual machines. This allows for greater flexibility and security, as each operating system can be configured and managed independently.

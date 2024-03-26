@@ -1,0 +1,65 @@
+Lecture 7: Pagerank Algorithm
+
+The winner's curse can be a problem for investors because it can lead them to pay too much for a company. If a company's market share is greater than the sum of the market shares of the two companies that merged, then it is likely that the company is overvalued.
+
+## Random Walks in Graphs
+- ### The Random Surfer Model
+  - The simplified model: the standing probability distribution of a random walk on the graph of the web simply keeps clicking successive links at random.
+- ### The Modified Model
+  - The modified model: the “random surfer" simply keeps clicking successive links at random, but periodically "gets bored" and jumps to a random page based on the distribution of E.
+
+---
+
+Modified Version of PageRank
+\[ R'(u) = c_1 ∑ \frac{R'(v)}{N_v} + c_2E(u) \]
+\[ v \in B_u \]
+\[ E(u) \]: a distribution of ranks of web pages that "users" jump to when they "get bored" after successive links at random.
+
+An example of Modified PageRank
+The diagram shows a modified PageRank algorithm.
+- There are three web pages: Yahoo, Amazon, and Microsoft.
+- The weight of the link from Yahoo to Amazon is 1/2, the weight of the link from Amazon to Microsoft is 1/2, and the weight of the link from Microsoft to Yahoo is 1/2.
+- The initial rank of each page is 1/3.
+- The modified PageRank of Yahoo is 0.333, the modified PageRank of Amazon is 0.333, and the modified PageRank of Microsoft is 0.333.
+
+---
+
+Dangling Links
+- Links that point to any page with no outgoing links.
+- Most are pages that have not been downloaded yet.
+- Affect the model since it is not clear where their weight should be distributed.
+- Do not affect the ranking of any other page directly.
+- Can be simply removed before pagerank calculation and added back afterwards.
+
+## Convergence Property
+- PR (322 Million Links): 52 iterations.
+- PR (161 Million Links): 45 iterations.
+- Scaling factor is roughly linear in logn.
+The diagram shows the convergence property of the PageRank algorithm. The x-axis shows the number of iterations, and the y-axis shows the total difference from the previous iteration. The two lines show the convergence of the algorithm for two different numbers of links: 322 million and 161 million. The algorithm converges faster for the smaller number of links.
+- The Web is an expander-like graph.
+  - Theory of random walk: a random walk on a graph is said to be rapidly-mixing if it quickly converges to a limiting distribution on the set of nodes in the graph. A random walk is rapidly-mixing on a graph if and only if the graph is an expander graph.
+  - Expander graph: every subset of nodes S has a neighborhood (set of vertices accessible via outedges emanating from nodes in S) that is larger than some factor a times of |S|. A graph has a good expansion factor if and only if the largest eigenvalue is sufficiently larger than the second-largest eigenvalue.
+
+---
+
+PageRank vs. Web Traffic
+- An important component of PageRank calculation is E.
+  - A vector over the web pages (used as a source of rank).
+  - A powerful parameter to adjust the page ranks.
+- The vector E corresponds to the distribution of web pages that a random surfer periodically jumps to from the search engine.
+- Some highly accessed web pages have low page rank, possibly because:
+  - People do not want to link to these pages from their own web pages (the example in the 1998 PageRank paper is pornographic sites...).
+  - Some important backlinks are omitted.
+- Use web usage data as a start vector for PageRank.
+
+---
+
+Web Spamming by Gaming Pagerank
+- Since 2000, Google Search has become the default gateway to the web.
+- There is a very high premium to appear on the first few pages of search results.
+  - E-commerce sites.
+  - Advertising-driven sites.
+- Spamming: Manipulating the text of web pages in order to appear relevant to queries.
+- Approximately 10-15% of web pages are spam.
+- Spammers' goal: Maximize the page rank of a target page t.
+- Spammers' technique: Manipulating the text of web pages to appear relevant to queries and get as many links from accessible pages as possible to the target page.

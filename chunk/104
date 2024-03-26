@@ -1,0 +1,17 @@
+Lecture 7: Pagerank Algorithm
+
+Dangling Links
+- Links that point to any page with no outgoing links.
+- Most are pages that have not been downloaded yet.
+- Affect the model since it is not clear where their weight should be distributed.
+- Do not affect the ranking of any other page directly.
+- Can be simply removed before pagerank calculation and added back afterwards.
+
+## Convergence Property
+- PR (322 Million Links): 52 iterations.
+- PR (161 Million Links): 45 iterations.
+- Scaling factor is roughly linear in logn.
+The diagram shows the convergence property of the PageRank algorithm. The x-axis shows the number of iterations, and the y-axis shows the total difference from the previous iteration. The two lines show the convergence of the algorithm for two different numbers of links: 322 million and 161 million. The algorithm converges faster for the smaller number of links.
+- The Web is an expander-like graph.
+  - Theory of random walk: a random walk on a graph is said to be rapidly-mixing if it quickly converges to a limiting distribution on the set of nodes in the graph. A random walk is rapidly-mixing on a graph if and only if the graph is an expander graph.
+  - Expander graph: every subset of nodes S has a neighborhood (set of vertices accessible via outedges emanating from nodes in S) that is larger than some factor a times of |S|. A graph has a good expansion factor if and only if the largest eigenvalue is sufficiently larger than the second-largest eigenvalue.

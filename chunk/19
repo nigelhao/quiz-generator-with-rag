@@ -1,0 +1,23 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+TCP/IP
+Transmission Control Protocol/Internet Protocol (TCP/IP) is a suite of communication protocols used to connect networked computers. It is the basis for the Internet and most other modern computer networks.
+TCP/IP is a layered protocol stack, meaning that it is composed of multiple layers, each of which performs a specific function. The layers are as follows:
+- Physical layer: This layer defines the physical connection between two devices, such as a network cable or a wireless connection.
+- Data link layer: This layer ensures that data is transmitted and received correctly between two devices.
+- Network layer: This layer routes data packets from one device to another across a network.
+- Transport layer: This layer ensures that data is delivered reliably and in the correct order.
+- Application layer: This layer provides the interface between the user and the network. It includes protocols such as HTTP, FTP, and SMTP.
+TCP/IP is a connection-oriented protocol, meaning that it establishes a connection between two devices before data is transmitted. This ensures that data is delivered reliably and in the correct order.
+TCP/IP is a widely used protocol suite, and it is the foundation of the Internet. It is also used in many other types of networks, such as private networks and corporate networks.
+Host: IP address A
+Application P3 Transport Network Link Physical
+Source IP, port: B, 80 Dest IP, port: A, 9157
+Source IP, port: A, 9157 Dest IP, port: B, 80
+Server: IP address B
+Application P4 Transport Network Link Physical
+Source IP, port: C, 5775 Dest IP, port: B, 80
+Source IP, port: C, 9157
+Dest IP, port: B, 80
+Host: IP address C
+Application P2 P3 Transport Network Link Physical

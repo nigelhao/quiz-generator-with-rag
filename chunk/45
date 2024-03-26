@@ -1,0 +1,24 @@
+Lecture 3: Virtualization in Cloud
+
+Redundant Array of Inexpensive Disks (RAID)
+- Disks have limited space: the biggest disk today is approximately 15TB.
+- What if you need more than 15TB?
+  - Creating bigger disks incurs nonlinear costs.
+- Use virtualization: combine multiple physical disks to appear as one larger virtual disk.
+World's biggest hard drive: Meet Western Digital's 15TB monster
+Western Digital packs another terabyte into its 3.5-inch hard disk drives.
+By Liam Tung | October 26, 2018--12:49 GMT (05:49 PDT) | Topic: Storage
+**RAID (Redundant Array of Inexpensive Disks)**
+- Disks have limited space: the biggest disk today is approximately 15TB.
+- What if you need more than 15TB?
+  - Creating bigger disks incurs nonlinear costs.
+- Use virtualization: combine multiple physical disks to appear as one bigger virtual disk
+Diagram:
+A RAID system with six physical disks is depicted. These disks connect to a RAID controller, managing data storage and retrieval. The RAID controller presents the virtual disk as a single logical unit to the operating system.
+The diagram illustrates data writing and reading processes in the RAID system. Data is striped across physical disks during writing, enhancing performance. During reading, data retrieval occurs in parallel from all disks, further optimizing performance.
+Additionally, the RAID system ensures data redundancy. In case of a disk failure, the RAID controller can retrieve data from other disks and reconstruct the failed disk, safeguarding data integrity.
+## RAID: a lot of advantages
+- Size: enables creation of arbitrarily large disks
+- Speed: optimally laid out data allows reading from multiple disks in parallel
+- Cost: multiple inexpensive disks are more cost-effective than one large disk
+The diagram demonstrates RAID's functionality, striping data across disks for improved speed and providing redundancy to ensure reliability.

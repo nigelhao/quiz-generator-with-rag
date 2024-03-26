@@ -1,0 +1,22 @@
+Lecture 7: Pagerank Algorithm
+
+PageRank
+- Not just a count of inlinks
+- A link from a more important page is more important
+- A link from a page with fewer links is more important
+- A page with lots of inlinks from important pages (which have few outlinks) is more important
+ PageRank Model
+
+The Web: a directed graph
+G = (V, E)
+Vertices (pages)	Edges (links)
+a	(a, e), (a, f)
+b	(b, d)
+c	(c, b)
+d	(d, a), (d, c), (d, f)
+e	(e, b), (e, d), (e, f)
+f	(f, a)
+
+Which is the most “important” vertex?
+V = {a, b, c, d, e, f }
+E = {(a, e), (a, f), (b, d), (c, b), (d, a), (d, c), (d, f), (e, b), (e, d), (e, f), (f,a)}

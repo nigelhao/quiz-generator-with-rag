@@ -1,0 +1,12 @@
+Lecture 7: Pagerank Algorithm
+
+PageRank: Random Surfer Model
+= someone surfing the web, clicking links randomly
+* What is the probability of being at page x after n hops?
+The diagram shows a web graph with 6 nodes labeled a, b, c, d, e, and f. The nodes are connected by directed edges. The surfer starts at node e and randomly surfs the web by clicking on links. The probability of the surfer being at node x after n hops is given by the following formula:
+P(x, n) = (1-d)/N + d * sum(P(y, n-1) * L(y, x)) for all y in N(x)
+where:
+N is the total number of nodes in the graph
+d is a damping factor that controls the probability of the surfer continuing to surf the web or jumping to a random page
+L(y, x) is the probability of the surfer clicking on the link from node y to node x
+The damping factor d is typically set to 0.85. This means that the surfer has an 85% chance of continuing to surf the web and a 15% chance of jumping to a random page.

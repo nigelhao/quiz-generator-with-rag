@@ -1,0 +1,16 @@
+Lecture 3: Virtualization in Cloud
+
+Amazon Elastic Compute Cloud (EC2):
+- Amazon computing service: a virtual computer is called an instance.
+- Many different kinds of instances: general purpose, memory-optimized, compute-optimized, GPUs, etc.
+- There's generally a full instance size, and you can have 1/2 of it.
+- Four a1.large is the same as one a1.2xlarge.
+- Two a 1.2x large is the same as one a1.4xlarge.
+| VCPU | ECU | Memory (GiB) | Instance Storage (GB) | Linux/UNIX Usage |
+|---|---|---|---|---|
+| a1.medium | 1 | N/A | 2 GiB | EBS Only | $0.0255 per Hour |
+| a1.large | 2 | N/A | 4 GiB | EBS Only | $0.051 per Hour |
+| a1.xlarge | 4 | N/A | 8 GiB | EBS Only | $0.102 per Hour |
+| a1.2xlarge | 8 | N/A | 16 GiB | EBS Only | $0.204 per Hour |
+| a1.4xlarge | 16 | N/A | 32 GiB | EBS Only | $0.408 per Hour |
+| a1.metal | 16 | N/A | 32 GiB | EBS Only | $0.408 per Hour |

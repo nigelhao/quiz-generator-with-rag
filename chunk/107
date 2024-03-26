@@ -1,0 +1,39 @@
+Lecture 7: Pagerank Algorithm
+
+Exercise on PageRank
+Consider a Web graph with three nodes 1, 2, and 3. The links are as follows:
+1->2, 3->2, 2->1, 2->3. Write down the transition probability matrices P for
+the surfer's walk with teleporting, with the value of teleport probability
+α=0.5.
+
+The transition probability matrix P is given by:
+```
+A =
+0   1   0
+1   0   1
+0   1   0
+```
+
+Each entry in the matrix is divided by the number of ones in that row.
+```
+(1- α)*
+1/2 0 1/2
+0 1 0
+0 1 0
+```
+
+The teleport probability matrix is given by:
+```
+α*
+1/3 1/3 1/3
+1/3 1/3 1/3
+1/3 1/3 1/3
+```
+
+The overall transition probability matrix is given by:
+```
+P = A + α*
+5/12 1/6 5/12
+1/3 1/3 1/3
+1/6 2/3 1/6
+```

@@ -1,0 +1,29 @@
+Lecture 7: Pagerank Algorithm
+
+PageRank: Random Surfer Model
+The PageRank model is a powerful tool for ranking web pages. It is used by Google and other search engines to determine the order in which pages are displayed in search results.
+- Imagine a surfer on the web, randomly clicking links.
+- What is the probability of the surfer being at a particular page after n hops?
+- Assume that the surfer starts at a random page.
+- We can model this process using a directed graph, where each node represents a web page and each edge represents a link between two pages.
+- The PageRank of a page is a measure of its importance, and it is calculated by iteratively applying the following formula:
+```
+PR(x) = (1-d) + d * (PR(y)/C(y) + PR(z)/C(z) + ...)
+```
+- Where:
+    - PR(x) is the PageRank of page x
+    - d is a damping factor (usually set to 0.85)
+    - C(y) is the number of outgoing links from page y
+    - PR(y) is the PageRank of page y
+- The PageRank of a page is a measure of its importance, and it is calculated by iteratively applying the following formula:
+```
+PR(x) = (1-d) + d * (PR(y)/C(y) + PR(z)/C(z) + ...)
+```
+- Where:
+    - PR(x) is the PageRank of page x
+    - d is a damping factor (usually set to 0.85)
+    - C(y) is the number of outgoing links from page y
+    - PR(y) is the PageRank of page y
+- This formula takes into account the number of links to a page, as well as the PageRanks of the pages that link to it.
+- The PageRank algorithm is a powerful tool for ranking web pages, and it is used by Google to determine the order of results in its search engine.
+Imagine a surfer on the web, randomly clicking links. What is the probability that the surfer will be at a particular page after n hops? We can model this using a random walk on a graph, where the nodes are the web pages and the edges are the links between them. The initial state of the surfer is that they are equally likely to be at any node. At each step, the surfer randomly chooses one of the outgoing links from their current page and follows it.

@@ -1,0 +1,224 @@
+ Nanyang Technological University, Singapore
+
+CE/CZ4052 Cloud Computing
+
+Cloud Security
+
+Dr. Tan, Chee Wei
+Email: cheewei.tan@ntu.edu.sg
+Office: N4-02c-104
+ "Three people can keep a secret only if two of them are dead!"
+- Benjamin Franklin
+ Outline
+* Principles of security
+* Plain Text and Cipher Text
+* Encryption/Decryption
+    * Symmetric key cryptography
+    * Asymmetric key cryptography
+ Principles of security
+
+The principle of security states that information should be protected from unauthorized access, use, disclosure, disruption, modification, or destruction. This principle is often referred to as the CIA triad, which stands for confidentiality, integrity, and availability.
+
+Confidentiality means that information should only be accessible to authorized users. Integrity means that information should be accurate and complete. Availability means that information should be available to authorized users when they need it.
+
+The principle of security is essential for protecting information from a variety of threats, including cyberattacks, natural disasters, and human error. There are a number of security measures that can be taken to protect information, including:
+
+* Using strong passwords and encryption
+* Implementing firewalls and intrusion detection systems
+* Backing up data regularly
+* Educating employees about security risks
+
+By taking these measures, organizations can help to protect their information from unauthorized access, use, disclosure, disruption, modification, or destruction.
+ Principles
+* Confidentiality
+* Integrity
+* Authentication
+* Non-repudiation
+ Confidentiality
+Alice wants to make sure no one except Bob gets the envelope, and even if someone else gets it, that person does not come to know about the details of the envelope.
+Otherwise, the headline of tabloids, career deep-dive
+
+The diagram shows a woman, Alice, on the left, and a man, Bob, on the right. There is an arrow pointing from Alice to Bob, and an envelope in the middle. The text above the arrow says "Alice wants to make sure no one except Bob gets the envelope". The text below the arrow says "and even if someone else gets it, that person does not come to know about the details of the envelope". The text on the left of the diagram says "Alice". The text on the right of the diagram says "Bob".
+ Integrity
+> An attacker may not know the details of the envelope, but he/she can intercept and burn the envelope...
+> Alice and Bob want to make sure no one can tamper with the contents of the message (location, date, etc.)
+ # Authentication
+Bob wants to make sure that the invite is indeed from Alice, not from someone else posing as Alice.
+Otherwise, could be embarrassing...
+ Non-repudiation
+> Later some tabloids found out about Alice's invite, but Alice claimed that she never sent the message to Bob, i.e. Alice repudiates (happens a lot...)
+> There should be some mechanism to defeat such a possibility of denying something which you have done.
+
+"I didn't invite him. He invited me to the hotel!"
+ Plain Text and Cipher Text
+
+A cryptosystem has five important characteristics:
+
+1. **Security:** The cryptosystem should be resistant to attack. An attacker should not be able to read the plaintext without knowing the key.
+2. **Usability:** The cryptosystem should be easy to use. The encryption and decryption processes should be efficient and easy to implement.
+3. **Scalability:** The cryptosystem should be able to handle large amounts of data. It should be able to encrypt and decrypt data quickly, even for large files.
+4. **Reliability:** The cryptosystem should be reliable. It should not fail or lose data.
+5. **Flexibility:** The cryptosystem should be flexible. It should be able to be used in a variety of applications.
+
+In addition to these five characteristics, a cryptosystem may also have other desirable properties, such as:
+
+* **Forward secrecy:** The cryptosystem should not be vulnerable to attacks that exploit knowledge of past keys.
+* **Backward secrecy:** The cryptosystem should not be vulnerable to attacks that exploit knowledge of future keys.
+* **Deniability:** The cryptosystem should allow a user to deny that they have encrypted or decrypted a message.
+* **Integrity:** The cryptosystem should ensure that the plaintext is not modified during transmission.
+* **Non-repudiation:** The cryptosystem should prevent a user from denying that they sent or received a message.
+
+The choice of cryptosystem depends on the specific application. For example, a cryptosystem that is used to protect sensitive government data will need to have a high level of security. A cryptosystem that is used to protect data that is transmitted over the Internet will need to be efficient and scalable.
+ Plain text
+> Can be understood by anyone knowing the language
+
+Hi Bob,
+I really like you and I know you have some problems with your new movie. Maybe you wanna talk about it with me, say this Saturday 8pm at Hotel A?
+Alice
+ Ciphertext
+> Use some scheme to codify the message, so that it's not easily understood by someone who doesn't know the coding scheme.
+
+KI Ere,
+Luhdoob olnh brx dqg L nqrz brx kdyh vrph sureohpv
+zlwk brxu qhz prylh. Pdbeh brx zdqqd wdon derxw lw
+zlwk ph, vdb wklv Vdwxugdb 8sp dw Krwho D?
+Dolfh
+ Two methods
+There are two primary ways in which a plain text message can be codified to obtain a cipher text:
+Substitution and Transposition
+The previous cipher text is a result of Caesar Cipher, which substitutes each alphabet by shifting it three places down the line
+“A” -> “D”, “b” -> “e”
+ Substitution
+- Modified Caesar Cipher: each alphabet is replaced by one that is k places down the line, where k is from 1 to 25.
+- You need 25 attempts at most to crack k and decipher the cipher text
+- Instead of a uniform substitution scheme, you can have a random substitution
+- Polygram Substitution Cipher: replace a block of alphabets with another. “HELLO” -> “YUQQW”, “HELL” -> "TEUI"
+ Transposition
+In addition to replacing the alphabets, we also perform some permutation over them
+
+Rail Fence Technique
+Write down the plain text as a sequence of diagonals
+Read the text written as above as a sequence of rows
+ Transposition
+Plain text: "Come home tomorrow"
+
+Cipher text: Cmhmtmrooeoeoorw
+
+In transposition, the position of letters in the plaintext is changed to produce the ciphertext. The key is the permutation that is applied to the plaintext to produce the ciphertext.
+ Some concepts
+Cryptography: a mechanism of encoding messages so that they can be sent securely
+Brute-force attack: try all combinations and permutations to decipher a message
+Encryption: encoding the plain text into cipher text
+Decryption: the reverse process
+ Some concepts
+Encryption/decryption involves two aspects: the algorithm and the key.
+The sender and receiver must agree on a common algorithm for encryption/decryption.
+The key is used to make the process of cryptography secure.
+The algorithm is known to everybody.
+ Cryptography
+Broadly, there are two mechanisms used in cryptography
+Symmetric Key Cryptography: the same key is used for encryption and decryption
+Asymmetric Key Cryptography: two different keys are used
+ Symmetric key cryptography
+
+The communication channel is insecure. How can we settle on the key to be used for cryptography over this insecure channel?
+
+Diffie-Hellman key exchange algorithm (1976)
+
+p, g: prime numbers. a, b: random numbers
+
+Alice                               Bob
+Secret  Public  Calculates  Sends  Calculates  Public  Secret
+a                                  p, g
+                                       p, g            b
+a                                  g^a mod p = A     A →
+                                       p, g            b
+a                                  p, g, A           B^b mod p = B
+                                       p, g, A, B      b
+a, s    p, g, A, B            B^a mod p = s      ←
+                                       Ab mod p = s     p, g, A, B, b, s
+ # Diffie-Hellman key exchange
+Alice computes s=g^ba mod p. Bob computes s=g^ab mod p.
+Example: Alice and Bob agree to use p=23 and g=5 (publicly). Alice secretly uses a=6, and Bob secretly chooses b=15.
+Alice sends to Bob A = g^a mod p = 5^6 mod 23 = 8
+Bob sends to Alice B = g^b mod p = 5^15 mod 23 = 19
+Alice computes s = B^a mod p = 19^6 mod 23 = 2
+Bob computes s = A^b mod p = 8^15 mod 23 = 2
+ # Diffie-Hellman key exchange
+If Alice and Bob can independently calculate the secret key s, so can an attacker who knows p, g, A, and B, right? — Not so easily
+If a, b, and p are large numbers, it's mathematically difficult to calculate a and b from p, g, A, and B only
+ DES
+> Data Encryption Algorithm. Been used for over two decades.
+DES is a block cipher. It encrypts data in blocks of 64 bits. The key is 56 bits.
+Plaintext     Initial permutation     LPT and RPT
+16 rounds with key     Final permutation     Ciphertext
+ Asymmetric key cryptography
+
+Also called Public Key Cryptography. A pair of keys are used
+
+- Public key: used for encryption
+- Private key: used for decryption. Only known to the owner. Only the corresponding private key can decrypt
+
+Requirements:
+- It's computationally infeasible to find the private key given only the algorithm and public key
+- It's computationally easy to en/decrypt a message using the relevant key
+ # RSA
+The most popular and proven asymmetric key cryptography algorithm
+By Rivest, Shamir, and Adleman of MIT, 1977
+It relies on a mathematical fact that it's easy to find and multiply two large prime numbers, but it's extremely difficult to factor their product back into two primes
+ # RSA - Key generation
+1. Choose two large prime numbers P and Q. P=7, Q=17
+2. Calculate N=P*Q. N=119
+3. Select the public key E such that it is not a factor of (P-1)(Q-1).
+(P-1)(Q-1)=6*16. Let's choose E=5
+4. Select the private key D such that the following is true:
+(D*E) mod (P-1)(Q-1) = 1
+5. Let's choose D=77, because 77*5 mod 96 = 1
+ RSA - En/decryption
+Suppose the keys are generated by Bob. Bob gives Alice its public key E and the number N.
+Alice wants to send a character "F" to Bob. She'll use Bob's public key to encrypt it
+CT = PTE mod N = PTE mod P*Q
+Alice sends 65 mod 119 = 41
+Bob uses the following: PT = CTD mod N
+Bob gets 4177 mod 119 = 6
+ # RSA
+- For an attacker to crack the message, he needs to find the values of P and Q using N. This is extremely difficult for large primes.
+- Takes more than 70 years if N is 100 digit
+- If Alice and Bob use RSA, it'll be difficult to crack their communication
+- "Factoring as a Service" (https://eprint.iacr.org/2015/1000.pdf), published in 2015, used Amazon EC2 cloud resources to factorize a 512-bit RSA modulus in just four hours for $75. What are the implications for network security?
+ Digital signatures
+When A sends to B, A uses B's public key to encrypt, so the message is confidential
+
+In many situations we need "signatures" to verify the identity of someone
+
+We can use a different scheme
+- A uses his private key to encrypt a message
+- Anyone can check the message is signed by A by using A's public key
+- Only A can sign the message
+ Digital certificates
+
+Certificates: bind Bob's ID to his PK
+
+How does Alice (browser) obtain Bob's public key pkBob?
+
+In the diagram, there are three entities: Alice, Bob, and a Certification Authority (CA). Alice is the browser, Bob is the server, and the CA is a trusted third party that issues certificates.
+
+The process of obtaining Bob's public key pkBob is as follows:
+
+1. Bob generates a public-private key pair (pkBob, skBob).
+2. Bob sends a certificate request to the CA. The certificate request contains Bob's public key pkBob and proof that Bob owns the corresponding private key skBob.
+3. The CA verifies the certificate request and issues a certificate. The certificate contains Bob's public key pkBob and the CA's signature.
+4. Bob sends the certificate to Alice.
+5. Alice verifies the certificate and extracts Bob's public key pkBob.
+
+Bob uses his certificate for an extended period (e.g., one year). During this period, Alice can use Bob's public key pkBob to encrypt messages to Bob. Bob can use his private key skBob to decrypt the messages.
+ Public key infrastructure - PKI
+How do we know a key belongs to Bob?
+One solution: PKI
+Trust certification/root authority (VeriSign, etc.)
+Everyone must know the public key of the root authority
+Check your browser, you can find many
+Root authority can sign certificates
+Certificates identify others, including other authorities
+DocuSign is a SaaS product that businesses use to send electronic signatures
+https://en.wikipedia.org/wiki/DocuSign

@@ -1,0 +1,8 @@
+Lecture 4: Cloud CPU Scheduling
+
+Motivation
+When multiple VMs send instructions to the host, which instructions should the host CPU execute first?
+
+Resource contention
+On a host with 1GHz CPU, how to emulate a 400MHz CPU?
+CPU scheduling is important in delivering performance guarantees and resource isolation.

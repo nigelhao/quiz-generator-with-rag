@@ -1,0 +1,20 @@
+Lecture 3: Virtualization in Cloud
+
+Some terms
+The diagram shows the relationship between applications, the operating system, the virtualization layer, and the hardware architecture.
+The applications are at the top level and interact with the operating system. The operating system provides a layer of abstraction between the applications and the hardware. The virtualization layer allows multiple operating systems to run on a single physical machine. The hardware architecture is the foundation of the system and provides the basic instructions that the operating system and applications need to run.
+The x86 architecture is a family of instruction sets that are used in most personal computers. The CPU is the central processing unit and is responsible for executing instructions. The memory is used to store data and instructions that are being processed by the CPU. The NIC is the network interface controller and is responsible for connecting the computer to a network. The disk is used to store data that is not currently being processed by the CPU.
+
+Hosted architecture
+A hosted architecture installs and runs the virtualization layer as an application on top of an operating system
+Hosted architecture
+* Indirect access to hardware through the host OS
+* Performance penalty, usually for desktops and personal use
+
+Hypervisor architecture
+The hypervisor architecture installs the virtualization layer, called hypervisor, directly on a clean x86-based system.
+Installer is usually an ISO installing a tailor-made OS.
+The diagram shows the hypervisor architecture. The hypervisor is a software layer that runs on top of the hardware and provides virtualization services to the guest operating systems. The guest operating systems are isolated from each other and from the hardware by the hypervisor. This allows multiple guest operating systems to run on the same hardware simultaneously.
+- It has direct access to hardware resources
+- A hypervisor is more efficient than a hosted architecture and delivers greater scalability, robustness, and performance
+- For production use

@@ -1,0 +1,27 @@
+Lecture 3: Virtualization in Cloud
+
+Third OS Concept: Process
+* Process: execution environment with Restricted Rights
+    * Address Space with One or More Threads
+    * Owns memory (address space)
+    * Owns file descriptors, file system context, …
+    * Encapsulate one or more threads sharing process resources
+* Why processes?
+    * Protected from each other!
+    * OS Protected from them
+    * Navigate fundamental tradeoff between protection and efficiency
+    * Processes provides memory protection
+* Application instance consists of one or more processes
+Protection
+- Operating System must protect itself from user programs
+  - Reliability: compromising the operating system generally causes it to crash
+  - Security: limit the scope of what processes can do
+  - Privacy: limit each process to the data it is permitted to access
+  - Fairness: each should be limited to its appropriate share
+- It must protect User programs from one another
+  - Primary Mechanism: limit the translation from program address space to physical memory space
+    - Can only touch what is mapped in
+  - Additional Mechanisms:
+    - Privileged instructions, in/out instructions, special registers
+    - syscall processing, subsystem implementation
+      - (e.g., file access rights, etc)

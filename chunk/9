@@ -1,0 +1,8 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+**Comparison of IaaS, PaaS, SaaS**
+The diagram shows the relationship between Infrastructure as a Service (IaaS), Platform as a Service (
+PaaS), and Software as a Service (SaaS).
+IaaS is the most basic level of cloud computing. It provides users with access to virtualized computing resources, such as servers, storage, and networking. PaaS is a more advanced level of cloud computing that provides users with a platform on which to develop, deploy, and manage their applications. SaaS is the most advanced level of cloud computing that provides users with access to software applications that are hosted in the cloud.
+The diagram also shows the tradeoff between flexibility and built-in functionality. IaaS provides the most flexibility, but it also requires users to have the most technical expertise. PaaS provides less flexibility than IaaS, but it also requires less technical expertise. SaaS provides the least flexibility, but it also requires the least technical expertise.
+The choice of which cloud computing model to use depends on the specific needs of the user. If the user needs the most flexibility, then IaaS is the best option. If the user needs a platform on which to develop, deploy, and manage their applications, then PaaS is the best option. If the user needs access to software applications that are hosted in the cloud, then SaaS is the best option.

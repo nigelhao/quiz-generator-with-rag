@@ -1,0 +1,31 @@
+Lecture 3: Virtualization in Cloud
+
+Second OS Concept: Program's Address Space
+- Address space -> the set of accessible addresses + state associated with them:
+- For a 32-bit processor there are 2^32 = 4 billion addresses
+- What happens when you read or write to an address?
+ - Perhaps Nothing
+ - Perhaps acts like regular memory
+ - Perhaps ignores writes
+ - Perhaps causes I/O operation
+ (Memory-mapped I/O)
+ - Perhaps causes exception (fault)
+The diagram shows the layout of a typical program's address space. The code segment contains the program's instructions,
+ while the data segment contains the program's data. The heap is a region of memory that is used for dynamic memory allocation. The stack is a region of
+ memory that is used for storing function calls and their local variables.
+Address Space: In a Picture
+- What's in the code segment? Data?
+- What's in the stack segment?
+ - How is it allocated? How big is it?
+- What's in the heap segment?
+ - How is it allocated? How big?
+
+The diagram shows the layout of the address space in a computer. The address space is divided into two segments: the code segment and the data segment. The code segment contains the instructions that are executed by the processor. The data segment contains the data that is used by the program.
+The processor registers are located at the top of the address space. The registers are used to store temporary data that is being processed by the processor. The program counter (PC) is a register that points to the next instruction that is to be executed. The stack pointer (SP) is a register that points to the top of the stack.
+The stack is a region of memory that is used to store temporary data that is not needed for a long period of time. The heap is a region of memory that is used to store data that is dynamically allocated. The heap is located at the bottom of the address space.
+Providing Illusion of Separate Address Space:
+Load new Translation Map on Switch
+In the above diagram, we can see how the virtual address space is divided into two parts, each with its own translation map. This allows for the illusion of separate address spaces for each process, even though they are all running in the same physical address space.
+The translation maps are used to convert virtual addresses to physical addresses. When a process accesses a virtual address, the translation map is used to look up the corresponding physical address. This address is then used to access the data in physical memory.
+The use of separate address spaces helps to protect each process from the others. If one process tries to access the memory of another process, it will cause a segmentation fault. This is because the translation map for the first process will not have an entry for the memory of the second process.
+Separate address spaces also help to improve performance. By keeping each process's memory separate, the operating system can avoid the need to constantly switch between different memory pages. This can lead to a significant improvement in performance, especially for systems that are running multiple processes at the same time.

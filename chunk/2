@@ -1,0 +1,14 @@
+Lecture 1: Basics, IaaS, PaaS, SaaS
+
+On-demand self-service
+Suppose you open a start-up and need 20 servers for the business. Cloud computing enables on-demand service.
+The engineer sends an API request to the cloud. The cloud then sends back a result, which is a VM.
+A consumer can unilaterally provision com     puting capabilities, such as servers and network storage, as needed automatically without requiring human interaction with each service provider.
+Cloud computing makes the underlying technology, beyond the user device, almost invisible and transparent to users
+Advantages for consumers: flexible, minimal overhead, quick and easy
+
+Broad network access
+Capabilities are available over the network and accessed through standard mechanisms that promote use by heterogeneous thin or thick client platforms (e.g., smartphones, tablets, laptops, and workstations).
+Advantages for consumers: "Always-on" experience, like utilities (electricity)
+Allows big amount of data to be collected from cloud edge
+Cloud computing enables scalable machine learning techniques to power Artificial Intelligence (AI) applications

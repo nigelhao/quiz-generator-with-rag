@@ -1,0 +1,29 @@
+Lecture 2: Data Center Networking– Basics, Topology
+
+Multiplexing
+Time-division multiplexing (TDM)
+Frequency-division multiplexing (FDM)
+The diagram shows a time-division multiplexing (TDM) system with three inputs, L1, L2, and L3, and three outputs, R1, R2, and R3. The switch connects each input to each output in a round-robin fashion. For example, in the first time slot, L1 is connected to R1, L2 is connected to R2, and L3 is connected to R3. In the second time slot, L1 is connected to R2, L2 is connected to R3, and L3 is connected to R1. This continues until all of the inputs have been connected to all of the outputs.
+TDM is a technique for sending multiple signals over a single channel by dividing the channel into multiple time slots. Each signal is assigned a specific time slot, and the signals are sent one after the other. TDM is used in a variety of applications, such as telecommunications and computer networking.
+
+Statistical multiplexing
+- On-demand time-division. Schedule link on a per-packet basis
+- Packets that contend for the link enter a buffer(s)/queue(s)
+- Different scheduling disciplines can be used to decide which packet to transmit next
+- Buffer (queue) overflow is called congestion
+Say host A sends data to host B in a bursty manner. On average, A generates 100Kbps in 10% of the time and idles for 90% of the time. In circuit switching, given a link with 1Mbps, how many hosts can be supported simultaneously? 10 with no delay (no queuing). In packet switching, how many? About 30 with a very low probability of queuing delay.
+Statistical multiplexing gain: not everybody is transmitting at the same time, meaning the total bandwidth required is less than if all users transmitted simultaneously. This depends on users' traffic characteristics. For bursty data transmission, more bandwidth can be saved as compared to continuous data transmission. The statistical multiplexing gain is vital in telecommunications network design, helping to provide high-speed data services to a large number of users without having to provision enough bandwidth for simultaneous transmission.
+
+Performance metrics
+- Bandwidth, throughput:
+  - amount of data transmitted per unit time
+  - 1 Mbps = 10^6 bits per second, 1 MBps = 8 Mbps
+- Latency (delay):
+  - total time from one end to another
+  - latency = propagation + transmission + queue
+  - propagation = distance / C, transmission = size / bandwidth
+- Relative importance:
+  - 1B flow: queuing delay dominates
+  - 1ms/100ms vs. 1MBps/100MBps
+  - 25MB flow: transmission delay, i.e., throughput, dominates
+  - 1ms/100ms vs. 1MBps/100MBps
